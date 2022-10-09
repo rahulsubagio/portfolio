@@ -610,21 +610,10 @@ video {
   padding-top: 9rem;
 }
 
-.pt-3 {
-  padding-top: 0.75rem;
+.font-semibold {
+  font-weight: 600;
 }
 
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
-.text-9xl {
-  font-size: 8rem;
-  line-height: 1;
+.font-bold {
+  font-weight: 700;
 }
