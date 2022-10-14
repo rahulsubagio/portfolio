@@ -10,6 +10,7 @@ module.exports = {
     extend: {
       colors: {
         primary: '#7CC649',
+        secondary: '#9ca3af',
         dark: '#374151', //gray-700
         light: '#f3f4f6',
       },
@@ -19,9 +20,9 @@ module.exports = {
         noto: "'Noto Sans Ethiopic', sans-serif",
       },
 
-      screens: {
-        '2xl': '1320px',
-      },
+      // screens: {
+      //   '2xl': '1320px',
+      // },
     },
   },
   plugins: [],
