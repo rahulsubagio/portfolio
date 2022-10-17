@@ -1,3 +1,95 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+p {
+  @apply text-sm text-secondary;
+}
+
+h4 {
+  @apply text-base text-light;
+}
+
+.back-btn {
+  @apply -bottom-52;
+}
+
+.section-page {
+  @apply flex flex-wrap md:px-8 lg:px-20 mx-auto;
+}
+
+.navbar-fixed {
+  @apply fixed z-[9999] bg-dark bg-opacity-70;
+  backdrop-filter: blur(5px);
+  box-shadow: inset 0 -1px 0 0 rgba(245, 245, 245, 0.2);
+  /* hitam = rgba(0, 0, 0, 0.2) */
+}
+
+.brand-logo {
+  @apply block w-12 md:w-20 lg:w-24 py-10;
+}
+
+.scale-logo {
+  @apply block w-12 lg:w-20 py-0 scale-75;
+}
+
+/* .scale-sm {
+  @apply scale-75;
+} */
+
+.humberger-line {
+  @apply w-[20px] h-[3px] my-1 block bg-secondary rounded-full;
+}
+
+.humberger-active {
+  @apply border-secondary bg-secondary bg-opacity-30;
+}
+
+.nav-item {
+  @apply px-4 py-2 rounded-md hover:bg-primary text-start;
+}
+
+.nav-item-lg {
+  @apply pl-8 py-2 text-lg text-light font-semibold group-hover:text-primary;
+}
+
+/* .humberger-active > span:nth-child(1) {
+  @apply rotate-45;
+}
+
+.humberger-active > span:nth-child(2) {
+  @apply scale-0;
+}
+
+.humberger-active > span:nth-child(3) {
+  @apply -rotate-45;
+} */
+
+
+.headline {
+  @apply font-noto font-semibold tracking-widest mb-5;
+}
+
+.icon-sosmed {
+  @apply hover:shadow-md hover:text-gray-500 transition duration-200 ease-in-out;
+}
+
+.CVButton {
+  @apply text-base font-semibold bg-primary text-light py-3 px-4 rounded-lg hover:shadow-lg hover:bg-transparent hover:text-primary hover:outline hover:outline-primary hover:outline-offset-1 hover:outline-1 transition duration-300 ease-in-out;
+}
+
+.dot-timeline {
+  @apply w-3 h-3 bg-primary rounded-full;
+}
+
+.line-timeline {
+  @apply w-0.5 h-full bg-dark rounded-full mx-auto;
+}
+
+/* .journey-link {
+  @apply
+} */

@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rahul Subagio</title>
+  <link rel="shortcut icon" href="assets/logo-rs-kecil.png">
   <link href="dist/output.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,43 +16,101 @@
 <body>
   
   <main class="">
+    <!-- BackToTop btn Start -->
+    <div id="backtop" class="back-btn fixed rounded-md flex bottom-20 right-7 md:right-20 lg:right-32 z-50 bg-dark transition-all duration-300 ease-in-out">
+      <a href="#" class="m-auto text-base text-light rounded-md bg-primary hover:bg-opacity-60 px-3.5 pt-3 pb-2"><iconify-icon icon="bxs:up-arrow"></iconify-icon></a>
+    </div>
+    <!-- BackToTop btn End -->
+
     <!-- Header Section Start -->
     <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10">
       <div class="container">
-        <div class="flex items-center justify-between relative">
+        <div class="section-page items-center justify-between relative">
           <div class="px-4">
-            Rahul Subagio
+            <a href="#home" id="logoRS" class="brand-logo transition-all duration-300 ease-in-out">
+              <img src="assets/LOGO-RS-PRODUCTION-putih.png" alt="logo rs">
+            </a>
+          </div>
+          <!-- Nav-lg Start -->
+          <nav class="hidden py-5 lg:block">
+            <ul class="px-4 flex">
+              <li class="group">
+                <a href="#home" class="nav-item-lg">Home</a>
+              </li>
+              <li class="group">
+                <a href="#about" class="nav-item-lg">About</a>
+              </li>
+              <li class="group">
+                <a href="#portfolio" class="nav-item-lg">Portfolio</a>
+              </li>
+              <li class="group">
+                <a href="#skills" class="nav-item-lg">Skills</a>
+              </li>
+              <li class="group">
+                <a href="#contact" class="nav-item-lg">Contact</a>
+              </li>
+            </ul>
+          </nav>
+          <!-- Nav-lg End -->
+          <div class="flex items-center px-4 lg:hidden">
+            <button id="humberger" name="humberger" type="button" class="block px-2 py-1 border-2 border-transparent hover:border-secondary hover:bg-secondary hover:bg-opacity-30 rounded-lg transition-all duration-200 ease-in-out">
+              <span class="humberger-line"></span>
+              <span class="humberger-line"></span>
+              <span class="humberger-line"></span>
+            </button>
           </div>
         </div>
       </div>
+      <!-- Nav Start -->
+      <nav id="nav-menu" class="hidden py-5 bg-dark shadow-lg absolute rounded-b-xl max-w-prose w-full top-full right-1/2 translate-x-1/2 border-0 border-secondary">
+        <ul class="px-4 block">
+          <li class="nav-item">
+            <a href="#home"><h4>Home</h4></a>
+          </li>
+          <li class="nav-item">
+            <a href="#about"><h4>About</h4></a>
+          </li>
+          <li class="nav-item">
+            <a href="#portfolio"><h4>Portfolio</h4></a>
+          </li>
+          <li class="nav-item">
+            <a href="#skills"><h4>Skills</h4></a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact"><h4>Contact</h4></a>
+          </li>
+        </ul>
+      </nav>
+      <!-- Nav End -->
     </header>
+    
     <!-- Header Section End -->
 
     <!-- Hero Section Start -->
     <section id="home" class="pt-36 bg-dark">
       <div class="container">
-        <div class="flex flex-wrap md:px-8 lg:px-20 mx-auto">
+        <div class="section-page">
 
           <div class="w-full self-center px-4 lg:w-2/3">
             <div class="relative">
               <img src="assets/Rahul_Bin_Subagio-123180033-removebg-preview.png" alt="Rahul Subagio" class="max-w-full mx-auto drop-shadow-2xl">
               <div class="absolute bottom-0">
-                <h1 class="block font-semibold text-light text-5xl font-poppin drop-shadow-xl md:text-7xl">Rahul
+                <h1 class="block font-semibold text-light text-5xl drop-shadow-xl md:text-7xl">Rahul
                   <span class="block">Subagio.</span>
                 </h1>
-                <div class="box-content h-2 w-10 mt-6 bg-primary md:h-2 md:w-14"></div>
+                <div class="box-content h-2 w-10 mt-6 bg-primary md:w-14"></div>
                 <!-- icon start-->
-                <div class="flex text-light lg:text-lg drop-shadow-lg mt-10 mb-2 lg:mt-24 lg:mb-28">
+                <div class="flex text-light lg:text-lg drop-shadow-lg mb-2 mt-8 lg:mt-24 lg:mb-28">
                   <!-- Github icon -->
-                  <a href="https://github.com/rahulsubagio" target="_blank" class="hover:shadow-md hover:text-gray-500 transition duration-200 ease-in-out">
+                  <a href="https://github.com/rahulsubagio" target="_blank" class="icon-sosmed">
                     <iconify-icon icon="akar-icons:github-fill"></iconify-icon>
                   </a>
                   <!-- Instagram icon -->
-                  <a href="https://www.instagram.com/rahulsubagio" target="_blank" class="mx-5 hover:shadow-md hover:text-gray-500 transition duration-200 ease-in-out">
+                  <a href="https://www.instagram.com/rahulsubagio" target="_blank" class="mx-5 icon-sosmed">
                     <iconify-icon icon="akar-icons:instagram-fill"></iconify-icon>
                   </a>
                   <!-- Linkedin icon -->
-                  <a href="https://www.linkedin.com/in/rahulsubagio/" target="_blank" class="hover:shadow-md hover:text-gray-500 transition duration-200 ease-in-out">
+                  <a href="https://www.linkedin.com/in/rahulsubagio/" target="_blank" class="icon-sosmed">
                     <iconify-icon icon="akar-icons:linkedin-fill"></iconify-icon>
                   </a>
                 </div>
@@ -62,11 +121,11 @@
 
           <div class="w-full self-end px-4 lg:w-1/3">
             <div class="mt-8 mb-10 lg:mb-28">
-              <h4 class="text-sm font-noto font-semibold text-secondary tracking-widest mb-5">-- Introduction</h4>
-              <h1 class="text-2xl font-medium font-poppin text-light max-w-md 2xl:text-3xl">Graphic Designer and Developer, based in Indonesia.</h1>
-              <p class="text-base font-poppin text-secondary my-7 max-w-xl text-justify">I'm a Full Stack Web Developer. I have passion for building and developing websites and also graphic design.</p>
+              <p class="headline">-- Introduction</p>
+              <h1 class="text-2xl font-medium text-light max-w-md 2xl:text-3xl">Graphic Designer and Developer, based in Indonesia.</h1>
+              <p class="text-base my-7 max-w-xl text-justify">I'm a Full Stack Web Developer. I have passion for building and developing websites and also graphic design.</p>
               
-              <a href="#about" class="text-base md:text-lg lg:text-lg font-semibold font-poppin text-primary tracking-wide underline underline-offset-2 hover:decoration-2">My Journey<span class="ml-6">🡪</span></a>
+              <a href="#about" class="text-base md:text-lg lg:text-lg font-semibold text-primary tracking-wide underline underline-offset-2 hover:decoration-2">My Journey<span class="ml-6">🡪</span></a>
             </div>
           </div>
            
@@ -78,20 +137,20 @@
     <!-- About Section Start -->
     <section id="about" class="pt-10 pb-32 lg:py-28 bg-gray-800">
       <div class="container">
-        <div class="flex flex-wrap md:px-8 lg:px-20 mx-auto">
+        <div class="section-page">
 
-          <!-- About Start-->
+          <!-- About Me Start-->
           <div class="w-full self-center px-4 lg:w-1/2 mb-8 lg:hidden">
-            <h4 class="text-sm font-noto font-semibold text-secondary tracking-widest mb-5">-- About</h4>
+            <p class="headline">-- About</p>
             <div class="relative">
               <img src="assets/img1.jpg" alt="Rahul Subagio" class="max-w-full mx-auto rounded-lg">
             </div>
           </div>
           <div class="w-full self-end px-4 lg:w-1/2 lg:pr-10">
-            <h4 class="text-sm font-noto font-semibold text-secondary tracking-widest mb-5 hidden lg:block">-- About</h4>
-            <p class="text-base text-justify font-poppin text-secondary">Hello everyone 👋, My name is Rahul Subagio, but you can call me Rahul. I'am a Full Stack Web Developer and Graphic Designer with a passion for building and developing websites and also graphic design. I have more than 2 years as a Junior Web Developer.</p>
+            <p class="headline hidden lg:block">-- About</p>
+            <p class="text-base text-justify" >Hello everyone 👋, My name is Rahul Subagio, but you can call me Rahul. I'am a Full Stack Web Developer and Graphic Designer with a passion for building and developing websites and also graphic design. I have more than 2 years as a Junior Web Developer.</p>
             <div class="my-16 text-center lg:mt-18 lg:mb-3 lg:text-start">
-              <a href="#" class="text-base font-semibold font-poppin bg-primary text-light py-3 px-4 rounded-lg hover:shadow-lg hover:bg-transparent hover:text-primary hover:outline hover:outline-primary hover:outline-offset-1 hover:outline-1 transition duration-300 ease-in-out"><iconify-icon icon="fa-solid:download" class="mr-2"></iconify-icon>Download CV</a>
+              <a href="#" class="CVButton"><iconify-icon icon="fa-solid:download" class="mr-2"></iconify-icon>Download CV</a>
             </div>
           </div>
           <div class="w-full self-center px-4 lg:w-1/2 hidden lg:block">
@@ -99,44 +158,44 @@
               <img src="assets/img1.jpg" alt="Rahul Subagio" class="max-w-full mx-auto rounded-lg">
             </div>
           </div>
-          <!-- About end -->
+          <!-- About Me end -->
 
           <!-- Journey Tabs Start -->
-          <div class="w-full self-center px-4 lg:mt-14">
-            <h1 class="text-2xl text-center font-medium font-poppin text-light">My Journey</h1>
+          <div class="w-full self-center px-4 lg:mt-16">
+            <h1 class="text-2xl text-center font-medium text-light">My Journey</h1>
             <div class="justify-center items-center mt-4 w-full">
               <!--actual component start-->
               <div x-data="setup()">
                 <ul class="flex justify-center items-center my-4">
                   <template x-for="(tab, index) in tabs" :key="index">
-                    <li class="cursor-pointer text-base font-poppin font-semibold py-2 px-2 mx-1 text-light hover:text-primary transition duration-200 ease-in-out" :class="activeTab===index ? 'shadow text-primary border-b-2 border-primary' : ''" @click="activeTab = index" x-text="tab"></li>
+                    <li class="cursor-pointer text-base font-semibold py-2 px-2 mx-1 text-light hover:text-primary transition duration-200 ease-in-out" :class="activeTab===index ? 'shadow text-primary border-b-2 border-primary' : ''" @click="activeTab = index" x-text="tab"></li>
                   </template>
                 </ul>
                 
-                <div class="mx-auto max-w-full">
+                <div class="mx-auto max-w-full mt-8">
                   <!-- content education start -->
                   <div x-show="activeTab===0">
                     <!-- SD -->
-                    <div class="flex mt-10">
+                    <div class="flex">
                       <div class="flex-1"></div>
                       <div class="mx-5 mt-2 flex-none">
-                        <div class="w-3 h-3 bg-primary rounded-full"></div>
-                        <div class="w-0.5 h-full bg-dark rounded-full mx-auto"></div>
+                        <div class="dot-timeline"></div>
+                        <div class="line-timeline"></div>
                       </div>
-                      <div class="font-poppin text-start flex-1">
-                        <h4 class="text-base text-light">SK Ladang Sandak</h4>
-                        <p class="text-sm text-secondary"><iconify-icon icon="akar-icons:calendar"></iconify-icon> 2006 - 2012</p>
+                      <div class="text-start flex-1">
+                        <h4>SK Ladang Sandak</h4>
+                        <p><iconify-icon icon="akar-icons:calendar"></iconify-icon> 2006 - 2012</p>
                       </div>
                     </div>
                     <!-- SMP 1 -->
                     <div class="flex">
-                      <div class="font-poppin text-end flex-1">
-                        <h4 class="text-base text-light">Secondary School As-Salam</h4>
-                        <p class="text-sm text-secondary"><iconify-icon icon="akar-icons:calendar"></iconify-icon> 2012 - 2013</p>
+                      <div class="text-end flex-1">
+                        <h4>Secondary School As-Salam</h4>
+                        <p><iconify-icon icon="akar-icons:calendar"></iconify-icon> 2012 - 2013</p>
                       </div>
                       <div class="mx-5 mt-2 flex-none">
-                        <div class="w-3 h-3 bg-primary rounded-full"></div>
-                        <div class="w-0.5 h-full bg-dark rounded-full mx-auto"></div>
+                        <div class="dot-timeline"></div>
+                        <div class="line-timeline"></div>
                       </div>
                       <div class="flex-1"></div>
                     </div>
@@ -144,24 +203,24 @@
                     <div class="flex">
                       <div class="flex-1"></div>
                       <div class="mx-5 mt-2 flex-none">
-                        <div class="w-3 h-3 bg-primary rounded-full"></div>
-                        <div class="w-0.5 h-full bg-dark rounded-full mx-auto"></div>
+                        <div class="dot-timeline"></div>
+                        <div class="line-timeline"></div>
                       </div>
-                      <div class="font-poppin text-start flex-1">
-                        <h4 class="text-base text-light">SMP Negeri 1 Watang Pulu</h4>
-                        <p class="text-sm text-secondary"><iconify-icon icon="akar-icons:calendar"></iconify-icon> 2013 - 2015</p>
+                      <div class="text-start flex-1">
+                        <h4>SMP Negeri 1 Watang Pulu</h4>
+                        <p><iconify-icon icon="akar-icons:calendar"></iconify-icon> 2013 - 2015</p>
                       </div>
                     </div>
                     <!-- SMA -->
                     <div class="flex">
-                      <div class="font-poppin text-end flex-1">
-                        <h4 class="text-base text-light">SMA Negeri 2 Sidrap</h4>
-                        <p class="text-sm text-secondary">Jurusan IPA</p>
-                        <p class="text-sm text-secondary"><iconify-icon icon="akar-icons:calendar"></iconify-icon> 2015 - 2018</p>
+                      <div class="text-end flex-1">
+                        <h4>SMA Negeri 2 Sidrap</h4>
+                        <p>Jurusan IPA</p>
+                        <p><iconify-icon icon="akar-icons:calendar"></iconify-icon> 2015 - 2018</p>
                       </div>
                       <div class="mx-5 mt-2 flex-none">
-                        <div class="w-3 h-3 bg-primary rounded-full"></div>
-                        <div class="w-0.5 h-full bg-dark rounded-full mx-auto"></div>
+                        <div class="dot-timeline"></div>
+                        <div class="line-timeline"></div>
                       </div>
                       <div class="flex-1"></div>
                     </div>
@@ -169,12 +228,12 @@
                     <div class="flex">
                       <div class="flex-1"></div>
                       <div class="mx-5 mt-2 flex-none">
-                        <div class="w-3 h-3 bg-primary rounded-full"></div>
+                        <div class="dot-timeline"></div>
                       </div>
-                      <div class="font-poppin text-start flex-1">
-                        <h4 class="text-base text-light">UPN "Veteran" Yogyakarta</h4>
-                        <p class="text-sm text-secondary">Informatika</p>
-                        <p class="text-sm text-secondary"><iconify-icon icon="akar-icons:calendar"></iconify-icon> 2018 - now</p>
+                      <div class="text-start flex-1">
+                        <h4>UPN "Veteran" Yogyakarta</h4>
+                        <p>Informatika</p>
+                        <p><iconify-icon icon="akar-icons:calendar"></iconify-icon> 2018 - now</p>
                       </div>
                     </div>
                   </div>
@@ -182,67 +241,67 @@
                   <!-- content experience start -->
                   <div x-show="activeTab===1">
                     <!-- HIMATIF -->
-                    <div class="flex mt-10">
-                      <div class="font-poppin text-end flex-1"></div>
+                    <div class="flex">
+                      <div class="text-end flex-1"></div>
                       <div class="mx-5 mt-2 flex-none">
-                        <div class="w-3 h-3 bg-primary rounded-full"></div>
-                        <div class="w-0.5 h-full bg-dark rounded-full mx-auto"></div>
+                        <div class="dot-timeline"></div>
+                        <div class="line-timeline"></div>
                       </div>
-                      <div class="font-poppin text-start flex-1">
-                        <h4 class="text-base text-light">Himpunan Mahasiswa Teknik Informatika (HIMATIF UPNYK)</h4>
-                        <P class="text-sm text-secondary">Member of Enterpreneuship</P>
-                        <p class="text-sm text-secondary"><iconify-icon icon="akar-icons:calendar"></iconify-icon> 2018 - 2019</p>
+                      <div class="text-start flex-1">
+                        <h4>Himpunan Mahasiswa Teknik Informatika (HIMATIF UPNYK)</h4>
+                        <P>Member of Enterpreneuship</P>
+                        <p><iconify-icon icon="akar-icons:calendar"></iconify-icon> 2018 - 2019</p>
                       </div>
                     </div>
                     <!-- ITC 1 -->
                     <div class="flex">
-                      <div class="font-poppin text-end flex-1">
-                        <h4 class="text-base text-light">Information Technology Club (ITC UPNYK)</h4>
-                        <P class="text-sm text-secondary">Member of Web Development</P>
-                        <p class="text-sm text-secondary"><iconify-icon icon="akar-icons:calendar"></iconify-icon> 2018 - 2019</p>
+                      <div class="text-end flex-1">
+                        <h4>Information Technology Club (ITC UPNYK)</h4>
+                        <P>Member of Web Development</P>
+                        <p><iconify-icon icon="akar-icons:calendar"></iconify-icon> 2018 - 2019</p>
                       </div>
                       <div class="mx-5 mt-2 flex-none">
-                        <div class="w-3 h-3 bg-primary rounded-full"></div>
-                        <div class="w-0.5 h-full bg-dark rounded-full mx-auto"></div>
+                        <div class="dot-timeline"></div>
+                        <div class="line-timeline"></div>
                       </div>
-                      <div class="font-poppin text-end flex-1"></div>
+                      <div class="text-end flex-1"></div>
                     </div>
                     <!-- ITC 2 -->
                     <div class="flex">
-                      <div class="font-poppin text-end flex-1"></div>
+                      <div class="text-end flex-1"></div>
                       <div class="mx-5 mt-2 flex-none">
-                        <div class="w-3 h-3 bg-primary rounded-full"></div>
-                        <div class="w-0.5 h-full bg-dark rounded-full mx-auto"></div>
+                        <div class="dot-timeline"></div>
+                        <div class="line-timeline"></div>
                       </div>
-                      <div class="font-poppin text-start flex-1">
-                        <h4 class="text-base text-light">Information Technology Club (ITC UPNYK)</h4>
-                        <P class="text-sm text-secondary">Vice Chairman</P>
-                        <p class="text-sm text-secondary"><iconify-icon icon="akar-icons:calendar"></iconify-icon> 2019 - 2021</p>
+                      <div class="text-start flex-1">
+                        <h4>Information Technology Club (ITC UPNYK)</h4>
+                        <P>Vice Chairman</P>
+                        <p><iconify-icon icon="akar-icons:calendar"></iconify-icon> 2019 - 2021</p>
                       </div>
                     </div>
                     <!-- Robot 1 -->
                     <div class="flex">
-                      <div class="font-poppin text-end flex-1">
-                        <h4 class="text-base text-light">Robotics UPN "Veteran" Yogyakarta (RUVY)</h4>
-                        <P class="text-sm text-secondary">Member of Wheel Division</P>
-                        <p class="text-sm text-secondary"><iconify-icon icon="akar-icons:calendar"></iconify-icon> 2020 - 2021</p>
+                      <div class="text-end flex-1">
+                        <h4>Robotics UPN "Veteran" Yogyakarta (RUVY)</h4>
+                        <P>Member of Wheel Division</P>
+                        <p><iconify-icon icon="akar-icons:calendar"></iconify-icon> 2020 - 2021</p>
                       </div>
                       <div class="mx-5 mt-2 flex-none">
-                        <div class="w-3 h-3 bg-primary rounded-full"></div>
-                        <div class="w-0.5 h-full bg-dark rounded-full mx-auto"></div>
+                        <div class="dot-timeline"></div>
+                        <div class="line-timeline"></div>
                       </div>
-                      <div class="font-poppin text-end flex-1"></div>
+                      <div class="text-end flex-1"></div>
                     </div>
                     <!-- Robot 2 -->
                     <div class="flex">
-                      <div class="font-poppin text-end flex-1"></div>
+                      <div class="text-end flex-1"></div>
                       <div class="mx-5 mt-2 flex-none">
-                        <div class="w-3 h-3 bg-primary rounded-full"></div>
+                        <div class="dot-timeline"></div>
                       </div>
-                      <div class="font-poppin text-start flex-1">
-                        <h4 class="text-base text-light">Robotics UPN "Veteran" Yogyakarta (RUVY)</h4>
-                        <P class="text-sm text-secondary">Wheel Division Head</P>
-                        <p class="text-sm text-secondary"><iconify-icon icon="akar-icons:calendar"></iconify-icon> 2021 - 2022</p>
+                      <div class="text-start flex-1">
+                        <h4>Robotics UPN "Veteran" Yogyakarta (RUVY)</h4>
+                        <P>Wheel Division Head</P>
+                        <p><iconify-icon icon="akar-icons:calendar"></iconify-icon> 2021 - 2022</p>
                       </div>
                     </div>
                   </div>
@@ -250,55 +309,55 @@
                   <!-- content awards start -->
                   <div x-show="activeTab===2">
                     <!-- CP Find IT -->
-                    <div class="flex mt-10">
-                      <div class="font-poppin text-end flex-1"></div>
+                    <div class="flex">
+                      <div class="text-end flex-1"></div>
                       <div class="mx-5 mt-2 flex-none">
-                        <div class="w-3 h-3 bg-primary rounded-full"></div>
-                        <div class="w-0.5 h-full bg-dark rounded-full mx-auto"></div>
+                        <div class="dot-timeline"></div>
+                        <div class="line-timeline"></div>
                       </div>
-                      <div class="font-poppin text-start flex-1">
-                        <h4 class="text-base text-light">Participants Senior Competitive Programming</h4>
-                        <P class="text-sm text-secondary">Issued by FIND IT 2019</P>
-                        <p class="text-sm text-secondary"><iconify-icon icon="akar-icons:calendar"></iconify-icon> Apr 2019</p>
+                      <div class="text-start flex-1">
+                        <h4>Participants Senior Competitive Programming</h4>
+                        <P>Issued by FIND IT 2019</P>
+                        <p><iconify-icon icon="akar-icons:calendar"></iconify-icon> Apr 2019</p>
                       </div>
                     </div>
                     <!-- CP FKBMIK -->
                     <div class="flex">
-                      <div class="font-poppin text-end flex-1">
-                        <h4 class="text-base text-light">3rd Winner in Programming Competition</h4>
-                        <P class="text-sm text-secondary">Issued by FKBMIK</P>
-                        <p class="text-sm text-secondary"><iconify-icon icon="akar-icons:calendar"></iconify-icon> Sep 2019</p>
+                      <div class="text-end flex-1">
+                        <h4>3rd Winner in Programming Competition</h4>
+                        <P>Issued by FKBMIK</P>
+                        <p><iconify-icon icon="akar-icons:calendar"></iconify-icon> Sep 2019</p>
                       </div>
                       <div class="mx-5 mt-2 flex-none">
-                        <div class="w-3 h-3 bg-primary rounded-full"></div>
-                        <div class="w-0.5 h-full bg-dark rounded-full mx-auto"></div>
+                        <div class="dot-timeline"></div>
+                        <div class="line-timeline"></div>
                       </div>
-                      <div class="font-poppin text-end flex-1"></div>
+                      <div class="text-end flex-1"></div>
                     </div>
                     <!-- ISIF -->
                     <div class="flex">
-                      <div class="font-poppin text-end flex-1"></div>
+                      <div class="text-end flex-1"></div>
                       <div class="mx-5 mt-2 flex-none">
-                        <div class="w-3 h-3 bg-primary rounded-full"></div>
-                        <div class="w-0.5 h-full bg-dark rounded-full mx-auto"></div>
+                        <div class="dot-timeline"></div>
+                        <div class="line-timeline"></div>
                       </div>
-                      <div class="font-poppin text-start flex-1">
-                        <h4 class="text-base text-light">Bronze Medal at International Science and Invention Fair 2021</h4>
-                        <P class="text-sm text-secondary">Issued by International Science and Invention Fair (ISIF 2021)</P>
-                        <p class="text-sm text-secondary"><iconify-icon icon="akar-icons:calendar"></iconify-icon> Nov 2021</p>
+                      <div class="text-start flex-1">
+                        <h4>Bronze Medal at International Science and Invention Fair 2021</h4>
+                        <P>Issued by International Science and Invention Fair (ISIF 2021)</P>
+                        <p><iconify-icon icon="akar-icons:calendar"></iconify-icon> Nov 2021</p>
                       </div>
                     </div>
                     <!-- CP FKBMIK -->
                     <div class="flex">
-                      <div class="font-poppin text-end flex-1">
-                        <h4 class="text-base text-light">3rd Winner in Micromouse Competition</h4>
-                        <P class="text-sm text-secondary">Issued by PORSIMNAS UPN Veteran</P>
-                        <p class="text-sm text-secondary"><iconify-icon icon="akar-icons:calendar"></iconify-icon> Jul 2022</p>
+                      <div class="text-end flex-1">
+                        <h4>3rd Winner in Micromouse Competition</h4>
+                        <P>Issued by PORSIMNAS UPN Veteran</P>
+                        <p><iconify-icon icon="akar-icons:calendar"></iconify-icon> Jul 2022</p>
                       </div>
                       <div class="mx-5 mt-2 flex-none">
-                        <div class="w-3 h-3 bg-primary rounded-full"></div>
+                        <div class="dot-timeline"></div>
                       </div>
-                      <div class="font-poppin text-end flex-1"></div>
+                      <div class="text-end flex-1"></div>
                     </div>
 
                   </div>
@@ -317,17 +376,6 @@
     
   </main>
   <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
-  <script>
-    function setup() {
-      return {
-        activeTab: 0,
-        tabs: [
-            "Education",
-            "Experience",
-            "Awards",
-        ]
-      };
-    };
-  </script>
+  <script src="dist/js/script.js"></script>
 </body>
 </html>
