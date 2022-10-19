@@ -671,6 +671,10 @@ video {
   margin-right: 0.25rem;
 }
 
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
 .mt-6 {
   margin-top: 1.5rem;
 }
@@ -723,12 +727,20 @@ video {
   display: none;
 }
 
+.h-1 {
+  height: 0.25rem;
+}
+
 .h-2 {
   height: 0.5rem;
 }
 
 .w-full {
   width: 100%;
+}
+
+.w-5 {
+  width: 1.25rem;
 }
 
 .w-10 {
@@ -794,6 +806,10 @@ video {
 
 .rounded-md {
   border-radius: 0.375rem;
+}
+
+.rounded-full {
+  border-radius: 9999px;
 }
 
 .rounded-lg {
@@ -1140,12 +1156,7 @@ h4 {
   line-height: 1.75rem;
   font-weight: 600;
   --tw-text-opacity: 1;
-  color: rgb(243 244 246 / var(--tw-text-opacity));
-}
-
-.group:hover .nav-item-lg {
-  --tw-text-opacity: 1;
-  color: rgb(124 198 73 / var(--tw-text-opacity));
+  color: rgb(156 163 175 / var(--tw-text-opacity));
 }
 
 .nav-item {
@@ -1162,9 +1173,14 @@ h4 {
   background-color: rgb(124 198 73 / var(--tw-bg-opacity));
 }
 
-.active {
+.active-lg {
   --tw-text-opacity: 1;
-  color: rgb(124 198 73 / var(--tw-text-opacity));
+  color: rgb(243 244 246 / var(--tw-text-opacity));
+}
+
+.active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(124 198 73 / var(--tw-bg-opacity));
 }
 
 /* .humberger-active > span:nth-child(1) {
@@ -1273,6 +1289,11 @@ h4 {
 
 .hover\:bg-opacity-30:hover {
   --tw-bg-opacity: 0.3;
+}
+
+.hover\:text-light:hover {
+  --tw-text-opacity: 1;
+  color: rgb(243 244 246 / var(--tw-text-opacity));
 }
 
 .hover\:text-primary:hover {

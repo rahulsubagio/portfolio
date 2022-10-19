@@ -50,15 +50,19 @@ h4 {
 }
 
 .nav-item-lg {
-  @apply pl-8 py-2 text-lg text-light font-semibold group-hover:text-primary;
+  @apply pl-8 py-2 text-lg text-secondary font-semibold;
 }
 
 .nav-item {
   @apply px-4 py-2 rounded-md text-start hover:bg-primary;
 }
 
+.active-lg {
+  @apply text-light;
+}
+
 .active {
-  @apply text-primary;
+  @apply bg-primary;
 }
 
 /* .humberger-active > span:nth-child(1) {
