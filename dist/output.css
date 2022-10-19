@@ -880,14 +880,14 @@ video {
   padding-bottom: 0.25rem;
 }
 
-.py-2 {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-
 .py-10 {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .pt-3 {
@@ -902,28 +902,8 @@ video {
   padding-top: 9rem;
 }
 
-.pt-10 {
-  padding-top: 2.5rem;
-}
-
-.pb-32 {
-  padding-bottom: 8rem;
-}
-
 .pb-16 {
   padding-bottom: 4rem;
-}
-
-.pb-28 {
-  padding-bottom: 7rem;
-}
-
-.pb-10 {
-  padding-bottom: 2.5rem;
-}
-
-.pt-1 {
-  padding-top: 0.25rem;
 }
 
 .text-center {
@@ -1152,6 +1132,22 @@ h4 {
   --tw-bg-opacity: 0.3;
 }
 
+.nav-item-lg {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 2rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  --tw-text-opacity: 1;
+  color: rgb(243 244 246 / var(--tw-text-opacity));
+}
+
+.group:hover .nav-item-lg {
+  --tw-text-opacity: 1;
+  color: rgb(124 198 73 / var(--tw-text-opacity));
+}
+
 .nav-item {
   border-radius: 0.375rem;
   padding-left: 1rem;
@@ -1166,18 +1162,7 @@ h4 {
   background-color: rgb(124 198 73 / var(--tw-bg-opacity));
 }
 
-.nav-item-lg {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 2rem;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-  font-weight: 600;
-  --tw-text-opacity: 1;
-  color: rgb(243 244 246 / var(--tw-text-opacity));
-}
-
-.group:hover .nav-item-lg {
+.active {
   --tw-text-opacity: 1;
   color: rgb(124 198 73 / var(--tw-text-opacity));
 }
