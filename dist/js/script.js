@@ -26,11 +26,29 @@ window.onscroll = function () {
 const humberger = document.querySelector('#humberger');
 const navMenu = document.querySelector('#nav-menu');
 
-
 humberger.addEventListener('click', function () {
   humberger.classList.toggle('humberger-active');
   navMenu.classList.toggle('hidden');
 });
+
+// active nav scroll
+const liLg = document.querySelectorAll('.nav-item-lg');
+const sec = document.querySelectorAll('section');
+const navUnderline = document.querySelectorAll('#nav-underline');
+const liSm = document.querySelectorAll('.nav-item');
+
+function activeMenu() {
+  let len = sec.length;
+  while (--len && window.scrollY + 97 < sec[len].offsetTop) {}
+  liLg.forEach(ltx => ltx.classList.remove('active-lg'));
+  liLg[len].classList.add('active-lg');
+  navUnderline.forEach(ltx => ltx.classList.add('hidden'));
+  navUnderline[len].classList.remove('hidden');
+  liSm.forEach(ltx => ltx.classList.remove('active'));
+  liSm[len].classList.add('active');
+}
+activeMenu();
+window.addEventListener('scroll', activeMenu);
 
 // nav item sm
 for (let i = 1; i <= 5; i++) {
@@ -41,23 +59,6 @@ for (let i = 1; i <= 5; i++) {
     navMenu.classList.toggle('hidden');
   });
 }
-
-// active nav scroll
-const liLg = document.querySelectorAll('.nav-item-lg');
-const sec = document.querySelectorAll('section');
-// const liSm = document.querySelectorAll('.nav-item');
-// const boxContent = document.querySelectorAll('');
-
-function activeMenu() {
-  let len = sec.length;
-  while (--len && window.scrollY + 97 < sec[len].offsetTop) {}
-  liLg.forEach(ltx => ltx.classList.remove('active-lg'));
-  liLg[len].classList.add('active-lg');
-  // liSm.forEach(ltx => ltx.classList.remove('active'));
-  // liSm[len].classList.add('active');
-}
-activeMenu();
-window.addEventListener('scroll', activeMenu);
 
 // Journey Tab
 function setup() {

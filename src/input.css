@@ -50,11 +50,11 @@ h4 {
 }
 
 .nav-item-lg {
-  @apply pl-8 py-2 text-lg text-secondary font-semibold;
+  @apply pl-8 py-2 text-lg text-secondary font-semibold items-center;
 }
 
 .nav-item {
-  @apply px-4 py-2 rounded-md text-start hover:bg-primary;
+  @apply px-4 py-2 my-2 rounded-md text-center font-semibold hover:bg-primary;
 }
 
 .active-lg {
@@ -64,19 +64,6 @@ h4 {
 .active {
   @apply bg-primary;
 }
-
-/* .humberger-active > span:nth-child(1) {
-  @apply rotate-45;
-}
-
-.humberger-active > span:nth-child(2) {
-  @apply scale-0;
-}
-
-.humberger-active > span:nth-child(3) {
-  @apply -rotate-45;
-} */
-
 
 .headline {
   @apply font-noto font-semibold tracking-widest mb-5;
@@ -97,7 +84,3 @@ h4 {
 .line-timeline {
   @apply w-0.5 h-full bg-dark rounded-full mx-auto;
 }
-
-/* .journey-link {
-  @apply
-} */
