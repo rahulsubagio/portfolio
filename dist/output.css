@@ -671,14 +671,6 @@ video {
   margin-right: 0.25rem;
 }
 
-.mt-0\.5 {
-  margin-top: 0.125rem;
-}
-
-.mt-0 {
-  margin-top: 0px;
-}
-
 .mt-6 {
   margin-top: 1.5rem;
 }
@@ -731,20 +723,12 @@ video {
   display: none;
 }
 
-.h-1 {
-  height: 0.25rem;
-}
-
 .h-2 {
   height: 0.5rem;
 }
 
 .w-full {
   width: 100%;
-}
-
-.w-5 {
-  width: 1.25rem;
 }
 
 .w-10 {
@@ -810,10 +794,6 @@ video {
 
 .rounded-md {
   border-radius: 0.375rem;
-}
-
-.rounded-full {
-  border-radius: 9999px;
 }
 
 .rounded-lg {
@@ -1041,6 +1021,8 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* ========== Default Start ========== */
+
 body {
   font-family: 'Poppins', sans-serif;
 }
@@ -1083,6 +1065,17 @@ h4 {
     padding-right: 5rem;
   }
 }
+
+.headline {
+  margin-bottom: 1.25rem;
+  font-family: 'Noto Sans Ethiopic', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+/* ========== Default End ========== */
+
+/* ========== Header Start ========== */
 
 .navbar-fixed {
   position: fixed;
@@ -1129,10 +1122,6 @@ h4 {
     width: 5rem;
   }
 }
-
-/* .scale-sm {
-  @apply scale-75;
-} */
 
 .humberger-line {
   margin-top: 0.25rem;
@@ -1191,12 +1180,18 @@ h4 {
   background-color: rgb(124 198 73 / var(--tw-bg-opacity));
 }
 
-.headline {
-  margin-bottom: 1.25rem;
-  font-family: 'Noto Sans Ethiopic', sans-serif;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+#nav-underline {
+  margin-top: 0.125rem;
+  height: 0.25rem;
+  width: 1.25rem;
+  border-radius: 9999px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(124 198 73 / var(--tw-bg-opacity));
 }
+
+/* ========== Header End ========== */
+
+/* ========== Hero Section Start ========== */
 
 .icon-sosmed {
   transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
@@ -1213,6 +1208,10 @@ h4 {
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
+
+/* ========== Hero Section End ========== */
+
+/* ========== About Section Start ========== */
 
 .CVButton {
   border-radius: 0.5rem;
@@ -1264,6 +1263,46 @@ h4 {
   --tw-bg-opacity: 1;
   background-color: rgb(55 65 81 / var(--tw-bg-opacity));
 }
+
+.tabs__list {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+  cursor: pointer;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 600;
+  --tw-text-opacity: 1;
+  color: rgb(243 244 246 / var(--tw-text-opacity));
+  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tabs__list:hover {
+  --tw-text-opacity: 1;
+  color: rgb(124 198 73 / var(--tw-text-opacity));
+}
+
+/* ========== About Section End ========== */
+
+/* ========== Services Section Start ========== */
+
+.box-services {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  height: 9rem;
+  width: 9rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(124 198 73 / var(--tw-bg-opacity));
+}
+
+/* ========== Services Section Start ========== */
 
 .hover\:border-secondary:hover {
   --tw-border-opacity: 1;

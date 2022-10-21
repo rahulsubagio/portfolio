@@ -14,82 +14,88 @@
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.4.0/dist/alpine.min.js" defer></script>
 </head>
 <body>
-  
-  <main class="">
-    <!-- BackToTop btn Start -->
-    <div id="backtop" class="back-btn fixed rounded-md flex bottom-20 right-7 md:right-20 lg:right-32 z-50 bg-dark transition-all duration-300 ease-in-out">
-      <a href="#" class="m-auto text-base text-light rounded-md bg-primary hover:bg-opacity-60 px-3.5 pt-3 pb-2"><iconify-icon icon="bxs:up-arrow"></iconify-icon></a>
-    </div>
-    <!-- BackToTop btn End -->
+  <!-- BackToTop btn Start -->
+  <div id="backtop" class="back-btn fixed rounded-md flex bottom-20 right-7 md:right-20 lg:right-32 z-50 bg-dark transition-all duration-300 ease-in-out">
+    <a href="#" class="m-auto text-base text-light rounded-md bg-primary hover:bg-opacity-60 px-3.5 pt-3 pb-2"><iconify-icon icon="bxs:up-arrow"></iconify-icon></a>
+  </div>
+  <!-- BackToTop btn End -->
 
-    <!-- Header Section Start -->
-    <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10">
-      <div class="container">
-        <div class="section-page items-center justify-between relative">
-          <div class="px-4">
-            <a href="#home" id="logoRS" class="brand-logo transition-all duration-300 ease-in-out">
-              <img src="assets/LOGO-RS-PRODUCTION-putih.png" alt="logo rs">
-            </a>
-          </div>
-          <!-- Nav-lg Start -->
-          <nav class="hidden py-5 lg:block">
-            <ul class="px-4 flex transition-all duration-300 ease-in-out">
-              <li class="nav-item-lg">
-                <a href="#home" class="hover:text-light">Home</a>
-                <div id="nav-underline" class="hidden h-1 w-5 mt-0.5 bg-primary rounded-full"></div>
-              </li>
-              <li class="nav-item-lg">
-                <a href="#about" class="hover:text-light">About</a>
-                <div id="nav-underline" class="hidden h-1 w-5 mt-0.5 bg-primary rounded-full"></div>
-              </li>
-              <li class="nav-item-lg">
-                <a href="#portfolio" class="hover:text-light">Portfolio</a>
-                <div id="nav-underline" class="hidden h-1 w-5 mt-0.5 bg-primary rounded-full"></div>
-              </li>
-              <li class="nav-item-lg">
-                <a href="#skills" class="hover:text-light">Skills</a>
-                <div id="nav-underline" class="hidden h-1 w-5 mt-0.5 bg-primary rounded-full"></div>
-              </li>
-              <li class="nav-item-lg">
-                <a href="#contact" class="hover:text-light">Contact</a>
-                <div id="nav-underline" class="hidden h-1 w-5 mt-0.5 bg-primary rounded-full"></div>
-              </li>
-            </ul>
-          </nav>
-          <!-- Nav-lg End -->
-          <div class="flex items-center px-4 lg:hidden">
-            <button id="humberger" name="humberger" type="button" class="block px-2 py-1 border-2 border-transparent hover:border-secondary hover:bg-secondary hover:bg-opacity-30 rounded-lg transition-all duration-200 ease-in-out">
-              <span class="humberger-line"></span>
-              <span class="humberger-line"></span>
-              <span class="humberger-line"></span>
-            </button>
-          </div>
+  <!-- Header Section Start -->
+  <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10">
+    <div class="container">
+      <div class="section-page items-center justify-between relative">
+        <div class="px-4">
+          <a href="#home" id="logoRS" class="brand-logo transition-all duration-300 ease-in-out">
+            <img src="assets/LOGO-RS-PRODUCTION-putih.png" alt="logo rs">
+          </a>
+        </div>
+        <!-- Nav-lg Start -->
+        <nav class="hidden py-5 lg:block">
+          <ul class="px-4 flex transition-all duration-300 ease-in-out">
+            <li class="nav-item-lg">
+              <a href="#home" class="hover:text-light">Home</a>
+              <div id="nav-underline" class="hidden"></div>
+            </li>
+            <li class="nav-item-lg">
+              <a href="#about" class="hover:text-light">About</a>
+              <div id="nav-underline" class="hidden"></div>
+            </li>
+            <li class="nav-item-lg">
+              <a href="#skills" class="hover:text-light">Skills</a>
+              <div id="nav-underline" class="hidden"></div>
+            </li>
+            <li class="nav-item-lg">
+              <a href="#services" class="hover:text-light">Services</a>
+              <div id="nav-underline" class="hidden"></div>
+            </li>
+            <li class="nav-item-lg">
+              <a href="#portfolio" class="hover:text-light">Portfolio</a>
+              <div id="nav-underline" class="hidden"></div>
+            </li>
+            <li class="nav-item-lg">
+              <a href="#contact" class="hover:text-light">Contact</a>
+              <div id="nav-underline" class="hidden"></div>
+            </li>
+          </ul>
+        </nav>
+        <!-- Nav-lg End -->
+        <div class="flex items-center px-4 lg:hidden">
+          <button id="humberger" type="button" class="block px-2 py-1 border-2 border-transparent hover:border-secondary hover:bg-secondary hover:bg-opacity-30 rounded-lg transition-all duration-200 ease-in-out">
+            <span class="humberger-line"></span>
+            <span class="humberger-line"></span>
+            <span class="humberger-line"></span>
+          </button>
         </div>
       </div>
-      <!-- Nav-sm Start -->
-      <nav id="nav-menu" class="hidden py-5 bg-dark shadow-lg absolute rounded-b-xl max-w-prose w-full top-full right-1/2 translate-x-1/2 border-0 border-secondary">
-        <ul class="px-4 block">
-          <li id="nav-item-1" class="nav-item">
-            <a href="#home"><h4>Home</h4></a>
-          </li>
-          <li id="nav-item-2" class="nav-item">
-            <a href="#about"><h4>About</h4></a>
-          </li>
-          <li id="nav-item-3" class="nav-item">
-            <a href="#portfolio"><h4>Portfolio</h4></a>
-          </li>
-          <li id="nav-item-4" class="nav-item">
-            <a href="#skills"><h4>Skills</h4></a>
-          </li>
-          <li id="nav-item-5" class="nav-item">
-            <a href="#contact"><h4>Contact</h4></a>
-          </li>
-        </ul>
-      </nav>
-      <!-- Nav-sm End -->
-    </header>
-    <!-- Header Section End -->
+    </div>
+    <!-- Nav-sm Start -->
+    <nav id="nav-menu" class="hidden py-5 bg-dark shadow-lg absolute rounded-b-xl max-w-prose w-full top-full right-1/2 translate-x-1/2 border-0 border-secondary">
+      <ul class="px-4 block">
+        <li id="nav-item-1" class="nav-item">
+          <a href="#home"><h4>Home</h4></a>
+        </li>
+        <li id="nav-item-2" class="nav-item">
+          <a href="#about"><h4>About</h4></a>
+        </li>
+        <li id="nav-item-3" class="nav-item">
+          <a href="#skills"><h4>Skills</h4></a>
+        </li>
+        <li id="nav-item-4" class="nav-item">
+          <a href="#services"><h4>Services</h4></a>
+        </li>
+        <li id="nav-item-5" class="nav-item">
+          <a href="#portfolio"><h4>Portfolio</h4></a>
+        </li>
+        <li id="nav-item-6" class="nav-item">
+          <a href="#contact"><h4>Contact</h4></a>
+        </li>
+      </ul>
+    </nav>
+    <!-- Nav-sm End -->
+  </header>
+  <!-- Header Section End -->
 
+  <main class="">
     <!-- Hero Section Start -->
     <section id="home" class="pt-36 bg-dark">
       <div class="container">
@@ -132,7 +138,7 @@
               <a href="#about" class="text-base md:text-lg lg:text-lg font-semibold text-primary tracking-wide underline underline-offset-2 hover:decoration-2">My Journey<span class="ml-6">🡪</span></a>
             </div>
           </div>
-           
+            
         </div>
       </div>
     </section>
@@ -378,31 +384,53 @@
     </section>
     <!-- About Section End -->
 
+     <!-- Skills Section Start -->
+     <section id="skills" class="pt-36 pb-16 lg:py-28 bg-dark">
+
+    </section>
+    <!-- Skills Section End -->
+
+    <!-- Services Section Start -->
+    <section id="services" class="pt-36 pb-16 lg:py-28 bg-gray-800">
+      <div class="container">
+        <div class="section-page">
+          <div class="w-full self-center px-4">
+            <div class="flex">
+              <div class="box-services">
+
+              </div>
+              <div class="box-services">
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Services Section End -->
+
     <!-- Portfolio Section Start -->
     <section id="portfolio" class="pt-36 pb-16 lg:py-28 bg-dark">
       <div class="container">
         <div class="section-page">
           <div class="w-full self-center px-4">
-
+            
           </div>
         </div>
       </div>
     </section>
     <!-- Portfolio Section End -->
-    
-    <!-- Skills Section Start -->
-    <section id="skills" class="pt-36 pb-16 lg:py-28 bg-gray-800">
-
-    </section>
-    <!-- Skills Section End -->
 
     <!-- Contact Section Start -->
-    <section id="contact" class="pt-36 pb-16 lg:py-28 bg-dark">
+    <section id="contact" class="pt-36 pb-16 lg:py-28 bg-gray-800">
 
     </section>
     <!-- Contact Section End -->
-    
   </main>
+
+  <!-- Footer Start -->
+
+  <!-- Footer End -->
   <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
   <script src="dist/js/script.js"></script>
 </body>

@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ========== Default Start ========== */
 body {
   font-family: 'Poppins', sans-serif;
 }
@@ -22,6 +23,12 @@ h4 {
   @apply flex flex-wrap md:px-8 lg:px-20 mx-auto;
 }
 
+.headline {
+  @apply font-noto font-semibold tracking-widest mb-5;
+}
+/* ========== Default End ========== */
+
+/* ========== Header Start ========== */
 .navbar-fixed {
   @apply fixed z-[9999] bg-dark bg-opacity-70;
   backdrop-filter: blur(5px);
@@ -36,10 +43,6 @@ h4 {
 .scale-logo {
   @apply block w-12 lg:w-20 py-0 scale-75;
 }
-
-/* .scale-sm {
-  @apply scale-75;
-} */
 
 .humberger-line {
   @apply w-[20px] h-[3px] my-1 block bg-secondary rounded-full;
@@ -65,14 +68,18 @@ h4 {
   @apply bg-primary;
 }
 
-.headline {
-  @apply font-noto font-semibold tracking-widest mb-5;
+#nav-underline {
+  @apply h-1 w-5 mt-0.5 bg-primary rounded-full;
 }
+/* ========== Header End ========== */
 
+/* ========== Hero Section Start ========== */
 .icon-sosmed {
   @apply hover:shadow-md hover:text-gray-500 transition duration-200 ease-in-out;
 }
+/* ========== Hero Section End ========== */
 
+/* ========== About Section Start ========== */
 .CVButton {
   @apply text-base font-semibold bg-primary text-light py-3 px-4 rounded-lg hover:shadow-lg hover:bg-transparent hover:text-primary hover:outline hover:outline-primary hover:outline-offset-1 hover:outline-1 transition duration-300 ease-in-out;
 }
@@ -84,3 +91,14 @@ h4 {
 .line-timeline {
   @apply w-0.5 h-full bg-dark rounded-full mx-auto;
 }
+
+.tabs__list {
+  @apply cursor-pointer text-base font-semibold py-2 px-2 mx-1 text-light hover:text-primary transition duration-200 ease-in-out;
+}
+/* ========== About Section End ========== */
+
+/* ========== Services Section Start ========== */
+.box-services {
+  @apply w-36 h-36 bg-primary mx-6;
+}
+/* ========== Services Section Start ========== */

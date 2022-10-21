@@ -1,3 +1,4 @@
+/* ========== Header Start ========== */
 // Navbar Fixed
 window.onscroll = function () {
   const header = document.querySelector('header');
@@ -21,6 +22,16 @@ window.onscroll = function () {
     // sNav.classList.remove('scale-sm');
   }
 };
+
+// nav item sm
+for (let i = 1; i <= 6; i++) {
+  const navItem = document.querySelector('#nav-item-'+[i]);
+  
+  navItem.addEventListener('click', function () {
+    humberger.classList.remove('humberger-active');
+    navMenu.classList.toggle('hidden');
+  });
+}
 
 // humberger
 const humberger = document.querySelector('#humberger');
@@ -49,17 +60,9 @@ function activeMenu() {
 }
 activeMenu();
 window.addEventListener('scroll', activeMenu);
+/* ========== Header End ========== */
 
-// nav item sm
-for (let i = 1; i <= 5; i++) {
-  const navItem = document.querySelector('#nav-item-'+[i]);
-
-  navItem.addEventListener('click', function () {
-    humberger.classList.remove('humberger-active');
-    navMenu.classList.toggle('hidden');
-  });
-}
-
+/* ========== About Section Start ========== */
 // Journey Tab
 function setup() {
   return {
@@ -71,3 +74,4 @@ function setup() {
     ]
   };
 };
+/* ========== About Section End ========== */
