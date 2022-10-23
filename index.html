@@ -11,7 +11,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.4.0/dist/alpine.min.js" defer></script>
 </head>
 <body>
   <!-- BackToTop btn Start -->
@@ -41,11 +40,11 @@
               <div id="nav-underline" class="hidden"></div>
             </li>
             <li class="nav-item-lg">
-              <a href="#skills" class="hover:text-light">Skills</a>
+              <a href="#services" class="hover:text-light">Services</a>
               <div id="nav-underline" class="hidden"></div>
             </li>
             <li class="nav-item-lg">
-              <a href="#services" class="hover:text-light">Services</a>
+              <a href="#skills" class="hover:text-light">Skills</a>
               <div id="nav-underline" class="hidden"></div>
             </li>
             <li class="nav-item-lg">
@@ -77,11 +76,11 @@
         <li id="nav-item-2" class="nav-item">
           <a href="#about"><h4>About</h4></a>
         </li>
-        <li id="nav-item-3" class="nav-item">
-          <a href="#skills"><h4>Skills</h4></a>
-        </li>
         <li id="nav-item-4" class="nav-item">
           <a href="#services"><h4>Services</h4></a>
+        </li>
+        <li id="nav-item-3" class="nav-item">
+          <a href="#skills"><h4>Skills</h4></a>
         </li>
         <li id="nav-item-5" class="nav-item">
           <a href="#portfolio"><h4>Portfolio</h4></a>
@@ -384,33 +383,124 @@
     </section>
     <!-- About Section End -->
 
-     <!-- Skills Section Start -->
-     <section id="skills" class="pt-36 pb-16 lg:py-28 bg-dark">
-
-    </section>
-    <!-- Skills Section End -->
-
     <!-- Services Section Start -->
-    <section id="services" class="pt-36 pb-16 lg:py-28 bg-gray-800">
+    <section id="services" class="pt-10 pb-5 lg:pb-10 lg:pt-28 bg-dark">
       <div class="container">
         <div class="section-page">
-          <div class="w-full self-center px-4">
-            <div class="flex">
+          <div class="w-full px-4">
+            <p class="headline">-- Services</p>
+          </div>
+          <div class="w-full">
+            <div class="flex flex-wrap items-center justify-center">
+              <!-- Service Content UI/UX -->
               <div class="box-services">
-
+                <div class="grow-0 ml-3 mr-6 mb-16 relative">
+                  <h4  class="absolute bottom-0 text-xl">
+                    <iconify-icon icon="charm:layout-stack-v"></iconify-icon>
+                  </h4>
+                </div>
+                <div class="grow mx-6 relative">
+                  <h4 class="service__branch">UI/UX Designer.</h4>
+                  <button type="button" data-modal-toggle="serviceModal-1">
+                    <p class="service__modal">View More <span class="ml-2">🡪</span></p>
+                  </button>
+                </div>
               </div>
+              <!-- Service Content Fullstack -->
               <div class="box-services">
-                
+                <div class="grow-0 ml-3 mr-6 mb-16 relative">
+                  <h4  class="absolute bottom-0 text-xl">
+                    <iconify-icon icon="charm:code"></iconify-icon>
+                  </h4>
+                </div>
+                <div class="grow mx-6 relative">
+                  <h4 class="service__branch">Full Stack Developer.</h4>
+                  <button type="button" data-modal-toggle="serviceModal-2">
+                    <p class="service__modal">View More <span class="ml-2">🡪</span></p>
+                  </button>
+                </div>
+              </div>
+              <!-- Service Content Graphic -->
+              <div class="box-services">
+                <div class="grow-0 ml-3 mr-6 mb-16 relative">
+                  <h4  class="absolute bottom-0 text-xl">
+                    <iconify-icon icon="charm:pencil"></iconify-icon>
+                  </h4>
+                </div>
+                <div class="grow mx-6 relative">
+                  <h4 class="service__branch">Graphic Designer.</h4>
+                  <button type="button" data-modal-toggle="serviceModal-3">
+                    <p class="service__modal">View More <span class="ml-2">🡪</span></p>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+    <!-- Modal Start -->
+    
+    <!-- Modal End -->
     <!-- Services Section End -->
 
+    <!-- Skills Section Start -->
+    <section id="skills" class="pb-10 pt-5 lg:pt-10 lg:pb-28 bg-dark">
+      <div class="container">
+        <div class="section-page">
+          <div class="w-full px-4">
+            <p class="headline">-- My Skills</p>
+          </div>
+          <div class="w-full">
+            <div class="flex flex-wrap items-center justify-center">
+              <a href="https://en.wikipedia.org/wiki/HTML5" target="_blank" class="skill__logo">
+                <img src="assets/skills/html.svg" alt="html">
+              </a>
+              <a href="https://en.wikipedia.org/wiki/CSS#CSS_3" target="_blank" class="skill__logo">
+                <img src="assets/skills/css.svg" alt="css">
+              </a>
+              <a href="https://tailwindcss.com/" target="_blank" class="skill__logo">
+                <img src="assets/skills/tailwind.svg" alt="tailwind">
+              </a>
+              <a href="https://getbootstrap.com/" target="_blank" class="skill__logo">
+                <img src="assets/skills/bootstrap.svg" alt="bootstrap">
+              </a>
+              <a href="https://www.javascript.com/" target="_blank" class="skill__logo">
+                <img src="assets/skills/javascript.svg" alt="javascript">
+              </a>
+              <a href="https://www.php.net/" target="_blank" class="skill__logo">
+                <img src="assets/skills/php.svg" alt="php">
+              </a>
+              <a href="https://www.mysql.com/" target="_blank" class="skill__logo">
+                <img src="assets/skills/mysql.svg" alt="mysql">
+              </a>
+              <a href="https://www.codeigniter.com/" target="_blank" class="skill__logo">
+                <img src="assets/skills/codeigniter.svg" alt="codeigniter">
+              </a>
+              <a href="https://laravel.com/" target="_blank" class="skill__logo">
+                <img src="assets/skills/laravel.svg" alt="laravel">
+              </a>
+              <a href="https://nodejs.org/en/" target="_blank" class="skill__logo">
+                <img src="assets/skills/nodejs.svg" alt="nodejs">
+              </a>
+              <a href="https://www.figma.com/" target="_blank" class="skill__logo">
+                <img src="assets/skills/figma.svg" alt="figma">
+              </a>
+              <a href="https://en.wikipedia.org/wiki/Adobe_XD" target="_blank" class="skill__logo">
+                <img src="assets/skills/adobe-xd.svg" alt="adobe xd">
+              </a>
+              <a href="https://www.coreldraw.com/en/" target="_blank" class="skill__logo">
+                <img src="assets/skills/coreldraw.svg" alt="coreldraw">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Skills Section End -->
+
     <!-- Portfolio Section Start -->
-    <section id="portfolio" class="pt-36 pb-16 lg:py-28 bg-dark">
+    <section id="portfolio" class="pt-36 pb-16 lg:py-28 bg-gray-800">
       <div class="container">
         <div class="section-page">
           <div class="w-full self-center px-4">
@@ -422,7 +512,7 @@
     <!-- Portfolio Section End -->
 
     <!-- Contact Section Start -->
-    <section id="contact" class="pt-36 pb-16 lg:py-28 bg-gray-800">
+    <section id="contact" class="pt-36 pb-16 lg:py-28 bg-dark">
 
     </section>
     <!-- Contact Section End -->
@@ -432,6 +522,7 @@
 
   <!-- Footer End -->
   <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.4.0/dist/alpine.min.js" defer></script>
   <script src="dist/js/script.js"></script>
 </body>
 </html>
