@@ -113,16 +113,20 @@ h4 {
 
 /* ========== Skills Section Start ========== */
 .skill__logo {
-  @apply  max-w-[55px] mx-4 py-4 grayscale opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8;
+  @apply  max-w-[55px] mx-4 py-4 grayscale opacity-60 transition duration-300 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8;
 }
 /* ========== Skills Section End ========== */
 
 /* ========== Portfolio Section Start ========== */
 .box-portfolio {
-  @apply p-1 m-2 rounded-lg bg-secondary;
+  @apply rounded-lg m-2 border-4 border-secondary bg-dark shadow-md hover:shadow-xl;
 }
 
 .img__box-portfolio {
-  @apply w-36 rounded-lg hover:opacity-50;
+  @apply w-36 rounded-lg;
+}
+
+.text-Hover__box-portfolio {
+  @apply absolute top-0 left-0 w-full h-full flex justify-center items-center opacity-0 hover:opacity-100;
 }
 /* ========== Portfolio Section End ========== */
