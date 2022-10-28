@@ -117,3 +117,12 @@ h4 {
 }
 /* ========== Skills Section End ========== */
 
+/* ========== Portfolio Section Start ========== */
+.box-portfolio {
+  @apply p-1 m-2 rounded-lg bg-secondary;
+}
+
+.img__box-portfolio {
+  @apply w-36 rounded-lg hover:opacity-50;
+}
+/* ========== Portfolio Section End ========== */

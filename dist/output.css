@@ -1452,6 +1452,27 @@ h4 {
 
 /* ========== Skills Section End ========== */
 
+/* ========== Portfolio Section Start ========== */
+
+.box-portfolio {
+  margin: 0.5rem;
+  border-radius: 0.5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
+  padding: 0.25rem;
+}
+
+.img__box-portfolio {
+  width: 9rem;
+  border-radius: 0.5rem;
+}
+
+.img__box-portfolio:hover {
+  opacity: 0.5;
+}
+
+/* ========== Portfolio Section End ========== */
+
 .hover\:border-secondary:hover {
   --tw-border-opacity: 1;
   border-color: rgb(156 163 175 / var(--tw-border-opacity));
@@ -1586,4 +1607,3 @@ h4 {
     line-height: 2.25rem;
   }
 }
-
