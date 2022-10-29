@@ -30,18 +30,17 @@ h4 {
 
 /* ========== Header Start ========== */
 .navbar-fixed {
-  @apply fixed z-[9999] bg-dark bg-opacity-70;
-  backdrop-filter: blur(5px);
+  @apply fixed z-[9999];
   box-shadow: inset 0 -1px 0 0 rgba(245, 245, 245, 0.2);
   /* hitam = rgba(0, 0, 0, 0.2) */
 }
 
 .brand-logo {
-  @apply block w-12 md:w-20 lg:w-24 py-10;
+  @apply block w-14 sm:w-16 md:w-20 lg:w-24 py-10;
 }
 
 .scale-logo {
-  @apply block w-12 lg:w-20 py-0 scale-75;
+  @apply block w-14 sm:w-16 lg:w-20 py-0 scale-75;
 }
 
 .humberger-line {
@@ -119,14 +118,18 @@ h4 {
 
 /* ========== Portfolio Section Start ========== */
 .box-portfolio {
-  @apply rounded-lg m-2 border-4 border-secondary bg-dark shadow-md hover:shadow-xl;
+  @apply rounded-lg mx-2 mb-4 border-4 border-secondary bg-dark shadow-md hover:shadow-xl sm:mb-6 lg:mb-10;
 }
 
 .img__box-portfolio {
-  @apply w-36 rounded-lg;
+  @apply w-64 rounded-lg lg:w-96;
 }
 
-.text-Hover__box-portfolio {
-  @apply absolute top-0 left-0 w-full h-full flex justify-center items-center opacity-0 hover:opacity-100;
+.text__box-portfolio {
+  @apply absolute top-0 left-0 w-full h-full flex justify-center items-end opacity-0 hover:opacity-100;
+}
+
+.btn__box-portfolio {
+  @apply text-sm font-semibold px-3 py-2 rounded-lg text-light bg-primary hover:bg-opacity-90 hover:border-2 hover:border-primary;
 }
 /* ========== Portfolio Section End ========== */
