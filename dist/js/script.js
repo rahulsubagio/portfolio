@@ -24,7 +24,8 @@ window.onscroll = function () {
 };
 
 // nav item sm
-for (let i = 1; i <= 6; i++) {
+let navItemCounter = 6;
+for (let i = 1; i <= navItemCounter; i++) {
   const navItem = document.querySelector('#nav-item-'+[i]);
   
   navItem.addEventListener('click', function () {
@@ -75,3 +76,40 @@ function setup() {
   };
 };
 /* ========== About Section End ========== */
+
+
+
+
+/* ============================== Untuk testing aja ============================== 
+const tabElements = [
+  {
+    id: 'education',
+    triggerE1: document.querySelector('#trig-tab-education'),
+    targetE1: document.querySelector('#tab-education')
+  },
+  {
+    id: 'experience',
+    triggerE1: document.querySelector('#trig-tab-experience'),
+    targetE1: document.querySelector('#tab-experience')
+  },
+  {
+    id: 'awards',
+    triggerE1: document.querySelector('#trig-tab-awards'),
+    targetE1: document.querySelector('#tab-awards')
+  }
+];
+
+const options = {
+  defaultTabId: 'education',
+  activeClasses: 'text-primary',
+  inactiveClasses: 'text-light',
+  onShow: () => {
+    console.log('tab is shown');
+  }
+};
+
+const tabs = new Tabs(tabElements, options);
+
+tabs.show('education');
+tabs.getTab('experience');
+tabs.getActiveTab();*/

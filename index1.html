@@ -1,45 +1,241 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rahul Subagio</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <!-- shortcut icon -->
+  <link rel="shortcut icon" href="assets/logo-rs-kecil.png">
+  <!-- output css tailwind -->
+  <link href="dist/output.css" rel="stylesheet">
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
-  <main class="bg-dark">
-    <div class="container p-4">
-      <header class="pb-3 mb-4 d-flex align-items-center text-decoration-none">
-        <a href="#" class="col-7">
-          <img src="/assets/LOGO-RS-PRODUCTION-putih.svg" alt="" width="60">
-        </a>
-        <ul class="nav justify-content-end col-5">
-          <li class="nav-item">
-            <a class="nav-link active text-light" href="#"><h5>Services</h5></a>
+<body class="bg-gray-800">
+  <!-- Journey Tabs Start -->
+  <div class="w-full self-center px-4 pt-36">
+    <h1 class="text-2xl text-center font-medium text-light">My Journey</h1>
+    <div class="justify-center items-center mt-4 w-full">
+      <!--actual component start-->
+      <div class="">
+        <ul class="flex justify-center items-center my-4">
+          <li class="mr-2" role="presentation">
+            <button class="text-lg text-light font-semibold hover:text-primary" id="trig-tab-education" role="tab" aria-controls="tab-education" aria-selected="false">Education</button>
           </li>
-          <li class="nav-item">
-            <a class="nav-link text-secondary" href="#"><h5>Works</h5></a>
+          <li class="mr-2" role="presentation">
+            <button class="text-lg text-light font-semibold hover:text-primary" id="trig-tab-experience" role="tab" aria-controls="tab-experience" aria-selected="false">Experience</button>
           </li>
-          <li class="nav-item">
-            <a class="nav-link text-secondary" href="#"><h5>Blog</h5></a>
+          <li class="" role="presentation">
+            <button class="text-lg text-light font-semibold hover:text-primary" id="trig-tab-awards" role="tab" aria-controls="tab-awards" aria-selected="false">Awards</button>
           </li>
         </ul>
-      </header>
-
-      <div class="mb-4 bg-light rounded-5 d-flex">
-        <div class="col-7">
-          <h1 class="display-5 fw-bold">Rahul</h1>
-          <h1 class="display-5 fw-bold">Subagio</h1>
-        </div>
-        <div class="col-5 justify-">
-          <h1 class="display-5 fw-bold">Rahul</h1>
-          <h1 class="display-5 fw-bold">Subagio</h1>
-        </div>
       </div>
-    </div>
-  </main>
+        
+      <div id="tabContent" class="mx-auto max-w-full mt-8">
+        <!-- content education start -->
+        <div id="tab-education" class="hidden" role="tabpanel" aria-labelledby="trig-tab-education">
+          <!-- SD -->
+          <div class="flex">
+            <div class="flex-1"></div>
+            <div class="mx-5 mt-2 flex-none">
+              <div class="dot-timeline"></div>
+              <div class="line-timeline"></div>
+            </div>
+            <div class="text-start flex-1">
+              <h4>SK Ladang Sandak</h4>
+              <p><iconify-icon icon="akar-icons:calendar"></iconify-icon> 2006 - 2012</p>
+            </div>
+          </div>
+          <!-- SMP 1 -->
+          <div class="flex">
+            <div class="text-end flex-1">
+              <h4>Secondary School As-Salam</h4>
+              <p><iconify-icon icon="akar-icons:calendar"></iconify-icon> 2012 - 2013</p>
+            </div>
+            <div class="mx-5 mt-2 flex-none">
+              <div class="dot-timeline"></div>
+              <div class="line-timeline"></div>
+            </div>
+            <div class="flex-1"></div>
+          </div>
+          <!-- SMP 2 -->
+          <div class="flex">
+            <div class="flex-1"></div>
+            <div class="mx-5 mt-2 flex-none">
+              <div class="dot-timeline"></div>
+              <div class="line-timeline"></div>
+            </div>
+            <div class="text-start flex-1">
+              <h4>SMP Negeri 1 Watang Pulu</h4>
+              <p><iconify-icon icon="akar-icons:calendar"></iconify-icon> 2013 - 2015</p>
+            </div>
+          </div>
+          <!-- SMA -->
+          <div class="flex">
+            <div class="text-end flex-1">
+              <h4>SMA Negeri 2 Sidrap</h4>
+              <p>Jurusan IPA</p>
+              <p><iconify-icon icon="akar-icons:calendar"></iconify-icon> 2015 - 2018</p>
+            </div>
+            <div class="mx-5 mt-2 flex-none">
+              <div class="dot-timeline"></div>
+              <div class="line-timeline"></div>
+            </div>
+            <div class="flex-1"></div>
+          </div>
+          <!-- University -->
+          <div class="flex">
+            <div class="flex-1"></div>
+            <div class="mx-5 mt-2 flex-none">
+              <div class="dot-timeline"></div>
+            </div>
+            <div class="text-start flex-1">
+              <h4>UPN "Veteran" Yogyakarta</h4>
+              <p>Informatika</p>
+              <p><iconify-icon icon="akar-icons:calendar"></iconify-icon> 2018 - now</p>
+            </div>
+          </div>
+        </div>
+        <!-- content education end -->
+        <!-- content experience start -->
+        <div id="tab-experience" class="hidden" role="tabpanel" aria-labelledby="trig-tab-experience">
+          <!-- HIMATIF -->
+          <div class="flex">
+            <div class="text-end flex-1"></div>
+            <div class="mx-5 mt-2 flex-none">
+              <div class="dot-timeline"></div>
+              <div class="line-timeline"></div>
+            </div>
+            <div class="text-start flex-1">
+              <h4>Himpunan Mahasiswa Teknik Informatika (HIMATIF UPNYK)</h4>
+              <P>Member of Enterpreneuship</P>
+              <p><iconify-icon icon="akar-icons:calendar"></iconify-icon> 2018 - 2019</p>
+            </div>
+          </div>
+          <!-- ITC 1 -->
+          <div class="flex">
+            <div class="text-end flex-1">
+              <h4>Information Technology Club (ITC UPNYK)</h4>
+              <P>Member of Web Development</P>
+              <p><iconify-icon icon="akar-icons:calendar"></iconify-icon> 2018 - 2019</p>
+            </div>
+            <div class="mx-5 mt-2 flex-none">
+              <div class="dot-timeline"></div>
+              <div class="line-timeline"></div>
+            </div>
+            <div class="text-end flex-1"></div>
+          </div>
+          <!-- ITC 2 -->
+          <div class="flex">
+            <div class="text-end flex-1"></div>
+            <div class="mx-5 mt-2 flex-none">
+              <div class="dot-timeline"></div>
+              <div class="line-timeline"></div>
+            </div>
+            <div class="text-start flex-1">
+              <h4>Information Technology Club (ITC UPNYK)</h4>
+              <P>Vice Chairman</P>
+              <p><iconify-icon icon="akar-icons:calendar"></iconify-icon> 2019 - 2021</p>
+            </div>
+          </div>
+          <!-- Robot 1 -->
+          <div class="flex">
+            <div class="text-end flex-1">
+              <h4>Robotics UPN "Veteran" Yogyakarta (RUVY)</h4>
+              <P>Member of Wheel Division</P>
+              <p><iconify-icon icon="akar-icons:calendar"></iconify-icon> 2020 - 2021</p>
+            </div>
+            <div class="mx-5 mt-2 flex-none">
+              <div class="dot-timeline"></div>
+              <div class="line-timeline"></div>
+            </div>
+            <div class="text-end flex-1"></div>
+          </div>
+          <!-- Robot 2 -->
+          <div class="flex">
+            <div class="text-end flex-1"></div>
+            <div class="mx-5 mt-2 flex-none">
+              <div class="dot-timeline"></div>
+            </div>
+            <div class="text-start flex-1">
+              <h4>Robotics UPN "Veteran" Yogyakarta (RUVY)</h4>
+              <P>Wheel Division Head</P>
+              <p><iconify-icon icon="akar-icons:calendar"></iconify-icon> 2021 - 2022</p>
+            </div>
+          </div>
+        </div>
+        <!-- content experience end -->
+        <!-- content awards start -->
+        <div id="tab-awards" class="hidden" role="tabpanel" aria-labelledby="trig-tab-awards">
+          <!-- CP Find IT -->
+          <div class="flex">
+            <div class="text-end flex-1"></div>
+            <div class="mx-5 mt-2 flex-none">
+              <div class="dot-timeline"></div>
+              <div class="line-timeline"></div>
+            </div>
+            <div class="text-start flex-1">
+              <h4>Participants Senior Competitive Programming</h4>
+              <P>Issued by FIND IT 2019</P>
+              <p><iconify-icon icon="akar-icons:calendar"></iconify-icon> Apr 2019</p>
+            </div>
+          </div>
+          <!-- CP FKBMIK -->
+          <div class="flex">
+            <div class="text-end flex-1">
+              <h4>3rd Winner in Programming Competition</h4>
+              <P>Issued by FKBMIK</P>
+              <p><iconify-icon icon="akar-icons:calendar"></iconify-icon> Sep 2019</p>
+            </div>
+            <div class="mx-5 mt-2 flex-none">
+              <div class="dot-timeline"></div>
+              <div class="line-timeline"></div>
+            </div>
+            <div class="text-end flex-1"></div>
+          </div>
+          <!-- ISIF -->
+          <div class="flex">
+            <div class="text-end flex-1"></div>
+            <div class="mx-5 mt-2 flex-none">
+              <div class="dot-timeline"></div>
+              <div class="line-timeline"></div>
+            </div>
+            <div class="text-start flex-1">
+              <h4>Bronze Medal at International Science and Invention Fair 2021</h4>
+              <P>Issued by International Science and Invention Fair (ISIF 2021)</P>
+              <p><iconify-icon icon="akar-icons:calendar"></iconify-icon> Nov 2021</p>
+            </div>
+          </div>
+          <!-- CP FKBMIK -->
+          <div class="flex">
+            <div class="text-end flex-1">
+              <h4>3rd Winner in Micromouse Competition</h4>
+              <P>Issued by PORSIMNAS UPN Veteran</P>
+              <p><iconify-icon icon="akar-icons:calendar"></iconify-icon> Jul 2022</p>
+            </div>
+            <div class="mx-5 mt-2 flex-none">
+              <div class="dot-timeline"></div>
+            </div>
+            <div class="text-end flex-1"></div>
+          </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+        </div>
+        <!-- content awards end -->
+      </div>
+      
+      <!--actual component end-->
+    </div>  
+  </div>
+  <!-- Journey Tabs End -->
+
+  <!-- iconify -->
+  <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
+  <!-- alphine.js -->
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.4.0/dist/alpine.min.js" defer></script>
+  <script src="dist/js/script.js"></script>
 </body>
 </html>

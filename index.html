@@ -17,13 +17,13 @@
 </head>
 <body>
   <!-- BackToTop btn Start -->
-  <div id="backtop" class="back-btn fixed rounded-md flex bottom-20 right-7 md:right-20 lg:right-32 z-50 bg-dark transition-all duration-300 ease-in-out">
+  <div id="backtop" class="back-btn fixed rounded-md flex bottom-20 right-4 sm:right-8 md:right-12 lg:right-16 z-50 bg-dark transition-all duration-300 ease-in-out">
     <a href="#" class="m-auto text-base text-light rounded-md bg-primary hover:bg-opacity-60 px-3.5 pt-3 pb-2"><iconify-icon icon="bxs:up-arrow"></iconify-icon></a>
   </div>
   <!-- BackToTop btn End -->
 
   <!-- Header Section Start -->
-  <header class="absolute top-0 left-0 w-full flex items-center z-10 bg-dark/70 backdrop-blur-sm">
+  <header class="absolute top-0 left-0 w-full flex items-center z-10">
     <div class="container">
       <div class="section-page items-center justify-between relative">
         <div class="px-4">
@@ -71,7 +71,7 @@
       </div>
     </div>
     <!-- Nav-sm Start -->
-    <nav id="nav-menu" class="hidden py-5 shadow-lg absolute w-full top-full right-1/2 translate-x-1/2 bg-dark/80 backdrop-blur-sm">
+    <nav id="nav-menu" class="hidden py-5 shadow-lg absolute w-full top-full right-1/2 translate-x-1/2 bg-dark/80 backdrop-blur-sm lg:hidden">
       <ul class="px-8 sm:px-14 block">
         <li id="nav-item-1" class="nav-item">
           <a href="#home"><h4>Home</h4></a>
@@ -99,11 +99,11 @@
 
   <main class="">
     <!-- Hero Section Start -->
-    <section id="home" class="pt-36 bg-dark">
+    <section id="home" class="bg-dark">
       <div class="container">
-        <div class="section-page">
+        <div class="section-page content-center h-[100vh] sm:h-auto md:h-auto lg:h-[100vh] py-5 sm:py-10 md:py-10 lg:py-20 xl:py-32">
 
-          <div class="w-full self-center px-4 lg:w-2/3">
+          <div class="w-full px-4 lg:w-2/3">
             <div class="relative">
               <img src="assets/Rahul_Bin_Subagio-123180033-removebg-preview.png" alt="Rahul Subagio" class="max-w-full mx-auto drop-shadow-2xl">
               <div class="absolute bottom-0">
@@ -131,10 +131,10 @@
             </div>
           </div>
 
-          <div class="w-full self-end px-4 lg:w-1/3">
-            <div class="mt-8 mb-10 lg:mb-28">
+          <div class="w-full px-4 lg:w-1/3">
+            <div class="mt-8 lg:mt-36 ">
               <p class="headline">-- Introduction</p>
-              <h1 class="text-2xl font-medium text-light max-w-md 2xl:text-3xl">Graphic Designer and Developer, based in Indonesia.</h1>
+              <h1 class="text-xl font-medium text-light max-w-md md:text-2xl 2xl:text-3xl">Graphic Designer and Developer, based in Indonesia.</h1>
               <p class="text-base my-7 max-w-xl text-justify">I'm a Full Stack Web Developer. I have passion for building and developing websites and also graphic design.</p>
               
               <a href="#about" class="text-base md:text-lg lg:text-lg font-semibold text-primary tracking-wide underline underline-offset-2 hover:decoration-2">My Journey<span class="ml-6">🡪</span></a>
@@ -149,11 +149,10 @@
     <!-- About Section Start -->
     <section id="about" class="py-10 lg:py-28 bg-gray-800">
       <div class="container">
-        <div class="section-page">
-
+        <div class="section-page flex-row-reverse">
           <!-- About Me Start-->
-          <div class="w-full self-center px-4 lg:w-1/2 mb-8 lg:hidden">
-            <p class="headline">-- About</p>
+          <div class="w-full self-center px-4 lg:w-1/2 mb-8">
+            <p class="headline lg:hidden">-- About</p>
             <div class="relative">
               <img src="assets/img1.jpg" alt="Rahul Subagio" class="max-w-full mx-auto rounded-lg">
             </div>
@@ -163,11 +162,6 @@
             <p class="text-base text-justify" >Hello everyone 👋, My name is Rahul Subagio, but you can call me Rahul. I'am a Full Stack Web Developer and Graphic Designer with a passion for building and developing websites and also graphic design. I have more than 2 years as a Junior Web Developer.</p>
             <div class="my-16 text-center lg:mt-18 lg:mb-3 lg:text-start">
               <a href="#" class="CVButton"><iconify-icon icon="fa-solid:download" class="mr-2"></iconify-icon>Download CV</a>
-            </div>
-          </div>
-          <div class="w-full self-center px-4 lg:w-1/2 hidden lg:block">
-            <div class="">
-              <img src="assets/img1.jpg" alt="Rahul Subagio" class="max-w-full mx-auto rounded-lg">
             </div>
           </div>
           <!-- About Me end -->
@@ -405,7 +399,7 @@
                 <div class="grow mx-6 relative">
                   <h4 class="service__branch">UI/UX Designer.</h4>
                   <button type="button" data-modal-toggle="serviceModal-1">
-                    <p class="service__modal">View More <span class="ml-2">🡪</span></p>
+                    <p class="service__modal">View More<span class="ml-3">🡪</span></p>
                   </button>
                 </div>
               </div>
@@ -419,7 +413,7 @@
                 <div class="grow mx-6 relative">
                   <h4 class="service__branch">Full Stack Developer.</h4>
                   <button type="button" data-modal-toggle="serviceModal-2">
-                    <p class="service__modal">View More <span class="ml-2">🡪</span></p>
+                    <p class="service__modal">View More<span class="ml-3">🡪</span></p>
                   </button>
                 </div>
               </div>
@@ -433,7 +427,7 @@
                 <div class="grow mx-6 relative">
                   <h4 class="service__branch">Graphic Designer.</h4>
                   <button type="button" data-modal-toggle="serviceModal-3">
-                    <p class="service__modal">View More <span class="ml-2">🡪</span></p>
+                    <p class="service__modal">View More<span class="ml-3">🡪</span></p>
                   </button>
                 </div>
               </div>
@@ -503,7 +497,7 @@
     <!-- Skills Section End -->
 
     <!-- Portfolio Section Start -->
-    <section id="portfolio" class="pt-10 pb-10 lg:py-28 bg-gray-800">
+    <section id="portfolio" class="py-10 lg:py-28 bg-gray-800">
       <div class="container">
         <div class="section-page">
           <div class="w-full px-4">
@@ -515,13 +509,13 @@
               <div class="relative group box-portfolio">
                 <img src="assets/portfolio/startup-594090__340.jpg" class="img__box-portfolio" alt="Gambar portfolio 1">
                 <div
-                  class="flex justify-center items-center opacity-0 bg-gradient-to-t from-gray-800 via-gray-800 to-opacity-30 group-hover:opacity-80 absolute top-0 left-0 h-full w-full">
+                  class="flex justify-center items-center opacity-0 bg-gradient-to-t from-gray-800 via-gray-800 to-opacity-30 group-hover:opacity-80 absolute top-0 left-0 h-full w-full transition duration-500 ease-in-out">
                 </div>
                 <div class="text__box-portfolio">
                   <div class="flex-row text-center mb-6">
                     <h4 class="font-semibold">Jasa Rental</h4>
                     <p class="mb-6">Lorem ipsum dolor sit amet.</p>
-                    <a href="#" class="btn__box-portfolio">Details <iconify-icon icon="ic:outline-screenshot-monitor"></iconify-icon></a>
+                    <a href="#" class="btn__box-portfolio">Details <iconify-icon icon="charm:monitor-arrow"></iconify-icon></a>
                   </div>
                 </div>
               </div>
@@ -529,13 +523,13 @@
               <div class="relative group box-portfolio">
                 <img src="assets/portfolio/startup-594090__340.jpg" class="img__box-portfolio" alt="Gambar portfolio 2">
                 <div
-                  class="flex justify-center items-center opacity-0 bg-gradient-to-t from-gray-800 via-gray-800 to-opacity-30 group-hover:opacity-80 absolute top-0 left-0 h-full w-full">
+                  class="flex justify-center items-center opacity-0 bg-gradient-to-t from-gray-800 via-gray-800 to-opacity-30 group-hover:opacity-80 absolute top-0 left-0 h-full w-full transition duration-500 ease-in-out">
                 </div>
                 <div class="text__box-portfolio">
                   <div class="flex-row text-center mb-6">
                     <h4 class="font-semibold">Jasa Rental</h4>
                     <p class="mb-6">Lorem ipsum dolor sit amet.</p>
-                    <a href="#" class="btn__box-portfolio">Details <iconify-icon icon="ic:outline-screenshot-monitor"></iconify-icon></a>
+                    <a href="#" class="btn__box-portfolio">Details <iconify-icon icon="charm:monitor-arrow"></iconify-icon></a>
                   </div>
                 </div>
               </div>
@@ -543,13 +537,13 @@
               <div class="relative group box-portfolio">
                 <img src="assets/portfolio/startup-594090__340.jpg" class="img__box-portfolio" alt="Gambar portfolio 3">
                 <div
-                  class="flex justify-center items-center opacity-0 bg-gradient-to-t from-gray-800 via-gray-800 to-opacity-30 group-hover:opacity-80 absolute top-0 left-0 h-full w-full">
+                  class="flex justify-center items-center opacity-0 bg-gradient-to-t from-gray-800 via-gray-800 to-opacity-30 group-hover:opacity-80 absolute top-0 left-0 h-full w-full transition duration-500 ease-in-out">
                 </div>
                 <div class="text__box-portfolio">
                   <div class="flex-row text-center mb-6">
                     <h4 class="font-semibold">Jasa Rental</h4>
                     <p class="mb-6">Lorem ipsum dolor sit amet.</p>
-                    <a href="#" class="btn__box-portfolio">Details <iconify-icon icon="ic:outline-screenshot-monitor"></iconify-icon></a>
+                    <a href="#" class="btn__box-portfolio">Details <iconify-icon icon="charm:monitor-arrow"></iconify-icon></a>
                   </div>
                 </div>
               </div>
@@ -557,13 +551,13 @@
               <div class="relative group box-portfolio">
                 <img src="assets/portfolio/startup-594090__340.jpg" class="img__box-portfolio" alt="Gambar portfolio 4">
                 <div
-                  class="flex justify-center items-center opacity-0 bg-gradient-to-t from-gray-800 via-gray-800 to-opacity-30 group-hover:opacity-80 absolute top-0 left-0 h-full w-full">
+                  class="flex justify-center items-center opacity-0 bg-gradient-to-t from-gray-800 via-gray-800 to-opacity-30 group-hover:opacity-80 absolute top-0 left-0 h-full w-full transition duration-500 ease-in-out">
                 </div>
                 <div class="text__box-portfolio">
                   <div class="flex-row text-center mb-6">
                     <h4 class="font-semibold">Jasa Rental</h4>
                     <p class="mb-6">Lorem ipsum dolor sit amet.</p>
-                    <a href="#" class="btn__box-portfolio">Details <iconify-icon icon="ic:outline-screenshot-monitor"></iconify-icon></a>
+                    <a href="#" class="btn__box-portfolio">Details <iconify-icon icon="charm:monitor-arrow"></iconify-icon></a>
                   </div>
                 </div>
               </div>
@@ -575,14 +569,76 @@
     <!-- Portfolio Section End -->
 
     <!-- Contact Section Start -->
-    <section id="contact" class="pt-36 pb-16 lg:py-28 bg-dark">
-
+    <section id="contact" class="pt-10 pb-36 lg:py-28 bg-dark">
+      <div class="container">
+        <div class="section-page flex-row-reverse">
+          <div class="w-full px-4">
+            <p class="headline">-- Contact</p>
+          </div>
+          <!-- Form contact Start -->
+          <div class="w-full px-4 pb-10 lg:w-1/2">
+            <form action="">
+              <label class="block" for="">
+                <span class="form__label">Name</span>
+                <input type="text" name="name" id="name" placeholder="Your Name" class="form__input">
+              </label>
+              <label class="block mt-5" for="">
+                <span class="form__label">Email</span>
+                <input type="email" name="email" id="email" placeholder="you@example.com" class="peer form__input">
+                <p class="mt-2 invisible peer-invalid:visible font-medium text-red-500">Please input a valid email</p>
+              </label>
+              <label class="block mt-2" for="">
+                <span class="form__label">Message</span>
+                <textarea name="message" id="message" rows="3" placeholder="Your Message" class="form__input"></textarea>
+              </label>
+              <button type="button" class="mt-7 form__button">
+                Send Message
+              </button>
+            </form>
+          </div>
+          <!-- Form contact End -->
+          
+          <div class="w-full px-4 mt-5 lg:mt-0 lg:w-1/2">
+            <h1 class="block text-3xl font-semibold text-light">Got a project?
+              <span class="block">Lets Talk.</span>
+            </h1>
+            <div class="py-10">
+              <div class="mt-5">
+                <a href="https://www.google.com/maps/place/Caturtunggal,+Kec.+Depok,+Kabupaten+Sleman,+Daerah+Istimewa+Yogyakarta/@-7.7696252,110.4133997,13z/data=!4m5!3m4!1s0x2e7a59b967a22331:0x5027a76e3569a00!8m2!3d-7.7815151!4d110.3993969" target="_blank">
+                  <p>
+                    <iconify-icon icon="charm:map-pin" class="mr-2"></iconify-icon></iconify-icon>Sleman, D.I. Yogyakarta - Indonesia, 55281
+                  </p>
+                </a>
+              </div>
+              <div class="mt-3">
+                <a href="mailto:rahulsubagio99@gmail.com" target="_blank">
+                  <p>
+                    <iconify-icon icon="charm:mail" class="mr-2"></iconify-icon>rahulsubagio99@gmail.com
+                  </p>
+                </a>
+              </div>
+              <div class="mt-3">
+                <a href="https://bit.ly/rahulWA" target="_blank">
+                  <p>
+                    <iconify-icon icon="akar-icons:whatsapp-fill" class="mr-2"></iconify-icon>+62 822-9636-5028
+                  </p>
+                </a>
+              </div>
+              <div class="mt-20">
+                <a href="#portfolio" class="text-base font-semibold text-primary tracking-wide underline underline-offset-2 hover:decoration-2">My Projects<span class="ml-6">🡪</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
     <!-- Contact Section End -->
   </main>
 
   <!-- Footer Start -->
+  <footer>
 
+  </footer>
   <!-- Footer End -->
 
   <!-- iconify -->
