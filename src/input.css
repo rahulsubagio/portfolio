@@ -118,7 +118,7 @@ h4 {
 
 /* ========== Portfolio Section Start ========== */
 .box-portfolio {
-  @apply rounded-lg mx-2 mb-4 border-4 border-secondary bg-dark shadow-md hover:shadow-xl sm:mb-5 xl:mb-10;
+  @apply rounded-lg mx-2 mb-4 mt-2 border-4 border-secondary bg-dark shadow-md hover:shadow-xl sm:mb-5 xl:mb-10;
 }
 
 .img__box-portfolio {
@@ -145,5 +145,9 @@ h4 {
 
 .form__button {
   @apply py-2 px-3 rounded-lg w-full block text-center text-base font-medium text-light bg-primary hover:bg-opacity-70 transition duration-300 ease-in-out;
+}
+
+.contact__address {
+  @apply hover:underline hover:underline-offset-1 text-secondary;
 }
 /* ========== Contact Section End ========== */
