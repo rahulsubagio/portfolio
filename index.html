@@ -71,7 +71,7 @@
       </div>
     </div>
     <!-- Nav-sm Start -->
-    <nav id="nav-menu" class="hidden py-5 shadow-lg absolute w-full top-full right-1/2 translate-x-1/2 bg-dark/80 backdrop-blur-sm lg:hidden">
+    <nav id="nav-menu" class="hidden py-5 shadow-lg absolute w-full top-full right-1/2 translate-x-1/2 bg-dark/80 lg:hidden">
       <ul class="px-8 sm:px-14 block">
         <li id="nav-item-1" class="nav-item">
           <a href="#home"><h4>Home</h4></a>
@@ -101,7 +101,7 @@
     <!-- Hero Section Start -->
     <section id="home" class="bg-dark">
       <div class="container">
-        <div class="section-page content-center h-[100vh] sm:h-auto md:h-auto lg:h-[100vh] py-5 sm:py-10 md:py-10 lg:py-20 xl:py-32">
+        <div class="section-page content-center h-[100vh] lg:content-end 2xl:content-center 2xl:pt-36">
 
           <div class="w-full px-4 lg:w-2/3">
             <div class="relative">
@@ -132,11 +132,11 @@
           </div>
 
           <div class="w-full px-4 lg:w-1/3">
-            <div class="mt-8 lg:mt-36 ">
+            <div class="pt-8 lg:pt-36 ">
               <p class="headline">-- Introduction</p>
               <h1 class="text-xl font-medium text-light max-w-md md:text-2xl 2xl:text-3xl">Graphic Designer and Developer, based in Indonesia.</h1>
               <p class="text-base my-7 max-w-xl text-justify">I'm a Full Stack Web Developer. I have passion for building and developing websites and also graphic design.</p>
-              <a href="#about" class="text-base md:text-lg lg:text-lg font-semibold text-primary tracking-wide underline underline-offset-2 hover:decoration-2">My Journey<span class="ml-6">🡪</span></a>
+              <a href="#about" class="link-section">My Journey<span class="ml-6">🡪</span></a>
             </div>
           </div>
             
@@ -397,7 +397,7 @@
                 </div>
                 <div class="grow mx-6 relative">
                   <h4 class="service__branch">UI/UX Designer.</h4>
-                  <button type="button" data-modal-toggle="serviceModal-1">
+                  <button id="open-modal" class="modal__button">
                     <p class="service__modal">View More<span class="ml-3">🡪</span></p>
                   </button>
                 </div>
@@ -411,7 +411,7 @@
                 </div>
                 <div class="grow mx-6 relative">
                   <h4 class="service__branch">Full Stack Developer.</h4>
-                  <button type="button" data-modal-toggle="serviceModal-2">
+                  <button id="open-modal-fullstack" class="modal__button">
                     <p class="service__modal">View More<span class="ml-3">🡪</span></p>
                   </button>
                 </div>
@@ -425,7 +425,7 @@
                 </div>
                 <div class="grow mx-6 relative">
                   <h4 class="service__branch">Graphic Designer.</h4>
-                  <button type="button" data-modal-toggle="serviceModal-3">
+                  <button id="open-modal-gdesign" class="modal__button">
                     <p class="service__modal">View More<span class="ml-3">🡪</span></p>
                   </button>
                 </div>
@@ -436,7 +436,22 @@
       </div>
     </section>
     <!-- Modal Start -->
-    
+    <div id="modal-container" class="modal__container">
+      <div class="modal__content">
+        <div class="relative">
+          <div class="modal__close" title="Close">
+            <iconify-icon icon="akar-icons:circle-x"></iconify-icon>
+          </div>
+        </div>
+
+        <h4 class="modal__title">UI/UX Designer</h4>
+        <p class="modal__description"><iconify-icon icon="akar-icons:circle-check" class="mr-2"></iconify-icon>I develop the user interface.</p>
+        <p class="modal__description"><iconify-icon icon="akar-icons:circle-check" class="mr-2"></iconify-icon>Web page development.</p>
+        <p class="modal__description"><iconify-icon icon="akar-icons:circle-check" class="mr-2"></iconify-icon>I create UX element interactions.</p>
+        <p class="modal__description"><iconify-icon icon="akar-icons:circle-check" class="mr-2"></iconify-icon>I position your company brand.</p>
+
+      </div>
+    </div>
     <!-- Modal End -->
     <!-- Services Section End -->
 
@@ -624,7 +639,7 @@
                 </a>
               </div>
               <div class="mt-14">
-                <a href="#portfolio" class="text-base font-semibold text-primary tracking-wide underline underline-offset-2 hover:decoration-2">My Projects<span class="ml-6">🡪</span></a>
+                <a href="#portfolio" class="link-section">My Projects<span class="ml-6">🡪</span></a>
               </div>
             </div>
           </div>
@@ -644,6 +659,7 @@
           </a>
           <div class="mt-6 text-center">
             <p class="text-light text-xs font-medium tracking-wider">Copyright ©️ 2022, <span class="text-secondary font-normal"> that's all folks.</span></p>
+            <p class="text-xs tracking-wider mt-1">😎 by rahulsubagio.</p>
           </div>
           <div class="text-light text-center lg:text-lg drop-shadow-lg mb-2 mt-10">
             <!-- Github icon -->
