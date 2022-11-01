@@ -1526,27 +1526,25 @@ h4 {
 /* Modal */
 
 .modal__container {
-  visibility: hidden;
-  position: absolute;
+  position: fixed;
   top: 0px;
   left: 0px;
   z-index: 150;
   display: grid;
   height: 100%;
   width: 100%;
-  align-content: flex-end;
+  align-content: center;
   overflow: hidden;
   background-color: rgb(31 41 55 / 0.8);
-  opacity: 0;
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 300ms;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .modal__content {
   position: relative;
-  --tw-translate-y: 10%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
   border-radius: 0.75rem;
   --tw-bg-opacity: 1;
   background-color: rgb(55 65 81 / var(--tw-bg-opacity));
@@ -1555,25 +1553,54 @@ h4 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
   text-align: center;
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 300ms;
+  --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+@media (min-width: 640px) {
+  .modal__content {
+    width: 50%;
+  }
+}
+
+@media (min-width: 768px) {
+  .modal__content {
+    width: 40%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .modal__content {
+    width: 30%;
+  }
+}
+
+@media (min-width: 1536px) {
+  .modal__content {
+    width: 20%;
+  }
+}
+
+.modal__checklist {
+  margin-right: 0.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(124 198 73 / var(--tw-text-opacity));
 }
 
 .modal__close {
   position: absolute;
-  right: 0px;
-  top: 0px;
+  right: -1rem;
+  top: -0.625rem;
   cursor: pointer;
   font-size: 1.5rem;
   line-height: 2rem;
   --tw-text-opacity: 1;
-  color: rgb(239 68 68 / var(--tw-text-opacity));
+  color: rgb(156 163 175 / var(--tw-text-opacity));
 }
 
 .modal__close:hover {
   --tw-text-opacity: 1;
-  color: rgb(220 38 38 / var(--tw-text-opacity));
+  color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 
 .modal__title {
@@ -1584,17 +1611,10 @@ h4 {
 
 .modal__description {
   margin-bottom: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   text-align: start;
-}
-
-.show-modal {
-  visibility: visible;
-}
-
-.show-modal .modal__content {
-  --tw-translate-y: 0px;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  opacity: 1;
 }
 
 /* ========== Services Section Start ========== */
@@ -1912,6 +1932,10 @@ h4 {
     margin-bottom: 5rem;
   }
 
+  .lg\:mb-8 {
+    margin-bottom: 2rem;
+  }
+
   .lg\:mb-3 {
     margin-bottom: 0.75rem;
   }
@@ -1922,22 +1946,6 @@ h4 {
 
   .lg\:mt-0 {
     margin-top: 0px;
-  }
-
-  .lg\:mb-20 {
-    margin-bottom: 5rem;
-  }
-
-  .lg\:mb-1 {
-    margin-bottom: 0.25rem;
-  }
-
-  .lg\:mb-10 {
-    margin-bottom: 2.5rem;
-  }
-
-  .lg\:mb-8 {
-    margin-bottom: 2rem;
   }
 
   .lg\:block {
@@ -1995,10 +2003,6 @@ h4 {
 
   .lg\:pb-20 {
     padding-bottom: 5rem;
-  }
-
-  .lg\:pb-16 {
-    padding-bottom: 4rem;
   }
 
   .lg\:text-start {

@@ -97,7 +97,7 @@
   </header>
   <!-- Header Section End -->
 
-  <main class="">
+  <main>
     <!-- Hero Section Start -->
     <section id="home" class="bg-dark">
       <div class="container">
@@ -397,7 +397,7 @@
                 </div>
                 <div class="grow mx-6 relative">
                   <h4 class="service__branch">UI/UX Designer.</h4>
-                  <button id="open-modal" class="modal__button">
+                  <button id="open-modal-uiux" class="modal__button">
                     <p class="service__modal">View More<span class="ml-3">🡪</span></p>
                   </button>
                 </div>
@@ -436,20 +436,45 @@
       </div>
     </section>
     <!-- Modal Start -->
-    <div id="modal-container" class="modal__container">
-      <div class="modal__content">
+    <div id="modal-container" class="invisible modal__container">
+      <!-- Modal Content UI/UX Designer -->
+      <div id="modal-content-uiux" class="hidden modal__content">
         <div class="relative">
-          <div class="modal__close" title="Close">
+          <div id="close-modal-uiux" class="modal__close" title="Close">
             <iconify-icon icon="akar-icons:circle-x"></iconify-icon>
           </div>
         </div>
-
         <h4 class="modal__title">UI/UX Designer</h4>
-        <p class="modal__description"><iconify-icon icon="akar-icons:circle-check" class="mr-2"></iconify-icon>I develop the user interface.</p>
-        <p class="modal__description"><iconify-icon icon="akar-icons:circle-check" class="mr-2"></iconify-icon>Web page development.</p>
-        <p class="modal__description"><iconify-icon icon="akar-icons:circle-check" class="mr-2"></iconify-icon>I create UX element interactions.</p>
-        <p class="modal__description"><iconify-icon icon="akar-icons:circle-check" class="mr-2"></iconify-icon>I position your company brand.</p>
-
+        <p class="modal__description"><iconify-icon icon="akar-icons:circle-check" class="modal__checklist"></iconify-icon>I develop the user interface.</p>
+        <p class="modal__description"><iconify-icon icon="akar-icons:circle-check" class="modal__checklist"></iconify-icon>Web page development.</p>
+        <p class="modal__description"><iconify-icon icon="akar-icons:circle-check" class="modal__checklist"></iconify-icon>I create UX element interactions.</p>
+        <p class="modal__description"><iconify-icon icon="akar-icons:circle-check" class="modal__checklist"></iconify-icon>I position your company brand.</p>
+      </div>
+      <!-- Modal Content Fullstack -->
+      <div id="modal-content-fullstack" class="hidden modal__content">
+        <div class="relative">
+          <div id="close-modal-fullstack" class="modal__close" title="Close">
+            <iconify-icon icon="akar-icons:circle-x"></iconify-icon>
+          </div>
+        </div>
+        <h4 class="modal__title">Full Stack Developer</h4>
+        <p class="modal__description"><iconify-icon icon="akar-icons:circle-check" class="modal__checklist"></iconify-icon>I develop the user interface.</p>
+        <p class="modal__description"><iconify-icon icon="akar-icons:circle-check" class="modal__checklist"></iconify-icon>Web page development.</p>
+        <p class="modal__description"><iconify-icon icon="akar-icons:circle-check" class="modal__checklist"></iconify-icon>I create UX element interactions.</p>
+        <p class="modal__description"><iconify-icon icon="akar-icons:circle-check" class="modal__checklist"></iconify-icon>I position your company brand.</p>
+      </div>
+      <!-- Modal Content Graphic Designer -->
+      <div id="modal-content-gdesign" class="hidden modal__content">
+        <div class="relative">
+          <div id="close-modal-gdesign" class="modal__close" title="Close">
+            <iconify-icon icon="akar-icons:circle-x"></iconify-icon>
+          </div>
+        </div>
+        <h4 class="modal__title">Graphic Designer</h4>
+        <p class="modal__description"><iconify-icon icon="akar-icons:circle-check" class="modal__checklist"></iconify-icon>I develop the user interface.</p>
+        <p class="modal__description"><iconify-icon icon="akar-icons:circle-check" class="modal__checklist"></iconify-icon>Web page development.</p>
+        <p class="modal__description"><iconify-icon icon="akar-icons:circle-check" class="modal__checklist"></iconify-icon>I create UX element interactions.</p>
+        <p class="modal__description"><iconify-icon icon="akar-icons:circle-check" class="modal__checklist"></iconify-icon>I position your company brand.</p>
       </div>
     </div>
     <!-- Modal End -->
@@ -580,6 +605,37 @@
         </div>
       </div>
     </section>
+    <!-- Carousel Start -->
+    <div id="carousel-container" class="carousel__container">
+      <div class="carousel__wrapper">
+        <!-- item 1 -->
+        <div class="carousel__content">
+          <img src="" alt="" class="carousel__img">
+        </div>
+        <!-- item 2 -->
+        <div class="carousel__content">
+          <img src="" alt="" class="carousel__img">
+        </div>
+        <!-- item 3 -->
+        <div class="carousel__content">
+          <img src="" alt="" class="carousel__img">
+        </div>
+      </div>
+      <!-- Slider indicator -->
+      <div class="carousel__indicator">
+        <button class="carousel__indicator-btn"></button>
+        <button class="carousel__indicator-btn"></button>
+        <button class="carousel__indicator-btn"></button>
+      </div>
+      <!-- Slider control -->
+      <button class="carousel__control-prev">
+        <span class="carousel__control-icon"></span>
+      </button>
+      <button class="carousel__control-next">
+        <span class="carousel__control-icon"></span>
+      </button>
+    </div>
+    <!-- Carousel End -->
     <!-- Portfolio Section End -->
 
     <!-- Contact Section Start -->
@@ -683,7 +739,7 @@
 
   <!-- iconify -->
   <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
-  <!-- alphine.js -->
+  <!-- alphinejs -->
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.4.0/dist/alpine.min.js" defer></script>
   <script src="dist/js/script.js"></script>
 </body>

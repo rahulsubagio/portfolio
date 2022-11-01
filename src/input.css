@@ -115,15 +115,19 @@ h4 {
 
 /* Modal */
 .modal__container {
-  @apply absolute top-0 left-0 bg-gray-800/80 w-full h-full grid content-end overflow-hidden transition-all duration-300 z-[150] invisible opacity-0;
+  @apply fixed top-0 left-0 bg-gray-800/80 w-full h-full px-4 grid content-center overflow-hidden z-[150];
 }
 
 .modal__content {
-  @apply relative bg-dark text-center px-8 py-6 rounded-xl transition-all duration-300 translate-y-[10%];
+  @apply relative bg-dark text-center px-8 py-6 rounded-xl drop-shadow-lg mx-auto w-[90%] sm:w-[50%] md:w-[40%] lg:w-[30%] 2xl:w-[20%];
+}
+
+.modal__checklist {
+  @apply mr-2 text-primary;
 }
 
 .modal__close {
-  @apply text-red-500 text-2xl cursor-pointer absolute right-0 top-0 hover:text-red-600; 
+  @apply text-secondary text-2xl cursor-pointer absolute -right-4 -top-2.5 hover:text-gray-500; 
 }
 
 .modal__title {
@@ -131,15 +135,7 @@ h4 {
 }
 
 .modal__description {
-  @apply mb-4 text-start;
-}
-
-.show-modal {
-  @apply visible;
-}
-
-.show-modal .modal__content {
-  @apply translate-y-0 opacity-100;
+  @apply mb-4 text-start truncate;
 }
 
 /* ========== Services Section Start ========== */

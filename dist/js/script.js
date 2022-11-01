@@ -78,27 +78,74 @@ function setup() {
 /* ========== About Section End ========== */
 
 /* ========== Service Section Start ========== */
-const showModal = (openButton, modalContent) => {
-  const openBtn = document.getElementById(openButton);
-  const modalContainer = document.getElementById(modalContent);
+// Modal UI/UX Designer
+const showModal = document.querySelector('#modal-container');
 
-  if (openBtn && modalContainer) {
-    openBtn.addEventListener('click', () => {
-      modalContainer.classList.add('.show-modal');
-    });
-  }
-}
+// Modal UI/UX
+const modalBtnUiux = document.querySelector('#open-modal-uiux');
+const modalContentUiux = document.querySelector('#modal-content-uiux');
 
-showModal('#open-modal', '#modal-container');
+modalBtnUiux.addEventListener('click', function () {
+  showModal.classList.toggle('invisible');
+  modalContentUiux.classList.toggle('hidden');
+  
+  const closeModalUiux = document.querySelector('#close-modal-uiux');
+  
+  closeModalUiux.addEventListener('click', function () {
+    showModal.classList.add('invisible');
+    modalContentUiux.classList.add('hidden');
+  });
 
-const closeBtn = document.querySelectorAll('.close-modal');
+  showModal.addEventListener('click', function (event) {
+    if (event.target.closest('#modal-content-uiux')) return;
+    showModal.classList.add('invisible');
+    modalContentUiux.classList.add('hidden');
+  });
+});
 
-function closeModal() {
-  const modalContainer = document.getElementById('#modal-container');
-  modalContainer.classList.remove('show-modal')
-}
+// Modal Fullstack
+const modalBtnFullstack = document.querySelector('#open-modal-fullstack');
+const modalContentFullstack = document.querySelector('#modal-content-fullstack');
 
-closeBtn.forEach(c => c.addEventListener('click', closeModal));
+modalBtnFullstack.addEventListener('click', function () {
+  showModal.classList.toggle('invisible');
+  modalContentFullstack.classList.toggle('hidden');
+  
+  const closeModalFullstack = document.querySelector('#close-modal-fullstack');
+  
+  closeModalFullstack.addEventListener('click', function () {
+    showModal.classList.add('invisible');
+    modalContentFullstack.classList.add('hidden');
+  });
+
+  showModal.addEventListener('click', function (event) {
+    if (event.target.closest('#modal-content-fullstack')) return;
+    showModal.classList.add('invisible');
+    modalContentFullstack.classList.add('hidden');
+  });
+});
+
+// Modal Graphic Design
+const modalBtnGdesign = document.querySelector('#open-modal-gdesign');
+const modalContentGdesign = document.querySelector('#modal-content-gdesign');
+
+modalBtnGdesign.addEventListener('click', function () {
+  showModal.classList.toggle('invisible');
+  modalContentGdesign.classList.toggle('hidden');
+  
+  const closeModalGdesign = document.querySelector('#close-modal-gdesign');
+  
+  closeModalGdesign.addEventListener('click', function () {
+    showModal.classList.add('invisible');
+    modalContentGdesign.classList.add('hidden');
+  });
+
+  showModal.addEventListener('click', function (event) {
+    if (event.target.closest('#modal-content-gdesign')) return;
+    showModal.classList.add('invisible');
+    modalContentGdesign.classList.add('hidden');
+  });
+});
 /* ========== Service Section End ========== */
 
 
