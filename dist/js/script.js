@@ -78,107 +78,50 @@ function setup() {
 /* ========== About Section End ========== */
 
 /* ========== Service Section Start ========== */
-// Modal UI/UX Designer
-const showModal = document.querySelector('#modal-container');
-
-// Modal UI/UX
-const modalBtnUiux = document.querySelector('#open-modal-uiux');
-const modalContentUiux = document.querySelector('#modal-content-uiux');
-
-modalBtnUiux.addEventListener('click', function () {
-  showModal.classList.toggle('invisible');
-  modalContentUiux.classList.toggle('hidden');
+let modalContentCounter = 3;
+for (let i = 1; i <= modalContentCounter; i++) {
+  const modalContainer = document.querySelector('#modal-container');
+  const openModalBtn = document.querySelector('#open-modal-'+[i]);
+  const modalContent = document.querySelector('#modal-content-'+[i]);
   
-  const closeModalUiux = document.querySelector('#close-modal-uiux');
-  
-  closeModalUiux.addEventListener('click', function () {
-    showModal.classList.add('invisible');
-    modalContentUiux.classList.add('hidden');
-  });
+  openModalBtn.addEventListener('click', function () {
+    modalContainer.classList.remove('invisible');
+    modalContent.classList.remove('hidden');
+    
+    const closeModal = document.querySelector('#close-modal-'+[i]);
 
-  showModal.addEventListener('click', function (event) {
-    if (event.target.closest('#modal-content-uiux')) return;
-    showModal.classList.add('invisible');
-    modalContentUiux.classList.add('hidden');
-  });
-});
+    closeModal.addEventListener('click', function () {
+      modalContainer.classList.add('invisible');
+      modalContent.classList.add('hidden');
+    });
 
-// Modal Fullstack
-const modalBtnFullstack = document.querySelector('#open-modal-fullstack');
-const modalContentFullstack = document.querySelector('#modal-content-fullstack');
-
-modalBtnFullstack.addEventListener('click', function () {
-  showModal.classList.toggle('invisible');
-  modalContentFullstack.classList.toggle('hidden');
-  
-  const closeModalFullstack = document.querySelector('#close-modal-fullstack');
-  
-  closeModalFullstack.addEventListener('click', function () {
-    showModal.classList.add('invisible');
-    modalContentFullstack.classList.add('hidden');
-  });
-
-  showModal.addEventListener('click', function (event) {
-    if (event.target.closest('#modal-content-fullstack')) return;
-    showModal.classList.add('invisible');
-    modalContentFullstack.classList.add('hidden');
-  });
-});
-
-// Modal Graphic Design
-const modalBtnGdesign = document.querySelector('#open-modal-gdesign');
-const modalContentGdesign = document.querySelector('#modal-content-gdesign');
-
-modalBtnGdesign.addEventListener('click', function () {
-  showModal.classList.toggle('invisible');
-  modalContentGdesign.classList.toggle('hidden');
-  
-  const closeModalGdesign = document.querySelector('#close-modal-gdesign');
-  
-  closeModalGdesign.addEventListener('click', function () {
-    showModal.classList.add('invisible');
-    modalContentGdesign.classList.add('hidden');
-  });
-
-  showModal.addEventListener('click', function (event) {
-    if (event.target.closest('#modal-content-gdesign')) return;
-    showModal.classList.add('invisible');
-    modalContentGdesign.classList.add('hidden');
-  });
-});
+    // ===== Click background to close =====
+    // modalContainer.addEventListener('click', function (event) {
+    //   if (event.target.closest('#modal-content-'+[i])) return;
+    //   modalContainer.classList.add('invisible');
+    //   modalContent.classList.add('hidden');
+    // });
+  });  
+}
 /* ========== Service Section End ========== */
 
+/* ========== Portfolio Section Start ========== */
+let carouselTrigCounter = 4;
+for (let i = 1; i <= carouselTrigCounter; i++) {
+  const carouselTrigBtn = document.querySelector('#carousel-trig-btn'+[i]);
+  const carouselContainer = document.querySelector('#carousel-container');
+  const carouselCloseBtn = document.querySelector('#carousel-close');
+  
+  const carouselContentImg = document.querySelector('#carousel-content-img'+[1]);
+  
+  carouselTrigBtn.addEventListener('click', function () {
+      carouselContainer.classList.remove('invisible');
+      carouselContentImg.classList.remove('invisible');
+  });
 
-/* ============================== Untuk testing aja ============================== 
-const tabElements = [
-  {
-    id: 'education',
-    triggerE1: document.querySelector('#trig-tab-education'),
-    targetE1: document.querySelector('#tab-education')
-  },
-  {
-    id: 'experience',
-    triggerE1: document.querySelector('#trig-tab-experience'),
-    targetE1: document.querySelector('#tab-experience')
-  },
-  {
-    id: 'awards',
-    triggerE1: document.querySelector('#trig-tab-awards'),
-    targetE1: document.querySelector('#tab-awards')
-  }
-];
-
-const options = {
-  defaultTabId: 'education',
-  activeClasses: 'text-primary',
-  inactiveClasses: 'text-light',
-  onShow: () => {
-    console.log('tab is shown');
-  }
-};
-
-const tabs = new Tabs(tabElements, options);
-
-tabs.show('education');
-tabs.getTab('experience');
-tabs.getActiveTab();*/
+  carouselCloseBtn.addEventListener('click', function () {
+    carouselContainer.classList.add('invisible');
+    carouselContentImg.classList.add('invisible');
+  });
+}
+/* ========== Portfolio Section End ========== */

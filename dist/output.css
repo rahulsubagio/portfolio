@@ -1535,9 +1535,12 @@ h4 {
   width: 100%;
   align-content: center;
   overflow: hidden;
-  background-color: rgb(31 41 55 / 0.8);
+  background-color: rgb(31 41 55 / 0.7);
   padding-left: 1rem;
   padding-right: 1rem;
+  --tw-backdrop-blur: blur(4px);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 
 .modal__content {
@@ -1743,9 +1746,113 @@ h4 {
 }
 
 .btn__box-portfolio:hover {
-  border-width: 2px;
-  --tw-border-opacity: 1;
-  border-color: rgb(124 198 73 / var(--tw-border-opacity));
+  --tw-bg-opacity: 0.9;
+}
+
+.carousel__container {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 150;
+  display: grid;
+  height: 100%;
+  width: 100%;
+  align-content: center;
+  overflow: hidden;
+  background-color: rgb(31 41 55 / 0.8);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  --tw-backdrop-blur: blur(12px);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+
+.carousel__close-btn {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity));
+}
+
+.carousel__close-btn:hover {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
+.carousel__prev-btn {
+  position: absolute;
+  left: 1rem;
+  z-index: 200;
+  cursor: pointer;
+  align-self: center;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  color: rgb(156 163 175 / 0.6);
+}
+
+.carousel__prev-btn:hover {
+  color: rgb(156 163 175 / 1);
+}
+
+.carousel__next-btn {
+  position: absolute;
+  right: 1rem;
+  z-index: 200;
+  cursor: pointer;
+  align-self: center;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  color: rgb(156 163 175 / 0.6);
+}
+
+.carousel__next-btn:hover {
+  color: rgb(156 163 175 / 1);
+}
+
+.carousel__wrapper {
+  overflow: hidden;
+}
+
+.carousel__content {
+  display: grid;
+  place-items: center;
+}
+
+.carousel__img {
+  position: absolute;
+  display: block;
+  width: 80%;
+  border-radius: 0.5rem;
+}
+
+@media (min-width: 1024px) {
+  .carousel__img {
+    width: 50%;
+  }
+}
+
+.carousel__indicator {
+  position: absolute;
+  bottom: 2.5rem;
+  right: 50%;
+  --tw-translate-x: 50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.carousel__indicator-btn {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity));
+}
+
+.carousel__indicator-btn:hover {
+  --tw-text-opacity: 1;
+  color: rgb(243 244 246 / var(--tw-text-opacity));
 }
 
 /* ========== Portfolio Section End ========== */

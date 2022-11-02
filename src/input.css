@@ -115,7 +115,7 @@ h4 {
 
 /* Modal */
 .modal__container {
-  @apply fixed top-0 left-0 bg-gray-800/80 w-full h-full px-4 grid content-center overflow-hidden z-[150];
+  @apply fixed top-0 left-0 bg-gray-800/70 backdrop-blur-sm w-full h-full px-4 grid content-center overflow-hidden z-[150];
 }
 
 .modal__content {
@@ -160,7 +160,43 @@ h4 {
 }
 
 .btn__box-portfolio {
-  @apply text-sm font-medium px-3 py-2 rounded-lg text-light bg-primary hover:border-2 hover:border-primary;
+  @apply text-sm font-medium px-3 py-2 rounded-lg text-light bg-primary hover:bg-opacity-90;
+}
+
+.carousel__container {
+  @apply fixed top-0 left-0 bg-gray-800/80 backdrop-blur-md w-full h-full px-4 grid content-center overflow-hidden z-[150];
+}
+
+.carousel__close-btn {
+  @apply text-secondary text-2xl cursor-pointer absolute right-4 top-4 hover:text-gray-500;
+}
+
+.carousel__prev-btn {
+  @apply text-secondary/60 self-center text-4xl cursor-pointer absolute z-[200] left-4 hover:text-secondary/100;
+}
+
+.carousel__next-btn {
+  @apply text-secondary/60 self-center text-4xl cursor-pointer absolute z-[200] right-4 hover:text-secondary/100;
+}
+
+.carousel__wrapper {
+  @apply overflow-hidden;
+}
+
+.carousel__content {
+  @apply grid place-items-center;
+}
+
+.carousel__img {
+  @apply block absolute rounded-lg w-[80%] lg:w-[50%];
+}
+
+.carousel__indicator {
+  @apply absolute bottom-10 right-1/2 translate-x-1/2;
+}
+
+.carousel__indicator-btn {
+  @apply text-secondary text-2xl hover:text-light;
 }
 /* ========== Portfolio Section End ========== */
 
