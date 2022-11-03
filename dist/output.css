@@ -1592,8 +1592,8 @@ h4 {
 
 .modal__close {
   position: absolute;
-  right: -1rem;
-  top: -0.625rem;
+  right: 1rem;
+  top: 0.875rem;
   cursor: pointer;
   font-size: 1.5rem;
   line-height: 2rem;
@@ -1799,6 +1799,12 @@ h4 {
   border-radius: 0.5rem;
 }
 
+@media (min-width: 768px) {
+  .carousel__img {
+    width: 60%;
+  }
+}
+
 @media (min-width: 1024px) {
   .carousel__img {
     width: 50%;
@@ -1809,6 +1815,7 @@ h4 {
   position: absolute;
   top: 2.5rem;
   right: 50%;
+  z-index: 300;
   --tw-translate-x: 50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   text-align: center;
@@ -1817,6 +1824,7 @@ h4 {
 .carousel__img-subheading {
   position: absolute;
   top: 4rem;
+  z-index: 300;
   text-align: center;
 }
 

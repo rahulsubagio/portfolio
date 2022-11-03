@@ -127,7 +127,7 @@ h4 {
 }
 
 .modal__close {
-  @apply text-secondary text-2xl cursor-pointer absolute -right-4 -top-2.5 hover:text-gray-500; 
+  @apply text-secondary text-2xl cursor-pointer absolute right-4 top-3.5 hover:text-gray-500; 
 }
 
 .modal__title {
@@ -180,15 +180,15 @@ h4 {
 }
 
 .carousel__img {
-  @apply block absolute rounded-lg w-[80%] lg:w-[50%];
+  @apply block absolute rounded-lg w-[80%] md:w-[60%] lg:w-[50%];
 }
 
 .carousel__img-heading {
-  @apply absolute top-10 text-center right-1/2 translate-x-1/2;
+  @apply absolute top-10 text-center right-1/2 translate-x-1/2 z-[300];
 }
 
 .carousel__img-subheading {
-  @apply absolute top-16 text-center;
+  @apply absolute top-16 text-center z-[300];
 }
 
 .carousel__indicator {

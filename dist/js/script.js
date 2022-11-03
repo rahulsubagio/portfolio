@@ -106,66 +106,65 @@ for (let i = 1; i <= modalContentCount; i++) {
 /* ========== Service Section End ========== */
 
 /* ========== Portfolio Section Start ========== */
-// let carouselTrigCounter = 4;
-// for (let i = 1; i <= carouselTrigCounter; i++) {
-//   const carouselTrigBtn = document.querySelector('#carousel-trig-btn'+[i]);
-//   const carouselContainer = document.querySelector('#carousel-container');
-//   const carouselCloseBtn = document.querySelector('#carousel-close');
+// Carousel
+const carouselContainer = document.getElementById('carousel-container');
+let carouselWrapperCount = carouselContainer.getElementsByClassName('carousel__wrapper').length;
+
+for (let j = 1; j <= carouselWrapperCount; j++) {
+  const carouselTrigBtn = document.getElementById('carousel-trig-btn'+[j]);
+  const carouselCloseBtn = document.getElementById('carousel-close');
+  const carouselContent = document.getElementById('carousel-content'+[j]);
+  const carouselContentCount = carouselContent.getElementsByClassName('carousel__content');
+
+  carouselCloseBtn.addEventListener('click', function () {
+    carouselContainer.classList.add('invisible');
+    carouselContent.classList.add('invisible');
+  });
+
+  carouselTrigBtn.addEventListener('click', function () {
+    carouselContainer.classList.remove('invisible');
+    carouselContent.classList.remove('invisible');
   
-//   const carouselContentImg = document.querySelector('#carousel-content-img'+[1]);
-  
-//   carouselTrigBtn.addEventListener('click', function () {
-//       carouselContainer.classList.remove('invisible');
-//       carouselContentImg.classList.remove('invisible');
-//   });
-
-//   carouselCloseBtn.addEventListener('click', function () {
-//     carouselContainer.classList.add('invisible');
-//     carouselContentImg.classList.add('invisible');
-//   });
-// }
-
-const carouselContent = document.getElementById('carousel-content');
-const carouselContentCount = document.getElementById('carousel-content').getElementsByClassName('carousel__content');
-
-let currentCarouselContentImgID = 1;
-let totalCarouselContentImg = carouselContentCount.length;
-// console.log(totalCarouselContentImg);
-
-const carouselImgNext = document.querySelector('.carousel__next-btn');
-const carouselImgPrev = document.querySelector('.carousel__prev-btn');
-
-carouselImgNext.addEventListener('click', function () {
-  if (currentCarouselContentImgID < totalCarouselContentImg) {
-    currentCarouselContentImgID++;
-    showCarouselContentImg();
-    // console.log("next");
-  }
-});
-
-carouselImgPrev.addEventListener('click', function () {
-  if (currentCarouselContentImgID > 1) {
-    currentCarouselContentImgID--;
-    showCarouselContentImg();
-    // console.log("prev");
-  }
-});
-
-function showCarouselContentImg() {
-  const contentImg = carouselContentCount;
-  const contentIndicator = document.getElementById('carousel-content').getElementsByTagName('button');
-  
-  for (let i = 0; i < totalCarouselContentImg; i++) {
-    const elementContentImg = contentImg[i];
-    const elementContentIndicator = contentIndicator[i];
-    if (currentCarouselContentImgID === i+1) {
-      elementContentImg.classList.remove('invisible');
-      elementContentIndicator.classList.add('carousel__indicator-active');
-    } else {
-      elementContentImg.classList.add('invisible');
-      elementContentIndicator.classList.remove('carousel__indicator-active');
+    let currentCarouselContentImgID = 1;
+    let totalCarouselContentImg = carouselContentCount.length;
+    // console.log(totalCarouselContentImg);
+    
+    const carouselImgNext = document.querySelector('.carousel__next-btn');
+    const carouselImgPrev = document.querySelector('.carousel__prev-btn');
+    
+    carouselImgNext.addEventListener('click', function () {
+      if (currentCarouselContentImgID < totalCarouselContentImg) {
+        currentCarouselContentImgID++;
+        showCarouselContentImg();
+        // console.log("next");
+      }
+    });
+    
+    carouselImgPrev.addEventListener('click', function () {
+      if (currentCarouselContentImgID > 1) {
+        currentCarouselContentImgID--;
+        showCarouselContentImg();
+        // console.log("prev");
+      }
+    });
+    
+    function showCarouselContentImg() {
+      const contentImg = carouselContentCount;
+      const contentIndicator = document.getElementById('carousel-content'+[j]).getElementsByTagName('button');
+      
+      for (let i = 0; i < totalCarouselContentImg; i++) {
+        const elementContentImg = contentImg[i];
+        const elementContentIndicator = contentIndicator[i];
+        if (currentCarouselContentImgID === i+1) {
+          elementContentImg.classList.remove('invisible');
+          elementContentIndicator.classList.add('carousel__indicator-active');
+        } else {
+          elementContentImg.classList.add('invisible');
+          elementContentIndicator.classList.remove('carousel__indicator-active');
+        }
+      }
     }
-  }
+  });
 }
 
 /* ========== Portfolio Section End ========== */
