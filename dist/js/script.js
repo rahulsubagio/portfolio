@@ -149,7 +149,7 @@ for (let j = 1; j <= carouselWrapperCount; j++) {
     
     function showCarouselContentImg() {
       const contentImg = carouselContentCount;
-      const contentIndicator = document.getElementById('carousel-content'+[j]).getElementsByTagName('button');
+      const contentIndicator = document.getElementById('carousel-content'+[j]).getElementsByTagName('span');
       
       for (let i = 0; i < totalCarouselContentImg; i++) {
         const elementContentImg = contentImg[i];

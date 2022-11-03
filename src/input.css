@@ -119,7 +119,7 @@ h4 {
 }
 
 .modal__content {
-  @apply relative bg-dark text-center px-8 py-6 rounded-xl drop-shadow-lg mx-auto w-[90%] sm:w-[50%] md:w-[40%] lg:w-[30%] 2xl:w-[20%];
+  @apply relative bg-dark text-center px-8 py-6 rounded-xl drop-shadow-lg mx-auto w-[90%] sm:w-[50%] lg:w-[35%] xl:w-[30%] 2xl:w-[20%];
 }
 
 .modal__checklist {
@@ -180,7 +180,7 @@ h4 {
 }
 
 .carousel__img {
-  @apply block absolute rounded-lg w-[80%] md:w-[60%] lg:w-[50%];
+  @apply block absolute rounded-lg w-[80%] lg:w-[70%] xl:w-[55%];
 }
 
 .carousel__img-heading {
@@ -196,7 +196,7 @@ h4 {
 }
 
 .carousel__indicator-btn {
-  @apply text-secondary text-2xl hover:text-light;
+  @apply text-secondary text-xl;
 }
 
 .carousel__indicator-active {
