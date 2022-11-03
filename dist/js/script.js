@@ -127,7 +127,6 @@ for (let j = 1; j <= carouselWrapperCount; j++) {
   
     let currentCarouselContentImgID = 1;
     let totalCarouselContentImg = carouselContentCount.length;
-    // console.log(totalCarouselContentImg);
     
     const carouselImgNext = document.querySelector('.carousel__next-btn');
     const carouselImgPrev = document.querySelector('.carousel__prev-btn');
@@ -166,5 +165,4 @@ for (let j = 1; j <= carouselWrapperCount; j++) {
     }
   });
 }
-
 /* ========== Portfolio Section End ========== */
