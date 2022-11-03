@@ -1783,6 +1783,68 @@ h4 {
   color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 
+.carousel__wrapper {
+  overflow: hidden;
+}
+
+.carousel__content {
+  display: grid;
+  place-items: center;
+}
+
+.carousel__img {
+  position: absolute;
+  display: block;
+  width: 80%;
+  border-radius: 0.5rem;
+}
+
+@media (min-width: 1024px) {
+  .carousel__img {
+    width: 50%;
+  }
+}
+
+.carousel__img-heading {
+  position: absolute;
+  top: 2.5rem;
+  right: 50%;
+  --tw-translate-x: 50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  text-align: center;
+}
+
+.carousel__img-subheading {
+  position: absolute;
+  top: 4rem;
+  text-align: center;
+}
+
+.carousel__indicator {
+  position: absolute;
+  bottom: 2.5rem;
+  right: 50%;
+  --tw-translate-x: 50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.carousel__indicator-btn {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity));
+}
+
+.carousel__indicator-btn:hover {
+  --tw-text-opacity: 1;
+  color: rgb(243 244 246 / var(--tw-text-opacity));
+}
+
+.carousel__indicator-active {
+  --tw-text-opacity: 1;
+  color: rgb(243 244 246 / var(--tw-text-opacity));
+}
+
 .carousel__prev-btn {
   position: absolute;
   left: 1rem;
@@ -1811,48 +1873,6 @@ h4 {
 
 .carousel__next-btn:hover {
   color: rgb(156 163 175 / 1);
-}
-
-.carousel__wrapper {
-  overflow: hidden;
-}
-
-.carousel__content {
-  display: grid;
-  place-items: center;
-}
-
-.carousel__img {
-  position: absolute;
-  display: block;
-  width: 80%;
-  border-radius: 0.5rem;
-}
-
-@media (min-width: 1024px) {
-  .carousel__img {
-    width: 50%;
-  }
-}
-
-.carousel__indicator {
-  position: absolute;
-  bottom: 2.5rem;
-  right: 50%;
-  --tw-translate-x: 50%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.carousel__indicator-btn {
-  font-size: 1.5rem;
-  line-height: 2rem;
-  --tw-text-opacity: 1;
-  color: rgb(156 163 175 / var(--tw-text-opacity));
-}
-
-.carousel__indicator-btn:hover {
-  --tw-text-opacity: 1;
-  color: rgb(243 244 246 / var(--tw-text-opacity));
 }
 
 /* ========== Portfolio Section End ========== */

@@ -171,14 +171,6 @@ h4 {
   @apply text-secondary text-2xl cursor-pointer absolute right-4 top-4 hover:text-gray-500;
 }
 
-.carousel__prev-btn {
-  @apply text-secondary/60 self-center text-4xl cursor-pointer absolute z-[200] left-4 hover:text-secondary/100;
-}
-
-.carousel__next-btn {
-  @apply text-secondary/60 self-center text-4xl cursor-pointer absolute z-[200] right-4 hover:text-secondary/100;
-}
-
 .carousel__wrapper {
   @apply overflow-hidden;
 }
@@ -191,12 +183,32 @@ h4 {
   @apply block absolute rounded-lg w-[80%] lg:w-[50%];
 }
 
+.carousel__img-heading {
+  @apply absolute top-10 text-center right-1/2 translate-x-1/2;
+}
+
+.carousel__img-subheading {
+  @apply absolute top-16 text-center;
+}
+
 .carousel__indicator {
   @apply absolute bottom-10 right-1/2 translate-x-1/2;
 }
 
 .carousel__indicator-btn {
   @apply text-secondary text-2xl hover:text-light;
+}
+
+.carousel__indicator-active {
+  @apply text-light;
+}
+
+.carousel__prev-btn {
+  @apply text-secondary/60 self-center text-4xl cursor-pointer absolute z-[200] left-4 hover:text-secondary/100;
+}
+
+.carousel__next-btn {
+  @apply text-secondary/60 self-center text-4xl cursor-pointer absolute z-[200] right-4 hover:text-secondary/100;
 }
 /* ========== Portfolio Section End ========== */
 

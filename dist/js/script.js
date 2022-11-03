@@ -78,17 +78,17 @@ function setup() {
 /* ========== About Section End ========== */
 
 /* ========== Service Section Start ========== */
-let modalContentCounter = 3;
-for (let i = 1; i <= modalContentCounter; i++) {
-  const modalContainer = document.querySelector('#modal-container');
-  const openModalBtn = document.querySelector('#open-modal-'+[i]);
-  const modalContent = document.querySelector('#modal-content-'+[i]);
+let modalContentCount = document.getElementById('modal-container').childElementCount;
+for (let i = 1; i <= modalContentCount; i++) {
+  const modalContainer = document.getElementById('modal-container');
+  const openModalBtn = document.getElementById('open-modal-'+[i]);
+  const modalContent = document.getElementById('modal-content-'+[i]);
   
   openModalBtn.addEventListener('click', function () {
     modalContainer.classList.remove('invisible');
     modalContent.classList.remove('hidden');
     
-    const closeModal = document.querySelector('#close-modal-'+[i]);
+    const closeModal = document.getElementById('close-modal-'+[i]);
 
     closeModal.addEventListener('click', function () {
       modalContainer.classList.add('invisible');
@@ -106,22 +106,66 @@ for (let i = 1; i <= modalContentCounter; i++) {
 /* ========== Service Section End ========== */
 
 /* ========== Portfolio Section Start ========== */
-let carouselTrigCounter = 4;
-for (let i = 1; i <= carouselTrigCounter; i++) {
-  const carouselTrigBtn = document.querySelector('#carousel-trig-btn'+[i]);
-  const carouselContainer = document.querySelector('#carousel-container');
-  const carouselCloseBtn = document.querySelector('#carousel-close');
+// let carouselTrigCounter = 4;
+// for (let i = 1; i <= carouselTrigCounter; i++) {
+//   const carouselTrigBtn = document.querySelector('#carousel-trig-btn'+[i]);
+//   const carouselContainer = document.querySelector('#carousel-container');
+//   const carouselCloseBtn = document.querySelector('#carousel-close');
   
-  const carouselContentImg = document.querySelector('#carousel-content-img'+[1]);
+//   const carouselContentImg = document.querySelector('#carousel-content-img'+[1]);
   
-  carouselTrigBtn.addEventListener('click', function () {
-      carouselContainer.classList.remove('invisible');
-      carouselContentImg.classList.remove('invisible');
-  });
+//   carouselTrigBtn.addEventListener('click', function () {
+//       carouselContainer.classList.remove('invisible');
+//       carouselContentImg.classList.remove('invisible');
+//   });
 
-  carouselCloseBtn.addEventListener('click', function () {
-    carouselContainer.classList.add('invisible');
-    carouselContentImg.classList.add('invisible');
-  });
+//   carouselCloseBtn.addEventListener('click', function () {
+//     carouselContainer.classList.add('invisible');
+//     carouselContentImg.classList.add('invisible');
+//   });
+// }
+
+const carouselContent = document.getElementById('carousel-content');
+const carouselContentCount = document.getElementById('carousel-content').getElementsByClassName('carousel__content');
+
+let currentCarouselContentImgID = 1;
+let totalCarouselContentImg = carouselContentCount.length;
+// console.log(totalCarouselContentImg);
+
+const carouselImgNext = document.querySelector('.carousel__next-btn');
+const carouselImgPrev = document.querySelector('.carousel__prev-btn');
+
+carouselImgNext.addEventListener('click', function () {
+  if (currentCarouselContentImgID < totalCarouselContentImg) {
+    currentCarouselContentImgID++;
+    showCarouselContentImg();
+    // console.log("next");
+  }
+});
+
+carouselImgPrev.addEventListener('click', function () {
+  if (currentCarouselContentImgID > 1) {
+    currentCarouselContentImgID--;
+    showCarouselContentImg();
+    // console.log("prev");
+  }
+});
+
+function showCarouselContentImg() {
+  const contentImg = carouselContentCount;
+  const contentIndicator = document.getElementById('carousel-content').getElementsByTagName('button');
+  
+  for (let i = 0; i < totalCarouselContentImg; i++) {
+    const elementContentImg = contentImg[i];
+    const elementContentIndicator = contentIndicator[i];
+    if (currentCarouselContentImgID === i+1) {
+      elementContentImg.classList.remove('invisible');
+      elementContentIndicator.classList.add('carousel__indicator-active');
+    } else {
+      elementContentImg.classList.add('invisible');
+      elementContentIndicator.classList.remove('carousel__indicator-active');
+    }
+  }
 }
+
 /* ========== Portfolio Section End ========== */
