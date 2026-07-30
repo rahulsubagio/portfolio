@@ -1,1150 +1,1542 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Rahul Subagio portfolio">
+  <meta name="description"
+    content="Rahul Subagio - IoT Engineer & Fullstack Web Developer based in Indonesia. Building intelligent connected systems and modern web solutions.">
+  <meta name="keywords" content="IoT Engineer, Fullstack Developer, Web Developer, Arduino, React, Laravel, Indonesia">
+  <meta name="author" content="Rahul Subagio">
   <title>Rahul Subagio</title>
-  <!-- shortcut icon -->
+
+  <!-- Favicon -->
   <link rel="shortcut icon" href="assets/logo-rs-kecil.png">
-  <!-- Sal.js -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sal.js/dist/sal.css">
-  <!-- output css tailwind -->
-  <link href="dist/output.css" rel="stylesheet">
-  <!-- google font -->
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <!-- BackToTop btn Start -->
-  <div id="backtop" class="fixed z-50 flex transition-all duration-300 ease-in-out rounded-md back-btn bottom-20 right-4 sm:right-8 md:right-12 lg:right-16 bg-dark">
-    <a href="#" class="m-auto text-base text-light rounded-md bg-primary hover:bg-opacity-60 px-3.5 pt-3 pb-2"><iconify-icon icon="bxs:up-arrow"></iconify-icon></a>
-  </div>
-  <!-- BackToTop btn End -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
 
-  <!-- Header Section Start -->
-  <header class="absolute top-0 left-0 z-10 flex items-center w-full">
-    <div class="container">
-      <div class="relative items-center justify-between section-page">
-        <div class="px-4">
-          <a href="#home" id="logoRS" class="transition-all duration-300 ease-in-out brand-logo">
-            <img src="assets/LOGO-RS-PRODUCTION-putih.png" alt="logo rs" data-sal="zoom-in" data-sal-duration="600">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            primary: { DEFAULT: '#6366f1', light: '#818cf8', dark: '#4f46e5' },
+            accent: { DEFAULT: '#06b6d4', light: '#22d3ee', dark: '#0891b2' },
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-20px)' },
+            },
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Iconify -->
+  <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0f0f1a;
+      color: #a0aec0;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #0f0f1a;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #6366f1;
+      border-radius: 10px;
+    }
+
+    .glass {
+      background: rgba(22, 22, 39, 0.7);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(99, 102, 241, 0.15);
+    }
+
+    .glass-nav {
+      background: rgba(15, 15, 26, 0.85);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-bottom: 1px solid rgba(99, 102, 241, 0.1);
+    }
+
+    .hero-bg {
+      background-color: #0f0f1a;
+      background-image: linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+      background-size: 50px 50px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #6366f1 0%, #06b6d4 50%, #818cf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+    }
+
+    .orb-purple {
+      background: rgba(99, 102, 241, 0.15);
+    }
+
+    .orb-cyan {
+      background: rgba(6, 182, 212, 0.1);
+    }
+
+    .nav-link {
+      position: relative;
+      color: #94a3b8;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      transition: color 0.3s;
+      padding: 0.5rem 0;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #6366f1, #06b6d4);
+      transition: width 0.3s ease;
+      border-radius: 2px;
+    }
+
+    .nav-link:hover {
+      color: #ffffff;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-link.active {
+      color: #6366f1;
+    }
+
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.75rem;
+      background: linear-gradient(135deg, #6366f1, #4f46e5);
+      color: white;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(99, 102, 241, 0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.75rem;
+      background: transparent;
+      color: #6366f1;
+      border: 1px solid rgba(99, 102, 241, 0.5);
+      border-radius: 0.5rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+
+    .btn-outline:hover {
+      background: rgba(99, 102, 241, 0.1);
+      border-color: #6366f1;
+      transform: translateY(-2px);
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: #6366f1;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-label::before {
+      content: '';
+      width: 2rem;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #6366f1);
+    }
+
+    .service-card {
+      background: rgba(22, 22, 39, 0.8);
+      border: 1px solid rgba(99, 102, 241, 0.1);
+      border-radius: 1rem;
+      padding: 2rem;
+      transition: all 0.4s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #6366f1, transparent);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+
+    .service-card:hover {
+      border-color: rgba(99, 102, 241, 0.4);
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(99, 102, 241, 0.2);
+    }
+
+    .service-card:hover::before {
+      opacity: 1;
+    }
+
+    .skill-card {
+      background: rgba(22, 22, 39, 0.6);
+      border: 1px solid rgba(99, 102, 241, 0.08);
+      border-radius: 0.75rem;
+      padding: 1rem;
+      text-align: center;
+      transition: all 0.3s;
+      cursor: default;
+      display: block;
+    }
+
+    .skill-card:hover {
+      border-color: rgba(99, 102, 241, 0.4);
+      transform: translateY(-4px);
+      background: rgba(99, 102, 241, 0.08);
+    }
+
+    .skill-card img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      margin: 0 auto 0.5rem;
+    }
+
+    .skill-card span {
+      font-size: 0.7rem;
+      color: #94a3b8;
+      font-weight: 500;
+      display: block;
+    }
+
+    .project-card {
+      background: rgba(22, 22, 39, 0.8);
+      border: 1px solid rgba(99, 102, 241, 0.08);
+      border-radius: 1rem;
+      overflow: hidden;
+      transition: all 0.4s;
+      cursor: pointer;
+    }
+
+    .project-card:hover {
+      border-color: rgba(99, 102, 241, 0.3);
+      transform: translateY(-6px);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+    }
+
+    .project-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+
+    .project-card:hover .project-img {
+      transform: scale(1.05);
+    }
+
+    .project-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(to bottom, transparent 30%, rgba(15, 15, 26, 0.9));
+      pointer-events: none;
+    }
+
+    .project-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+    }
+
+    .badge-iot {
+      background: rgba(6, 182, 212, 0.15);
+      color: #22d3ee;
+      border: 1px solid rgba(6, 182, 212, 0.2);
+    }
+
+    .badge-web {
+      background: rgba(99, 102, 241, 0.15);
+      color: #818cf8;
+      border: 1px solid rgba(99, 102, 241, 0.2);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 2rem;
+      padding-bottom: 2rem;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 0.425rem;
+      top: 1.5rem;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, rgba(99, 102, 241, 0.4), transparent);
+    }
+
+    .timeline-item:last-child::before {
+      display: none;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 0;
+      top: 0.35rem;
+      width: 0.875rem;
+      height: 0.875rem;
+      border-radius: 50%;
+      background: #6366f1;
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+    }
+
+    .stat-card {
+      background: rgba(22, 22, 39, 0.6);
+      border: 1px solid rgba(99, 102, 241, 0.1);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: 0.5rem;
+      background: rgba(22, 22, 39, 0.8);
+      border: 1px solid rgba(99, 102, 241, 0.15);
+      color: #94a3b8;
+      font-size: 1.25rem;
+      transition: all 0.3s;
+    }
+
+    .social-link:hover {
+      background: rgba(99, 102, 241, 0.15);
+      border-color: rgba(99, 102, 241, 0.5);
+      color: #6366f1;
+      transform: translateY(-3px);
+    }
+
+    .form-input {
+      width: 100%;
+      background: rgba(22, 22, 39, 0.8);
+      border: 1px solid rgba(99, 102, 241, 0.15);
+      border-radius: 0.5rem;
+      padding: 0.75rem 1rem;
+      color: #e2e8f0;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+      outline: none;
+    }
+
+    .form-input::placeholder {
+      color: #475569;
+    }
+
+    .form-input:focus {
+      border-color: rgba(99, 102, 241, 0.6);
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    }
+
+    #mobile-menu {
+      display: none;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    #mobile-menu.open {
+      display: flex;
+    }
+
+    .mobile-nav-link {
+      padding: 1rem 1.5rem;
+      color: #94a3b8;
+      font-size: 1rem;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(99, 102, 241, 0.05);
+      transition: all 0.3s;
+    }
+
+    .mobile-nav-link:hover {
+      color: #6366f1;
+      background: rgba(99, 102, 241, 0.05);
+      padding-left: 2rem;
+    }
+
+    .hamburger-line {
+      width: 24px;
+      height: 2px;
+      background: #94a3b8;
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    #hamburger.active .hamburger-line:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    #hamburger.active .hamburger-line:nth-child(2) {
+      opacity: 0;
+    }
+
+    #hamburger.active .hamburger-line:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(30px);
+      transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .typing-cursor {
+      display: inline-block;
+      width: 3px;
+      height: 1em;
+      background: #6366f1;
+      margin-left: 2px;
+      vertical-align: text-bottom;
+      animation: blink 1s step-end infinite;
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+      }
+    }
+
+    #back-to-top {
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s;
+    }
+
+    #back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .modal-overlay.open {
+      display: flex;
+    }
+
+    .modal-box {
+      background: #161627;
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      border-radius: 1rem;
+      max-width: 600px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 2rem;
+    }
+
+    .carousel-wrapper {
+      position: relative;
+      overflow: hidden;
+      border-radius: 0.75rem;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 2.5rem;
+      height: 2.5rem;
+      background: rgba(22, 22, 39, 0.8);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      border-radius: 50%;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s;
+      z-index: 10;
+    }
+
+    .carousel-btn:hover {
+      background: #6366f1;
+    }
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .carousel-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(99, 102, 241, 0.3);
+      transition: all 0.3s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .carousel-dot.active {
+      background: #6366f1;
+      width: 20px;
+      border-radius: 3px;
+    }
+
+    .tab-btn {
+      padding: 0.5rem 1.25rem;
+      border-radius: 0.5rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #64748b;
+      transition: all 0.3s;
+      cursor: pointer;
+      border: 1px solid transparent;
+      background: transparent;
+    }
+
+    .tab-btn.active {
+      background: rgba(99, 102, 241, 0.15);
+      border-color: rgba(99, 102, 241, 0.3);
+      color: #818cf8;
+    }
+
+    .tab-btn:hover:not(.active) {
+      color: #94a3b8;
+      background: rgba(99, 102, 241, 0.05);
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .float-anim {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .float-anim-delay {
+      animation: float 6s ease-in-out 1s infinite;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 0.2rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      background: rgba(99, 102, 241, 0.1);
+      color: #818cf8;
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      font-family: 'JetBrains Mono', monospace;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Back To Top -->
+  <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})"
+    class="fixed bottom-8 right-6 z-50 w-11 h-11 rounded-full bg-indigo-600 flex items-center justify-center text-white shadow-lg hover:bg-indigo-700 transition-all duration-300">
+    <iconify-icon icon="lucide:arrow-up" class="text-lg"></iconify-icon>
+  </button>
+
+  <!-- NAVBAR -->
+  <header id="navbar" class="fixed top-0 left-0 w-full z-40 transition-all duration-300">
+    <div class="glass-nav">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="flex items-center justify-between h-16">
+          <a href="#home" class="flex items-center gap-2">
+            <img src="assets/logo-rs-kecil.png" alt="RS Logo" class="w-7 h-7 object-contain">
+            <span class="font-bold text-white text-sm tracking-wide"
+              style="font-family:'Space Grotesk',sans-serif">Rahul<span style="color:#6366f1">.</span></span>
           </a>
+          <nav class="hidden lg:flex items-center gap-8">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#contact" class="nav-link">Contact</a>
+          </nav>
+          <div class="flex items-center gap-4">
+            <a href="assets/cv/CV-Rahul Bin Subagio-Nov-2024.pdf" download
+              class="hidden sm:inline-flex btn-outline text-sm py-2 px-4">
+              <iconify-icon icon="lucide:download" class="text-sm"></iconify-icon>Resume
+            </a>
+            <button id="hamburger" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Menu">
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+            </button>
+          </div>
         </div>
-        <!-- Nav-lg Start -->
-        <nav class="hidden lg:block">
-          <ul class="flex px-4 transition-all duration-300 ease-in-out">
-            <li class="nav-item-lg">
-              <a href="#home" class="hover:text-light">Home</a>
-              <div id="nav-underline" class="hidden"></div>
-            </li>
-            <li class="nav-item-lg">
-              <a href="#about" class="hover:text-light">About</a>
-              <div id="nav-underline" class="hidden"></div>
-            </li>
-            <li class="nav-item-lg">
-              <a href="#services" class="hover:text-light">Services</a>
-              <div id="nav-underline" class="hidden"></div>
-            </li>
-            <li class="nav-item-lg">
-              <a href="#skills" class="hover:text-light">Skills</a>
-              <div id="nav-underline" class="hidden"></div>
-            </li>
-            <li class="nav-item-lg">
-              <a href="#project" class="hover:text-light">Project</a>
-              <div id="nav-underline" class="hidden"></div>
-            </li>
-            <li class="nav-item-lg">
-              <a href="#contact" class="hover:text-light">Contact</a>
-              <div id="nav-underline" class="hidden"></div>
-            </li>
-          </ul>
-        </nav>
-        <!-- Nav-lg End -->
-        <div class="flex items-center px-4 lg:hidden">
-          <button id="humberger" type="button" class="block px-2 py-1 transition-all duration-200 ease-in-out border-2 border-transparent rounded-lg hover:border-secondary hover:bg-secondary hover:bg-opacity-30">
-            <span class="humberger-line"></span>
-            <span class="humberger-line"></span>
-            <span class="humberger-line"></span>
-          </button>
+      </div>
+      <div id="mobile-menu" class="lg:hidden border-t border-indigo-500/10">
+        <a href="#home" class="mobile-nav-link block">Home</a>
+        <a href="#about" class="mobile-nav-link block">About</a>
+        <a href="#services" class="mobile-nav-link block">Services</a>
+        <a href="#skills" class="mobile-nav-link block">Skills</a>
+        <a href="#projects" class="mobile-nav-link block">Projects</a>
+        <a href="#contact" class="mobile-nav-link block">Contact</a>
+        <div class="px-4 py-3">
+          <a href="assets/cv/CV-Rahul Bin Subagio-Nov-2024.pdf" download
+            class="btn-primary w-full justify-center text-sm">
+            <iconify-icon icon="lucide:download"></iconify-icon>Download Resume
+          </a>
         </div>
       </div>
     </div>
-    <!-- Nav-sm Start -->
-    <nav id="nav-menu" class="absolute hidden w-full py-5 translate-x-1/2 shadow-lg top-full right-1/2 bg-dark/90 lg:hidden">
-      <ul class="block px-8 sm:px-14">
-        <li id="nav-item-1" class="nav-item">
-          <a href="#home"><h4>Home</h4></a>
-        </li>
-        <li id="nav-item-2" class="nav-item">
-          <a href="#about"><h4>About</h4></a>
-        </li>
-        <li id="nav-item-4" class="nav-item">
-          <a href="#services"><h4>Services</h4></a>
-        </li>
-        <li id="nav-item-3" class="nav-item">
-          <a href="#skills"><h4>Skills</h4></a>
-        </li>
-        <li id="nav-item-5" class="nav-item">
-          <a href="#project"><h4>Project</h4></a>
-        </li>
-        <li id="nav-item-6" class="nav-item">
-          <a href="#contact"><h4>Contact</h4></a>
-        </li>
-      </ul>
-    </nav>
-    <!-- Nav-sm End -->
   </header>
-  <!-- Header Section End -->
 
   <main>
-    <!-- Hero Section Start -->
-    <section id="home" class="bg-dark">
-      <div class="container">
-        <div class="section-page content-center h-[100vh] lg:content-end 2xl:content-center 2xl:pt-36">
-
-          <div class="w-full px-4 lg:w-2/3">
-            <div class="relative">
-              <img src="assets/Rahul_Bin_Subagio-123180033-removebg-preview.png" alt="Rahul Subagio" class="max-w-full mx-auto drop-shadow-2xl" data-sal="slide-right" data-sal-duration="800">
-              <div class="absolute bottom-0">
-                <h1 class="text-5xl font-semibold text-light drop-shadow-xl md:text-7xl rahul"></h1>
-                <h1 class="text-5xl font-semibold text-light drop-shadow-xl md:text-7xl subagio"></h1>
-                <div class="box-content w-10 h-2 mt-6 bg-primary md:w-14"></div>
-                <!-- icon start-->
-                <div class="flex mt-8 mb-2 text-light lg:text-lg drop-shadow-lg lg:my-20">
-                  <!-- Github icon -->
-                  <a href="https://github.com/rahulsubagio" target="_blank" class="icon-sosmed">
-                    <iconify-icon icon="akar-icons:github-fill"></iconify-icon>
-                  </a>
-                  <!-- Linkedin icon -->
-                  <a href="https://www.linkedin.com/in/rahulsubagio/" target="_blank" class="mx-5 icon-sosmed">
-                    <iconify-icon icon="akar-icons:linkedin-fill"></iconify-icon>
-                  </a>
-                  <!-- Instagram icon -->
-                  <a href="https://www.instagram.com/rahulsubagio" target="_blank" class="icon-sosmed">
-                    <iconify-icon icon="akar-icons:instagram-fill"></iconify-icon>
-                  </a>
-                  <!-- Youtube icon -->
-                  <a href="https://www.youtube.com/@rahulsubagio" target="_blank" class="mx-5 icon-sosmed">
-                    <iconify-icon icon="akar-icons:youtube-fill"></iconify-icon></iconify-icon>
-                  </a> 
-                  <!-- Tiktok icon -->
-                  <a href="https://www.tiktok.com/@rahulsubagio" target="_blank" class=" icon-sosmed">
-                    <iconify-icon icon="akar-icons:tiktok-fill"></iconify-icon></iconify-icon></iconify-icon>
-                  </a> 
-                </div>
-                <!-- icon end -->
-              </div>
-            </div>
-          </div>
-
-          <div class="w-full px-4 lg:w-1/3">
-            <div class="pt-8 lg:pt-36">
-              <p class="headline">-- Introduction</p>
-              <div data-sal="slide-up" data-sal-duration="800">
-                <h1 class="max-w-md text-xl font-medium text-light md:text-2xl 2xl:text-3xl">Full Stack Web and IoT Developer, based in Indonesia.</h1>
-                <p class="max-w-xl text-base text-justify my-7">I'm a Full Stack Web Developer and Internet of Things Developer. I have a passion for building and developing websites and innovative IoT solutions.</p>
-              </div>
-              <div data-sal="slide-right" data-sal-duration="800" data-sal-delay="600">
-                <a href="#about" class="link-section">My Journey<span class="ml-6">➜</span></a>
-              </div>
-            </div>
-          </div>
-            
-        </div>
+    <!-- HERO -->
+    <section id="home" class="hero-bg relative min-h-screen flex items-center overflow-hidden">
+      <div class="orb orb-purple w-96 h-96 top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 float-anim"></div>
+      <div class="orb orb-cyan w-72 h-72 bottom-1/4 right-1/4 float-anim-delay"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0f0f1a] pointer-events-none">
       </div>
-    </section>
-    <!-- Hero Section End -->
 
-    <!-- About Section Start -->
-    <section id="about" class="py-10 bg-gray-800 lg:py-28">
-      <div class="container">
-        <div class="flex-row-reverse section-page">
-          <!-- About Me Start-->
-          <div class="self-end w-full px-4 mb-8 lg:w-1/2">
-            <p class="headline lg:hidden">-- About</p>
-            <div class="relative" data-sal="slide-left" data-sal-duration="800">
-              <img src="assets/img1.jpg" alt="Rahul Subagio" class="max-w-full rounded-lg">
+      <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-24 w-full">
+        <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+          <!-- Text -->
+          <div class="flex-1 text-center lg:text-left order-2 lg:order-1">
+            <div class="section-label mb-4 justify-center lg:justify-start">
+              <iconify-icon icon="lucide:terminal" class="text-xs"></iconify-icon>Hello, World!
             </div>
-          </div>
-          <div class="self-end w-full px-4 lg:mb-8 lg:w-1/2 lg:pr-10">
-            <p class="hidden headline lg:block">-- About</p>
-            <div data-sal="slide-right" data-sal-duration="800">
-              <p class="text-base text-justify">Hello everyone 👋, My name is Rahul Subagio, but you can call me Rahul. I'm a Full Stack Web Developer and Internet of Things Developer with a passion for crafting user-friendly websites and designing innovative IoT solutions for agriculture etc. Feel free to explore my portfolio to see some of my recent projects!</p>
-            </div>
-            <div class="my-16 text-center lg:mt-18 lg:mb-3 lg:text-start" data-sal="flip-right" data-sal-duration="800" data-sal-delay="500">
-              <a href="assets/cv/CV-Rahul Bin Subagio-Nov-2024.pdf" class="CVButton" download><iconify-icon icon="fa-solid:download" class="mr-2"></iconify-icon>Download CV</a>
-            </div>
-          </div>
-          <!-- About Me end -->
-
-          <!-- Journey Tabs Start -->
-          <div class="self-center w-full px-4 lg:mt-16" data-sal="slide-up" data-sal-duration="800"> 
-            <h1 class="text-2xl font-medium text-center text-light">My Journey</h1>
-            <div class="items-center justify-center w-full mt-4">
-              <!--actual component start-->
-              <div x-data="setup()">
-                <ul class="flex items-center justify-center my-4">
-                  <template x-for="(tab, index) in tabs" :key="index">
-                    <li class="px-2 py-2 mx-1 text-base font-semibold transition duration-200 ease-in-out cursor-pointer text-light hover:text-primary" :class="activeTab===index ? 'shadow text-primary border-b-2 border-primary' : ''" @click="activeTab = index" x-text="tab"></li>
-                  </template>
-                </ul>
-                
-                <div class="max-w-full mx-auto mt-8">
-                  <!-- content education start -->
-                  <div x-show="activeTab===0">
-                    <!-- SD -->
-                    <div class="flex">
-                      <div class="flex-1"></div>
-                      <div class="flex-none mx-5 mt-2">
-                        <div class="dot-timeline"></div>
-                        <div class="line-timeline"></div>
-                      </div>
-                      <div class="flex-1 text-start">
-                        <h4>SK Ladang Sandak</h4>
-                        <p><iconify-icon icon="akar-icons:calendar"></iconify-icon> 2006 - 2012</p>
-                      </div>
-                    </div>
-                    <!-- SMP 1 -->
-                    <div class="flex">
-                      <div class="flex-1 text-end">
-                        <h4>Secondary School As-Salam</h4>
-                        <p><iconify-icon icon="akar-icons:calendar"></iconify-icon> 2012 - 2013</p>
-                      </div>
-                      <div class="flex-none mx-5 mt-2">
-                        <div class="dot-timeline"></div>
-                        <div class="line-timeline"></div>
-                      </div>
-                      <div class="flex-1"></div>
-                    </div>
-                    <!-- SMP 2 -->
-                    <div class="flex">
-                      <div class="flex-1"></div>
-                      <div class="flex-none mx-5 mt-2">
-                        <div class="dot-timeline"></div>
-                        <div class="line-timeline"></div>
-                      </div>
-                      <div class="flex-1 text-start">
-                        <h4>SMP Negeri 1 Watang Pulu</h4>
-                        <p><iconify-icon icon="akar-icons:calendar"></iconify-icon> 2013 - 2015</p>
-                      </div>
-                    </div>
-                    <!-- SMA -->
-                    <div class="flex">
-                      <div class="flex-1 text-end">
-                        <h4>SMA Negeri 2 Sidrap</h4>
-                        <p>Jurusan IPA</p>
-                        <p><iconify-icon icon="akar-icons:calendar"></iconify-icon> 2015 - 2018</p>
-                      </div>
-                      <div class="flex-none mx-5 mt-2">
-                        <div class="dot-timeline"></div>
-                        <div class="line-timeline"></div>
-                      </div>
-                      <div class="flex-1"></div>
-                    </div>
-                    <!-- University -->
-                    <div class="flex">
-                      <div class="flex-1"></div>
-                      <div class="flex-none mx-5 mt-2">
-                        <div class="dot-timeline"></div>
-                      </div>
-                      <div class="flex-1 text-start">
-                        <h4>UPN "Veteran" Yogyakarta</h4>
-                        <p>Informatika</p>
-                        <p><iconify-icon icon="akar-icons:calendar"></iconify-icon> 2018 - now</p>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- content education end -->
-                  <!-- content experience start -->
-                  <div x-show="activeTab===1">
-                    <!-- HIMATIF -->
-                    <div class="flex">
-                      <div class="flex-1 text-end"></div>
-                      <div class="flex-none mx-5 mt-2">
-                        <div class="dot-timeline"></div>
-                        <div class="line-timeline"></div>
-                      </div>
-                      <div class="flex-1 text-start">
-                        <h4>Himpunan Mahasiswa Teknik Informatika (HIMATIF UPNYK)</h4>
-                        <P>Member of Enterpreneuship</P>
-                        <p><iconify-icon icon="akar-icons:calendar"></iconify-icon> 2018 - 2019</p>
-                      </div>
-                    </div>
-                    <!-- ITC 1 -->
-                    <div class="flex">
-                      <div class="flex-1 text-end">
-                        <h4>Information Technology Club (ITC UPNYK)</h4>
-                        <P>Member of Web Development</P>
-                        <p><iconify-icon icon="akar-icons:calendar"></iconify-icon> 2018 - 2019</p>
-                      </div>
-                      <div class="flex-none mx-5 mt-2">
-                        <div class="dot-timeline"></div>
-                        <div class="line-timeline"></div>
-                      </div>
-                      <div class="flex-1 text-end"></div>
-                    </div>
-                    <!-- ITC 2 -->
-                    <div class="flex">
-                      <div class="flex-1 text-end"></div>
-                      <div class="flex-none mx-5 mt-2">
-                        <div class="dot-timeline"></div>
-                        <div class="line-timeline"></div>
-                      </div>
-                      <div class="flex-1 text-start">
-                        <h4>Information Technology Club (ITC UPNYK)</h4>
-                        <P>Vice Chairman</P>
-                        <p><iconify-icon icon="akar-icons:calendar"></iconify-icon> 2019 - 2021</p>
-                      </div>
-                    </div>
-                    <!-- Robot 1 -->
-                    <div class="flex">
-                      <div class="flex-1 text-end">
-                        <h4>Robotics UPN "Veteran" Yogyakarta (RUVY)</h4>
-                        <P>Member of Wheel Division</P>
-                        <p><iconify-icon icon="akar-icons:calendar"></iconify-icon> 2020 - 2021</p>
-                      </div>
-                      <div class="flex-none mx-5 mt-2">
-                        <div class="dot-timeline"></div>
-                        <div class="line-timeline"></div>
-                      </div>
-                      <div class="flex-1 text-end"></div>
-                    </div>
-                    <!-- Robot 2 -->
-                    <div class="flex">
-                      <div class="flex-1 text-end"></div>
-                      <div class="flex-none mx-5 mt-2">
-                        <div class="dot-timeline"></div>
-                      </div>
-                      <div class="flex-1 text-start">
-                        <h4>Robotics UPN "Veteran" Yogyakarta (RUVY)</h4>
-                        <P>Wheel Division Head</P>
-                        <p><iconify-icon icon="akar-icons:calendar"></iconify-icon> 2021 - 2022</p>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- content experience end -->
-                  <!-- content awards start -->
-                  <div x-show="activeTab===2">
-                    <!-- CP Find IT -->
-                    <div class="flex">
-                      <div class="flex-1 text-end"></div>
-                      <div class="flex-none mx-5 mt-2">
-                        <div class="dot-timeline"></div>
-                        <div class="line-timeline"></div>
-                      </div>
-                      <div class="flex-1 text-start">
-                        <h4>Participants Senior Competitive Programming</h4>
-                        <P>Issued by FIND IT 2019</P>
-                        <p><iconify-icon icon="akar-icons:calendar"></iconify-icon> Apr 2019</p>
-                      </div>
-                    </div>
-                    <!-- CP FKBMIK -->
-                    <div class="flex">
-                      <div class="flex-1 text-end">
-                        <h4>3rd Winner in Programming Competition</h4>
-                        <P>Issued by FKBMIK</P>
-                        <p><iconify-icon icon="akar-icons:calendar"></iconify-icon> Sep 2019</p>
-                      </div>
-                      <div class="flex-none mx-5 mt-2">
-                        <div class="dot-timeline"></div>
-                        <div class="line-timeline"></div>
-                      </div>
-                      <div class="flex-1 text-end"></div>
-                    </div>
-                    <!-- ISIF -->
-                    <div class="flex">
-                      <div class="flex-1 text-end"></div>
-                      <div class="flex-none mx-5 mt-2">
-                        <div class="dot-timeline"></div>
-                        <div class="line-timeline"></div>
-                      </div>
-                      <div class="flex-1 text-start">
-                        <h4>Bronze Medal at International Science and Invention Fair 2021</h4>
-                        <P>Issued by International Science and Invention Fair (ISIF 2021)</P>
-                        <p><iconify-icon icon="akar-icons:calendar"></iconify-icon> Nov 2021</p>
-                      </div>
-                    </div>
-                    <!-- CP FKBMIK -->
-                    <div class="flex">
-                      <div class="flex-1 text-end">
-                        <h4>3rd Winner in Micromouse Competition</h4>
-                        <P>Issued by PORSIMNAS UPN Veteran</P>
-                        <p><iconify-icon icon="akar-icons:calendar"></iconify-icon> Jul 2022</p>
-                      </div>
-                      <div class="flex-none mx-5 mt-2">
-                        <div class="dot-timeline"></div>
-                      </div>
-                      <div class="flex-1 text-end"></div>
-                    </div>
-
-                  </div>
-                  <!-- content awards end -->
-                </div>
-              </div>
-              <!--actual component end-->
-            </div>  
-          </div>
-          <!-- Journey Tabs End -->
-
-        </div>
-      </div>
-    </section>
-    <!-- About Section End -->
-
-    <!-- Services Section Start -->
-    <section id="services" class="pt-10 pb-5 lg:pb-10 lg:pt-28 bg-dark">
-      <div class="container">
-        <div class="section-page">
-          <div class="w-full px-4">
-            <p class="headline">-- Services</p>
-          </div>
-          <div class="w-full">
-            <div class="flex flex-wrap items-center justify-center">
-              <!-- Service Content UI/UX -->
-              <div class="box-services" data-sal="flip-left" data-sal-duration="800">
-                <div class="relative mb-16 ml-3 mr-6 grow-0">
-                  <h4  class="absolute bottom-0 text-xl">
-                    <iconify-icon icon="charm:code"></iconify-icon>
-                  </h4>
-                </div>
-                <div class="relative mx-6 grow">
-                  <h4 class="service__branch">Full Stack Developer.</h4>
-                  <button id="open-modal-1" class="modal__button">
-                    <p class="service__modal">View More<span class="ml-3">➜</span></p>
-                  </button>
-                </div>
-              </div>
-              <!-- Service Content Fullstack -->
-              <div class="box-services" data-sal="flip-left" data-sal-duration="800" data-sal-delay="150"> 
-                <div class="relative mb-16 ml-3 mr-6 grow-0">
-                  <h4  class="absolute bottom-0 text-xl">
-                    <iconify-icon icon="material-symbols:wifi"></iconify-icon>
-                  </h4>
-                </div>
-                <div class="relative mx-6 grow">
-                  <h4 class="service__branch">IoT Developer.</h4>
-                  <button id="open-modal-2" class="modal__button">
-                    <p class="service__modal">View More<span class="ml-3">➜</span></p>
-                  </button>
-                </div>
-              </div>
-              <!-- Service Content Graphic -->
-              <div class="box-services" data-sal="flip-left" data-sal-duration="800" data-sal-delay="300">
-                <div class="relative mb-16 ml-3 mr-6 grow-0">
-                  <h4  class="absolute bottom-0 text-xl">
-                    <iconify-icon icon="charm:pencil"></iconify-icon>
-                  </h4>
-                </div>
-                <div class="relative mx-6 grow">
-                  <h4 class="service__branch">Graphic Designer.</h4>
-                  <button id="open-modal-3" class="modal__button">
-                    <p class="service__modal">View More<span class="ml-3">➜</span></p>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Modal Start -->
-      <div id="modal-container" class="invisible modal__container">
-        <!-- Modal Content UI/UX Designer -->
-        <div id="modal-content-1" class="hidden modal__content">
-          <div id="close-modal-1" class="modal__close" title="Close">
-            <iconify-icon icon="akar-icons:circle-x"></iconify-icon>
-          </div>
-          <h4 class="modal__title">UI/UX Designer</h4>
-          <p class="modal__description"><iconify-icon icon="akar-icons:circle-check" class="modal__checklist"></iconify-icon>Crafting user interface.</p>
-          <p class="modal__description"><iconify-icon icon="akar-icons:circle-check" class="modal__checklist"></iconify-icon>Building server-side logic & database.</p>
-          <p class="modal__description"><iconify-icon icon="akar-icons:circle-check" class="modal__checklist"></iconify-icon>Connecting website with API.</p>
-          <p class="modal__description"><iconify-icon icon="akar-icons:circle-check" class="modal__checklist"></iconify-icon>Website deployment & maintenance.</p>
-        </div>
-        <!-- Modal Content Fullstack -->
-        <div id="modal-content-2" class="hidden modal__content">
-          <div id="close-modal-2" class="modal__close" title="Close">
-            <iconify-icon icon="akar-icons:circle-x"></iconify-icon>
-          </div>
-          <h4 class="modal__title">Full Stack Developer</h4>
-          <p class="modal__description"><iconify-icon icon="akar-icons:circle-check" class="modal__checklist"></iconify-icon>Programming microcontrollers.</p>
-          <p class="modal__description"><iconify-icon icon="akar-icons:circle-check" class="modal__checklist"></iconify-icon>Connecting and configuring sensors.</p>
-          <p class="modal__description"><iconify-icon icon="akar-icons:circle-check" class="modal__checklist"></iconify-icon>Integrating IoT devices with cloud.</p>
-          <p class="modal__description"><iconify-icon icon="akar-icons:circle-check" class="modal__checklist"></iconify-icon>Building application to monitor & Control.</p>
-        </div>
-        <!-- Modal Content Graphic Designer -->
-        <div id="modal-content-3" class="hidden modal__content">
-          <div id="close-modal-3" class="modal__close" title="Close">
-            <iconify-icon icon="akar-icons:circle-x"></iconify-icon>
-          </div>
-          <h4 class="modal__title">Graphic Designer</h4>
-          <p class="modal__description"><iconify-icon icon="akar-icons:circle-check" class="modal__checklist"></iconify-icon>Creating unique and memorable logo.</p>
-          <p class="modal__description"><iconify-icon icon="akar-icons:circle-check" class="modal__checklist"></iconify-icon>Developing comprehensive brand guidelines.</p>
-          <p class="modal__description"><iconify-icon icon="akar-icons:circle-check" class="modal__checklist"></iconify-icon>Creating brochures, social media graphics.</p>
-          <p class="modal__description"><iconify-icon icon="akar-icons:circle-check" class="modal__checklist"></iconify-icon>Producing custom illustrations for websites.</p>
-        </div>
-      </div>
-      <!-- Modal End -->
-    </section>
-    <!-- Services Section End -->
-
-    <!-- Skills Section Start -->
-    <section id="skills" class="pt-5 pb-10 lg:pt-10 lg:pb-28 bg-dark">
-      <div class="container">
-        <div class="section-page">
-          <div class="w-full px-4">
-            <p class="headline">-- My Skills</p>
-          </div>
-          <div class="w-full" data-sal="slide-down" data-sal-duration="800" data-sal-delay="100">
-            <div class="flex flex-wrap items-center justify-center">
-              <a href="https://en.wikipedia.org/wiki/HTML5" target="_blank" class="skill__logo">
-                <img src="assets/skills/html.svg" alt="html">
-              </a>
-              <a href="https://en.wikipedia.org/wiki/CSS#CSS_3" target="_blank" class="skill__logo">
-                <img src="assets/skills/css.svg" alt="css">
-              </a>
-              <a href="https://tailwindcss.com/" target="_blank" class="skill__logo">
-                <img src="assets/skills/tailwind.svg" alt="tailwind">
-              </a>
-              <a href="https://getbootstrap.com/" target="_blank" class="skill__logo">
-                <img src="assets/skills/bootstrap.svg" alt="bootstrap">
-              </a>
-              <a href="https://www.javascript.com/" target="_blank" class="skill__logo">
-                <img src="assets/skills/javascript.svg" alt="javascript">
-              </a>
-              <a href="https://www.php.net/" target="_blank" class="skill__logo">
-                <img src="assets/skills/php.svg" alt="php">
-              </a>
-              <a href="https://www.mysql.com/" target="_blank" class="skill__logo">
-                <img src="assets/skills/mysql.svg" alt="mysql">
-              </a>
-              <a href="https://www.codeigniter.com/" target="_blank" class="skill__logo">
-                <img src="assets/skills/codeigniter.svg" alt="codeigniter">
-              </a>
-              <a href="https://laravel.com/" target="_blank" class="skill__logo">
-                <img src="assets/skills/laravel.svg" alt="laravel">
-              </a>
-              <a href="https://nodejs.org/id" target="_blank" class="skill__logo">
-                <img src="assets/skills/nodejs.svg" alt="nodejs">
-              </a>
-              <a href="https://react.dev/" target="_blank" class="skill__logo">
-                <img src="assets/skills/reactjs.svg" alt="reactjs">
-              </a>
-              <a href="https://vite.dev/" target="_blank" class="skill__logo">
-                <img src="assets/skills/vitejs.svg" alt="vitejs">
-              </a>
-              <a href="https://www.arduino.cc/" target="_blank" class="skill__logo">
-                <img src="assets/skills/arduino.svg" alt="arduino">
-              </a>
-              <a href="https://id.wikipedia.org/wiki/C%2B%2B" target="_blank" class="skill__logo">
-                <img src="assets/skills/cpp.svg" alt="cpp">
-              </a>
-              <a href="https://www.python.org/" target="_blank" class="skill__logo">
-                <img src="assets/skills/python.svg" alt="python">
-              </a>
-              <a href="https://www.figma.com/" target="_blank" class="skill__logo">
-                <img src="assets/skills/figma.svg" alt="figma">
-              </a>
-              <a href="https://en.wikipedia.org/wiki/Adobe_XD" target="_blank" class="skill__logo">
-                <img src="assets/skills/adobe-xd.svg" alt="adobe xd">
-              </a>
-              <a href="https://www.coreldraw.com/en/" target="_blank" class="skill__logo">
-                <img src="assets/skills/coreldraw.svg" alt="coreldraw">
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Skills Section End -->
-
-    <!-- Project Section Start -->
-    <section id="project" class="pt-10 pb-6 bg-gray-800 lg:pt-28 lg:pb-20">
-      <div class="container">
-        <div class="section-page">
-          <div class="w-full px-4">
-            <p class="headline">-- Project</p>
-          </div>
-          <div class="w-full px-2">
-            <div class="flex flex-wrap place-content-evenly">
-              <!-- project 1 -->
-              <div class="relative group box-portfolio" data-sal="zoom-out" data-sal-duration="600">
-                <img src="assets/portfolio/RAR-Rental/Home.PNG" class="img__box-portfolio" alt="Gambar Car Rental">
-                <div
-                  class="absolute top-0 left-0 flex items-center justify-center w-full h-full transition duration-500 ease-in-out bg-gray-800 rounded-md opacity-0 group-hover:opacity-80">
-                </div>
-                <div class="text__box-portfolio">
-                  <div class="flex-row px-2 mb-6 text-center">
-                    <h4 class="font-semibold">Car Rental</h4>
-                    <p class="mb-6">Website with car rental system.</p>
-                    <button id="carousel-trig-btn1" class="btn__box-portfolio">Details <iconify-icon icon="charm:monitor-arrow"></iconify-icon></a>
-                  </div>
-                </div>
-              </div>
-              <!-- project 2 -->
-              <div class="relative group box-portfolio" data-sal="zoom-out" data-sal-duration="600">
-                <img src="assets/portfolio/bangun-datar/home.png" class="img__box-portfolio" alt="Gambar bangun datar">
-                <div
-                  class="absolute top-0 left-0 flex items-center justify-center w-full h-full transition duration-500 ease-in-out bg-gray-800 rounded-md opacity-0 group-hover:opacity-80">
-                </div>
-                <div class="text__box-portfolio">
-                  <div class="flex-row px-2 mb-6 text-center">
-                    <h4 class="font-semibold">Two Dimensional Calculator</h4>
-                    <p class="mb-6">Calculate area and perimeter of two dimension figures</p>
-                    <button id="carousel-trig-btn2" class="btn__box-portfolio">Details <iconify-icon icon="charm:monitor-arrow"></iconify-icon></a>
-                  </div>
-                </div>
-              </div>
-              <!-- project 3 -->
-              <div class="relative group box-portfolio" data-sal="zoom-out" data-sal-duration="600">
-                <img src="assets/portfolio/simple-login/home.png" class="img__box-portfolio" alt="simple login">
-                <div
-                  class="absolute top-0 left-0 flex items-center justify-center w-full h-full transition duration-500 ease-in-out bg-gray-800 rounded-md opacity-0 group-hover:opacity-80">
-                </div>
-                <div class="text__box-portfolio">
-                  <div class="flex-row px-2 mb-6 text-center">
-                    <h4 class="font-semibold">Simple Login IoT</h4>
-                    <p class="mb-6">Simple login to dashboard</p>
-                    <button id="carousel-trig-btn3" class="btn__box-portfolio">Details <iconify-icon icon="charm:monitor-arrow"></iconify-icon></a>
-                  </div>
-                </div>
-              </div>
-              <!-- project 4 -->
-              <div class="relative group box-portfolio" data-sal="zoom-out" data-sal-duration="600">
-                <img src="assets/portfolio/dika-arenda/home.png" class="img__box-portfolio" alt="dika arenda home page">
-                <div
-                  class="absolute top-0 left-0 flex items-center justify-center w-full h-full transition duration-500 ease-in-out bg-gray-800 rounded-md opacity-0 group-hover:opacity-80">
-                </div>
-                <div class="text__box-portfolio">
-                  <div class="flex-row px-2 mb-6 text-center">
-                    <h4 class="font-semibold">Dika Arenda</h4>
-                    <p class="mb-6">Chicken slaughterhouse bookkeeping website</p>
-                    <button id="carousel-trig-btn4" class="btn__box-portfolio">Details <iconify-icon icon="charm:monitor-arrow"></iconify-icon></a>
-                  </div>
-                </div>
-              </div>
-              <!-- project 5 -->
-              <div class="relative group box-portfolio" data-sal="zoom-out" data-sal-duration="600">
-                <img src="assets/portfolio/hidroponik-melon-web/landing-page.png" class="img__box-portfolio" alt="actuator instalation">
-                <div
-                  class="absolute top-0 left-0 flex items-center justify-center w-full h-full transition duration-500 ease-in-out bg-gray-800 rounded-md opacity-0 group-hover:opacity-80">
-                </div>
-                <div class="text__box-portfolio">
-                  <div class="flex-row px-2 mb-6 text-center">
-                    <h4 class="font-semibold">Website IoT Hidroponic Melon</h4>
-                    <p class="mb-6">Website Automatic mixing of hydroponic melon plant nutrients</p>
-                    <button id="carousel-trig-btn5" class="btn__box-portfolio">Details <iconify-icon icon="charm:monitor-arrow"></iconify-icon></a>
-                  </div>
-                </div>
-              </div>
-              <!-- project 6 -->
-              <div class="relative group box-portfolio" data-sal="zoom-out" data-sal-duration="600">
-                <img src="assets/portfolio/hidroponik-melon/aktuator.png" class="img__box-portfolio" alt="actuator instalation">
-                <div
-                  class="absolute top-0 left-0 flex items-center justify-center w-full h-full transition duration-500 ease-in-out bg-gray-800 rounded-md opacity-0 group-hover:opacity-80">
-                </div>
-                <div class="text__box-portfolio">
-                  <div class="flex-row px-2 mb-6 text-center">
-                    <h4 class="font-semibold">IoT Hidroponic Melon</h4>
-                    <p class="mb-6">Automatic mixing of hydroponic melon plant nutrients</p>
-                    <button id="carousel-trig-btn6" class="btn__box-portfolio">Details <iconify-icon icon="charm:monitor-arrow"></iconify-icon></a>
-                  </div>
-                </div>
-              </div>
-              <!-- project 7 -->
-              <div class="relative group box-portfolio" data-sal="zoom-out" data-sal-duration="600">
-                <img src="assets/portfolio/sistem-pendingin-irigasi/iot-ongoing.png" class="img__box-portfolio" alt="actuator instalation">
-                <div
-                  class="absolute top-0 left-0 flex items-center justify-center w-full h-full transition duration-500 ease-in-out bg-gray-800 rounded-md opacity-0 group-hover:opacity-80">
-                </div>
-                <div class="text__box-portfolio">
-                  <div class="flex-row px-2 mb-6 text-center">
-                    <h4 class="font-semibold">IoT Cooling and Irrigation Systems</h4>
-                    <p class="mb-6">Automatic cooling and irrigation systems as well as hydroponic water quality monitoring</p>
-                    <button id="carousel-trig-btn7" class="btn__box-portfolio">Details <iconify-icon icon="charm:monitor-arrow"></iconify-icon></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Carousel Start -->
-      <div id="carousel-container" class="invisible carousel__container">
-        <div id="carousel-close" class="carousel__close-btn">
-          <iconify-icon icon="akar-icons:circle-x"></iconify-icon>
-        </div>
-  
-        <!-- ===== Carousel Item 1 ===== -->
-        <div id="carousel-content1" class="invisible carousel__wrapper">
-          <div class="carousel__img-heading">
-            <h4>Car Rental</h4>
-          </div>
-          <!-- image 1 -->
-          <div id="carousel-content-img" class="carousel__content">
-            <img src="assets/portfolio/RAR-Rental/Home.PNG" loading="lazy" alt="home page" class="carousel__img">
-            <div class="carousel__img-subheading">
-              <p>Home page</p>
-            </div>
-          </div>
-          <!-- image 2 -->
-          <div id="carousel-content-img" class="invisible carousel__content">
-            <img src="assets/portfolio/RAR-Rental/Daftar-Kendaraan-page.png" loading="lazy" alt="list vehicle" class="carousel__img">
-            <div class="carousel__img-subheading">
-              <p>List vehicle page</p>
-            </div>
-          </div>
-          <!-- image 3 -->
-          <div id="carousel-content-img" class="invisible carousel__content">
-            <img src="assets/portfolio/RAR-Rental/Input-penyewa-page.png" loading="lazy" alt="input tenant data" class="carousel__img">
-            <div class="carousel__img-subheading">
-              <p>Input tenant data page</p>
-            </div>
-          </div>
-          <!-- image 4 -->
-          <div id="carousel-content-img" class="invisible carousel__content">
-            <img src="assets/portfolio/RAR-Rental/transaksi-selesai.png" loading="lazy" alt="transaction done" class="carousel__img">
-            <div class="carousel__img-subheading">
-              <p>Transaction done page</p>
-            </div>
-          </div>
-          <!-- Slider indicator -->
-          <div id="carousel-indicator" class="carousel__indicator">
-            <span class="carousel__indicator-active carousel__indicator-btn"><iconify-icon icon="carbon:dot-mark"></iconify-icon></span>
-            <span class="carousel__indicator-btn"><iconify-icon icon="carbon:dot-mark"></iconify-icon></span>
-            <span class="carousel__indicator-btn"><iconify-icon icon="carbon:dot-mark"></iconify-icon></span>
-            <span class="carousel__indicator-btn"><iconify-icon icon="carbon:dot-mark"></iconify-icon></span>
-          </div>
-        </div>
-  
-        <!-- ===== Carousel Item 2 ===== -->
-        <div id="carousel-content2" class="invisible carousel__wrapper">
-          <div class="carousel__img-heading">
-            <h4>Two Dimenstion Calculator</h4>
-          </div>
-          <!-- image 1 -->
-          <div id="carousel-content-img" class="carousel__content">
-            <img src="assets/portfolio/bangun-datar/home.png" loading="lazy" alt="home page" class="carousel__img">
-            <div class="mt-6 carousel__img-subheading sm:mt-0">
-              <p>Home page</p>
-            </div>
-          </div>
-          <!-- image 2 -->
-          <div id="carousel-content-img" class="invisible carousel__content">
-            <img src="assets/portfolio/bangun-datar/triangle.png" loading="lazy" alt="input page" class="carousel__img">
-            <div class="mt-6 carousel__img-subheading sm:mt-0">
-              <p>Triangle input page</p>
-            </div>
-          </div>
-          <!-- image 3 -->
-          <div id="carousel-content-img" class="invisible carousel__content">
-            <img src="assets/portfolio/bangun-datar/hasil-hitung-persegi.png" loading="lazy" alt="result calculation page" class="carousel__img">
-            <div class="mt-6 carousel__img-subheading sm:mt-0">
-              <p>Result calculation page - Retangular</p>
-            </div>
-          </div>
-          <!-- image 4 -->
-          <div id="carousel-content-img" class="invisible carousel__content">
-            <img src="assets/portfolio/bangun-datar/persentase-perhitungan.png" loading="lazy" alt="calculate persentage" class="carousel__img">
-            <div class="mt-6 carousel__img-subheading sm:mt-0">
-              <p>Calculate persentage</p>
-            </div>
-          </div>
-          <!-- image 5 -->
-          <div id="carousel-content-img" class="invisible carousel__content">
-            <img src="assets/portfolio/bangun-datar/histori-perhitungan.png" loading="lazy" alt="history calculation" class="carousel__img">
-            <div class="mt-6 carousel__img-subheading sm:mt-0">
-              <p>Calculation histories</p>
-            </div>
-          </div>
-          <!-- Slider indicator -->
-          <div id="carousel-indicator" class="carousel__indicator">
-            <span class="carousel__indicator-active carousel__indicator-btn"><iconify-icon icon="carbon:dot-mark"></iconify-icon></span>
-            <span class="carousel__indicator-btn"><iconify-icon icon="carbon:dot-mark"></iconify-icon></span>
-            <span class="carousel__indicator-btn"><iconify-icon icon="carbon:dot-mark"></iconify-icon></span>
-            <span class="carousel__indicator-btn"><iconify-icon icon="carbon:dot-mark"></iconify-icon></span>
-            <span class="carousel__indicator-btn"><iconify-icon icon="carbon:dot-mark"></iconify-icon></span>
-          </div>
-        </div>
-  
-        <!-- ===== Carousel Item 3 ===== -->
-        <div id="carousel-content3" class="invisible carousel__wrapper">
-          <div class="carousel__img-heading">
-            <h4>Simple Login IoT</h4>
-          </div>
-          <!-- image 1 -->
-          <div id="carousel-content-img" class="carousel__content">
-            <img src="assets/portfolio/simple-login/home.png" loading="lazy" alt="home page" class="carousel__img">
-            <div class="carousel__img-subheading">
-              <p>Home page</p>
-            </div>
-          </div>
-          <!-- image 2 -->
-          <div id="carousel-content-img" class="invisible carousel__content">
-            <img src="assets/portfolio/simple-login/login.png" loading="lazy" alt="login page" class="carousel__img">
-            <div class="carousel__img-subheading">
-              <p>Login page</p>
-            </div>
-          </div>
-          <!-- image 3 -->
-          <div id="carousel-content-img" class="invisible carousel__content">
-            <img src="assets/portfolio/simple-login/create-account.png" loading="lazy" alt="create account page" class="carousel__img">
-            <div class="carousel__img-subheading">
-              <p>Create account page</p>
-            </div>
-          </div>
-          <!-- image 4 -->
-          <div id="carousel-content-img" class="invisible carousel__content">
-            <img src="assets/portfolio/simple-login/dashboard.png" loading="lazy" alt="dashboard page" class="carousel__img">
-            <div class="carousel__img-subheading">
-              <p>Dashboard page</p>
-            </div>
-          </div>
-          <!-- Slider indicator -->
-          <div id="carousel-indicator" class="carousel__indicator">
-            <span class="carousel__indicator-active carousel__indicator-btn"><iconify-icon icon="carbon:dot-mark"></iconify-icon></span>
-            <span class="carousel__indicator-btn"><iconify-icon icon="carbon:dot-mark"></iconify-icon></span>
-            <span class="carousel__indicator-btn"><iconify-icon icon="carbon:dot-mark"></iconify-icon></span>
-            <span class="carousel__indicator-btn"><iconify-icon icon="carbon:dot-mark"></iconify-icon></span>
-          </div>
-        </div>
-  
-        <!-- ===== Carousel Item 4 ===== -->
-        <div id="carousel-content4" class="invisible carousel__wrapper">
-          <div class="carousel__img-heading">
-            <h4>Dika Arenda</h4>
-          </div>
-          <!-- image 1 -->
-          <div id="carousel-content-img" class="carousel__content">
-            <img src="assets/portfolio/dika-arenda/home.png" loading="lazy" alt="dika arenda home page" class="carousel__img">
-            <div class="carousel__img-subheading">
-              <p>Dika Arenda home page</p>
-            </div>
-          </div>
-          <!-- image 2 -->
-          <div id="carousel-content-img" class="invisible carousel__content">
-            <img src="assets/portfolio/dika-arenda/login.png" loading="lazy" alt="login page" class="carousel__img">
-            <div class="carousel__img-subheading">
-              <p>Login page</p>
-            </div>
-          </div>
-          <!-- image 3 -->
-          <div id="carousel-content-img" class="invisible carousel__content">
-            <img src="assets/portfolio/dika-arenda/jurnal-kasir.png" loading="lazy" alt="jurnal kasir" class="carousel__img">
-            <div class="carousel__img-subheading">
-              <p>Jurnal page - kasir</p>
-            </div>
-          </div>
-          <!-- image 4 -->
-          <div id="carousel-content-img" class="invisible carousel__content">
-            <img src="assets/portfolio/dika-arenda/ledger-kasir.png" loading="lazy" alt="ledger kasir" class="carousel__img">
-            <div class="carousel__img-subheading">
-              <p>Ledger page - kasir</p>
-            </div>
-          </div>
-          <!-- image 5 -->
-          <div id="carousel-content-img" class="invisible carousel__content">
-            <img src="assets/portfolio/dika-arenda/rekapbulanan-kasir.png" loading="lazy" alt="rekap bulanan kasir" class="carousel__img">
-            <div class="carousel__img-subheading">
-              <p>Rekap bulanan page - kasir</p>
-            </div>
-          </div>
-          <!-- Slider indicator -->
-          <div id="carousel-indicator" class="carousel__indicator">
-            <span class="carousel__indicator-active carousel__indicator-btn"><iconify-icon icon="carbon:dot-mark"></iconify-icon></span>
-            <span class="carousel__indicator-btn"><iconify-icon icon="carbon:dot-mark"></iconify-icon></span>
-            <span class="carousel__indicator-btn"><iconify-icon icon="carbon:dot-mark"></iconify-icon></span>
-            <span class="carousel__indicator-btn"><iconify-icon icon="carbon:dot-mark"></iconify-icon></span>
-            <span class="carousel__indicator-btn"><iconify-icon icon="carbon:dot-mark"></iconify-icon></span>
-          </div>
-        </div>
-
-        <!-- ===== Carousel Item 5 ===== -->
-        <div id="carousel-content5" class="invisible carousel__wrapper">
-          <div class="carousel__img-heading">
-            <h4>IoT Hidroponic Melon</h4>
-          </div>
-          <!-- image 1 -->
-          <div id="carousel-content-img" class="carousel__content">
-            <img src="assets/portfolio/hidroponik-melon-web/landing-page.png" loading="lazy" alt="landing page" class="carousel__img">
-            <div class="carousel__img-subheading">
-              <p>Landing page</p>
-            </div>
-          </div>
-          <!-- image 2 -->
-          <div id="carousel-content-img" class="invisible carousel__content">
-            <img src="assets/portfolio/hidroponik-melon-web/login.png" loading="lazy" alt="login page" class="carousel__img">
-            <div class="carousel__img-subheading">
-              <p>Login page</p>
-            </div>
-          </div>
-          <!-- image 3 -->
-          <div id="carousel-content-img" class="invisible carousel__content">
-            <img src="assets/portfolio/hidroponik-melon-web/dashboard.png" loading="lazy" alt="dashboard" class="carousel__img">
-            <div class="carousel__img-subheading">
-              <p>Dashboard</p>
-            </div>
-          </div>
-          <!-- image 4 -->
-          <div id="carousel-content-img" class="invisible carousel__content">
-            <img src="assets/portfolio/hidroponik-melon-web/inventory.png" loading="lazy" alt="inventory" class="carousel__img">
-            <div class="carousel__img-subheading">
-              <p>Inventory</p>
-            </div>
-          </div>
-          <!-- Slider indicator -->
-          <div id="carousel-indicator" class="carousel__indicator">
-            <span class="carousel__indicator-active carousel__indicator-btn"><iconify-icon icon="carbon:dot-mark"></iconify-icon></span>
-            <span class="carousel__indicator-btn"><iconify-icon icon="carbon:dot-mark"></iconify-icon></span>
-            <span class="carousel__indicator-btn"><iconify-icon icon="carbon:dot-mark"></iconify-icon></span>
-            <span class="carousel__indicator-btn"><iconify-icon icon="carbon:dot-mark"></iconify-icon></span>
-          </div>
-        </div>
-        
-        <!-- ===== Carousel Item 6 ===== -->
-        <div id="carousel-content6" class="invisible carousel__wrapper">
-          <div class="carousel__img-heading">
-            <h4>IoT Hidroponic Melon</h4>
-          </div>
-          <!-- image 1 -->
-          <div id="carousel-content-img" class="carousel__content">
-            <img src="assets/portfolio/hidroponik-melon/aktuator.png" loading="lazy" alt="actuator instalation" class="carousel__img">
-            <div class="carousel__img-subheading">
-              <p>Actuator</p>
-            </div>
-          </div>
-          <!-- image 2 -->
-          <div id="carousel-content-img" class="invisible carousel__content">
-            <img src="assets/portfolio/hidroponik-melon/rangkaian.png" loading="lazy" alt="microcontroller circuit" class="carousel__img">
-            <div class="carousel__img-subheading">
-              <p>Microcontroller circuit</p>
-            </div>
-          </div>
-          <!-- image 3 -->
-          <div id="carousel-content-img" class="invisible carousel__content">
-            <img src="assets/portfolio/hidroponik-melon/gh-setup.png" loading="lazy" alt="gh setup" class="carousel__img">
-            <div class="carousel__img-subheading">
-              <p>Greenhouse setup</p>
-            </div>
-          </div>
-          <!-- image 4 -->
-          <div id="carousel-content-img" class="invisible carousel__content">
-            <img src="assets/portfolio/hidroponik-melon/pohon-melon.png" loading="lazy" alt="melon tree" class="carousel__img">
-            <div class="carousel__img-subheading">
-              <p>Melon tree</p>
-            </div>
-          </div>
-          <!-- image 5 -->
-          <div id="carousel-content-img" class="invisible carousel__content">
-            <img src="assets/portfolio/hidroponik-melon/buah-melon.png" loading="lazy" alt="melon" class="carousel__img">
-            <div class="carousel__img-subheading">
-              <p>Melons grow</p>
-            </div>
-          </div>
-          <!-- Slider indicator -->
-          <div id="carousel-indicator" class="carousel__indicator">
-            <span class="carousel__indicator-active carousel__indicator-btn"><iconify-icon icon="carbon:dot-mark"></iconify-icon></span>
-            <span class="carousel__indicator-btn"><iconify-icon icon="carbon:dot-mark"></iconify-icon></span>
-            <span class="carousel__indicator-btn"><iconify-icon icon="carbon:dot-mark"></iconify-icon></span>
-            <span class="carousel__indicator-btn"><iconify-icon icon="carbon:dot-mark"></iconify-icon></span>
-            <span class="carousel__indicator-btn"><iconify-icon icon="carbon:dot-mark"></iconify-icon></span>
-          </div>
-        </div>
-       
-        <!-- ===== Carousel Item 7 ===== -->
-        <div id="carousel-content7" class="invisible carousel__wrapper">
-          <div class="carousel__img-heading">
-            <h4>IoT Cooling and Irrigation Systems</h4>
-          </div>
-          <!-- image 1 -->
-          <div id="carousel-content-img" class="carousel__content">
-            <img src="assets/portfolio/sistem-pendingin-irigasi/iot.png" loading="lazy" alt="actuator instalation" class="carousel__img">
-            <div class="carousel__img-subheading">
-              <p>System Design</p>
-            </div>
-          </div>
-          <!-- image 2 -->
-          <div id="carousel-content-img" class="invisible carousel__content">
-            <img src="assets/portfolio/sistem-pendingin-irigasi/layout-pendingin.png" loading="lazy" alt="microcontroller circuit" class="carousel__img">
-            <div class="carousel__img-subheading">
-              <p>Cooling Layout</p>
-            </div>
-          </div>
-          <!-- image 3 -->
-          <div id="carousel-content-img" class="invisible carousel__content">
-            <img src="assets/portfolio/sistem-pendingin-irigasi/layout-irigasi.png" loading="lazy" alt="gh setup" class="carousel__img">
-            <div class="carousel__img-subheading">
-              <p>Irrigation Layout</p>
-            </div>
-          </div>
-          <!-- image 4 -->
-          <div id="carousel-content-img" class="invisible carousel__content">
-            <img src="assets/portfolio/sistem-pendingin-irigasi/skema-perangkat.png" loading="lazy" alt="melon tree" class="carousel__img">
-            <div class="carousel__img-subheading">
-              <p>Device Schematic</p>
-            </div>
-          </div>
-          <!-- image 5 -->
-          <div id="carousel-content-img" class="invisible carousel__content">
-            <img src="assets/portfolio/sistem-pendingin-irigasi/skema-detail-perangkat.png" loading="lazy" alt="melon" class="carousel__img">
-            <div class="carousel__img-subheading">
-              <p>Detailed Schematic of the Device</p>
-            </div>
-          </div>
-          <!-- Slider indicator -->
-          <div id="carousel-indicator" class="carousel__indicator">
-            <span class="carousel__indicator-active carousel__indicator-btn"><iconify-icon icon="carbon:dot-mark"></iconify-icon></span>
-            <span class="carousel__indicator-btn"><iconify-icon icon="carbon:dot-mark"></iconify-icon></span>
-            <span class="carousel__indicator-btn"><iconify-icon icon="carbon:dot-mark"></iconify-icon></span>
-            <span class="carousel__indicator-btn"><iconify-icon icon="carbon:dot-mark"></iconify-icon></span>
-            <span class="carousel__indicator-btn"><iconify-icon icon="carbon:dot-mark"></iconify-icon></span>
-          </div>
-        </div>
-
-        <!-- Slider control -->
-        <button class="carousel__prev-btn">
-          <iconify-icon icon="akar-icons:circle-chevron-left-fill" class="carousel__control-icon"></iconify-icon>
-        </button>
-        <button class="carousel__next-btn">
-          <iconify-icon icon="akar-icons:circle-chevron-right-fill" class="carousel__control-icon"></iconify-icon>
-        </button>
-      </div>
-      <!-- Carousel End -->
-    </section>
-    <!-- Portfolio Section End -->
-
-    <!-- Contact Section Start -->
-    <section id="contact" class="py-10 lg:py-28 bg-dark">
-      <div class="container">
-        <div class="flex-row-reverse section-page">
-          <div class="w-full px-4">
-            <p class="headline">-- Contact</p>
-          </div>
-          <!-- Form contact Start -->
-          <div class="w-full px-4 pb-10 lg:w-1/2" data-sal="slide-left" data-sal-duration="800">
-            <form action="https://formsubmit.co/rahulsubagio99@gmail.com" method="POST">
-              <label class="block">
-                <span class="form__label">Name</span>
-                <input type="text" name="name" id="name" placeholder="Your Name" class="form__input">
-              </label>
-              <label class="block mt-5">
-                <span class="form__label">Email</span>
-                <input type="email" name="email" id="email" placeholder="you@example.com" class="peer form__input">
-                <p class="invisible mt-2 font-medium text-red-500 peer-invalid:visible">Please input a valid email</p>
-              </label>
-              <label class="block mt-2">
-                <span class="form__label">Message</span>
-                <textarea name="message" id="message" rows="3" placeholder="Your Message" class="form__input"></textarea>
-              </label>
-              <button type="submit" class="mt-7 form__button">
-                Send Message
-              </button>
-            </form>
-          </div>
-          <!-- Form contact End -->
-          
-          <div class="w-full px-4 mt-5 lg:mt-0 lg:w-1/2" data-sal="slide-right" data-sal-duration="800">
-            <h1 class="block text-3xl font-semibold text-light">Got a project?
-              <span class="block">Lets Talk.</span>
+            <h1 class="font-bold text-white mb-3 leading-none"
+              style="font-family:'Space Grotesk',sans-serif; font-size:clamp(2.5rem,6vw,5rem)">
+              Rahul<br>
+              <span class="gradient-text">Subagio</span><span style="color:#6366f1">.</span>
             </h1>
-            <div class="py-10">
-              <div class="mt-5">
-                <a href="https://www.google.com/maps/place/Caturtunggal,+Kec.+Depok,+Kabupaten+Sleman,+Daerah+Istimewa+Yogyakarta/@-7.7696252,110.4133997,13z/data=!4m5!3m4!1s0x2e7a59b967a22331:0x5027a76e3569a00!8m2!3d-7.7815151!4d110.3993969" target="_blank">
-                  <p class="contact__address">
-                    <iconify-icon icon="charm:map-pin" class="mr-2"></iconify-icon></iconify-icon>Sleman, D.I. Yogyakarta - Indonesia, 55281
-                  </p>
-                </a>
+            <div class="flex items-center gap-2 justify-center lg:justify-start mb-6">
+              <span style="font-family:'JetBrains Mono',monospace; color:#06b6d4; font-size:clamp(0.9rem,2vw,1.1rem)"
+                id="typed-role"></span>
+              <span class="typing-cursor"></span>
+            </div>
+            <p class="text-slate-400 text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 mb-8">
+              Building intelligent connected systems and modern web applications. Passionate about bridging the physical
+              and digital world through IoT innovation and robust fullstack solutions.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-10">
+              <a href="projects.html" class="btn-primary"><iconify-icon icon="lucide:folder-open"></iconify-icon>View
+                Projects</a>
+              <a href="#contact" class="btn-outline"><iconify-icon icon="lucide:mail"></iconify-icon>Let's Talk</a>
+            </div>
+            <div class="flex items-center gap-3 justify-center lg:justify-start">
+              <a href="https://github.com/rahulsubagio" target="_blank" class="social-link" title="GitHub"><iconify-icon
+                  icon="akar-icons:github-fill"></iconify-icon></a>
+              <a href="https://www.linkedin.com/in/rahulsubagio/" target="_blank" class="social-link"
+                title="LinkedIn"><iconify-icon icon="akar-icons:linkedin-fill"></iconify-icon></a>
+              <a href="https://www.instagram.com/rahulsubagio" target="_blank" class="social-link"
+                title="Instagram"><iconify-icon icon="akar-icons:instagram-fill"></iconify-icon></a>
+              <a href="https://www.youtube.com/@rahulsubagio" target="_blank" class="social-link"
+                title="YouTube"><iconify-icon icon="akar-icons:youtube-fill"></iconify-icon></a>
+              <a href="https://www.tiktok.com/@rahulsubagio" target="_blank" class="social-link"
+                title="TikTok"><iconify-icon icon="akar-icons:tiktok-fill"></iconify-icon></a>
+            </div>
+          </div>
+          <!-- Image -->
+          <div class="flex-shrink-0 order-1 lg:order-2">
+            <div class="relative float-anim">
+              <div class="absolute inset-0 rounded-full border border-indigo-500/20 scale-110 animate-pulse"></div>
+              <div class="absolute inset-0 rounded-full border border-cyan-500/10 scale-125"></div>
+              <div class="relative rounded-full overflow-hidden"
+                style="width:280px;height:280px;background:linear-gradient(135deg,rgba(99,102,241,0.2),rgba(6,182,212,0.1));padding:3px;">
+                <div class="w-full h-full rounded-full overflow-hidden" style="background:#161627">
+                  <img src="assets/Rahul-Subagio.png" alt="Rahul Subagio" class="w-full h-full object-cover"
+                    style="object-position:top;transform:scale(1.1)">
+                </div>
               </div>
-              <div class="mt-3">
-                <a href="mailto:rahulsubagio99@gmail.com" target="_blank">
-                  <p class="contact__address">
-                    <iconify-icon icon="charm:mail" class="mr-2"></iconify-icon>rahulsubagio99@gmail.com
-                  </p>
-                </a>
+              <div class="absolute -top-4 -right-4 glass rounded-xl px-3 py-2 text-xs"
+                style="font-family:'JetBrains Mono',monospace">
+                <span style="color:#06b6d4">const</span> <span class="text-white">role</span> <span
+                  class="text-slate-400">=</span> <span style="color:#fbbf24">"IoT"</span>
               </div>
-              <div class="mt-3">
-                <a href="https://bit.ly/rahulWA" target="_blank">
-                  <p class="contact__address">
-                    <iconify-icon icon="akar-icons:whatsapp-fill" class="mr-2"></iconify-icon>+62 822-9636-5028
-                  </p>
-                </a>
+              <div class="absolute -bottom-4 -left-4 glass rounded-xl px-3 py-2 text-xs"
+                style="font-family:'JetBrains Mono',monospace">
+                <span style="color:#6366f1">&lt;/</span><span class="text-white">fullstack</span><span
+                  style="color:#6366f1">&gt;</span>
               </div>
-              <div class="mt-14" data-sal="slide-right" data-sal-duration="800" data-sal-delay="600">
-                <a href="#project" class="link-section">My Projects<span class="ml-6">➜</span></a>
+            </div>
+          </div>
+        </div>
+        <!-- Stats -->
+        <div class="mt-16 lg:mt-20 grid grid-cols-2 sm:grid-cols-4 gap-4 reveal">
+          <div class="stat-card">
+            <div class="text-3xl font-bold gradient-text" style="font-family:'Space Grotesk',sans-serif">7+</div>
+            <div class="text-xs text-slate-500 mt-1">Projects Done</div>
+          </div>
+          <div class="stat-card">
+            <div class="text-3xl font-bold gradient-text" style="font-family:'Space Grotesk',sans-serif">5+</div>
+            <div class="text-xs text-slate-500 mt-1">Years Coding</div>
+          </div>
+          <div class="stat-card">
+            <div class="text-3xl font-bold gradient-text" style="font-family:'Space Grotesk',sans-serif">2</div>
+            <div class="text-xs text-slate-500 mt-1">Specializations</div>
+          </div>
+          <div class="stat-card">
+            <div class="text-3xl font-bold gradient-text" style="font-family:'Space Grotesk',sans-serif">3</div>
+            <div class="text-xs text-slate-500 mt-1">Awards Won</div>
+          </div>
+        </div>
+      </div>
+      <div class="absolute bottom-8 left-0 right-0 w-fit mx-auto flex flex-col items-center gap-2 text-slate-600 animate-bounce">
+        <span class="text-xs" style="font-family:'JetBrains Mono',monospace">scroll</span>
+        <iconify-icon icon="lucide:chevron-down" class="text-lg"></iconify-icon>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-24 relative">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-16 reveal">
+          <div class="section-label justify-center">About Me</div>
+          <h2 class="font-bold text-white text-3xl sm:text-4xl" style="font-family:'Space Grotesk',sans-serif">Who I Am
+          </h2>
+        </div>
+        <div class="grid lg:grid-cols-2 gap-12 items-start">
+          <div class="reveal-left">
+            <div class="relative">
+              <div class="rounded-2xl overflow-hidden border border-indigo-500/15">
+                <img src="assets/img1.jpg" alt="Rahul Subagio" class="w-full object-cover" style="max-height:500px">
+              </div>
+              <div class="absolute -bottom-6 -right-2 sm:-right-8 glass rounded-xl p-4 max-w-xs">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
+                    style="background:rgba(99,102,241,0.2)">
+                    <iconify-icon icon="lucide:map-pin" style="color:#6366f1;font-size:1.1rem"></iconify-icon>
+                  </div>
+                  <div>
+                    <p class="text-white text-sm font-semibold">Based in Indonesia</p>
+                    <p class="text-slate-500 text-xs">Sleman, D.I. Yogyakarta</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="reveal-right mt-8 lg:mt-0">
+            <p class="text-slate-400 leading-relaxed mb-6">
+              Hello! 👋 I'm <span class="text-white font-semibold">Rahul Subagio</span>, an IoT Engineer and Fullstack
+              Web Developer with a passion for crafting user-friendly websites and designing innovative IoT solutions.
+            </p>
+            <p class="text-slate-400 leading-relaxed mb-8">
+              I love the challenge of building end-to-end solutions: from programming microcontrollers and connecting
+              sensors, to building beautiful web dashboards that visualize real-time data.
+            </p>
+            <div class="grid grid-cols-2 gap-4 mb-8">
+              <div>
+                <p class="text-xs text-slate-500 mb-1">University</p>
+                <p class="text-white text-sm font-medium">UPN "Veteran" Yogyakarta</p>
+              </div>
+              <div>
+                <p class="text-xs text-slate-500 mb-1">Major</p>
+                <p class="text-white text-sm font-medium">Informatics</p>
+              </div>
+              <div>
+                <p class="text-xs text-slate-500 mb-1">Email</p>
+                <p class="text-sm font-medium" style="color:#6366f1">rahulsubagio99@gmail.com</p>
+              </div>
+              <div>
+                <p class="text-xs text-slate-500 mb-1">Available For</p>
+                <p class="text-emerald-400 text-sm font-medium flex items-center gap-1">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400 inline-block animate-pulse"></span>Freelance &amp;
+                  Work
+                </p>
+              </div>
+            </div>
+            <a href="assets/cv/CV-Rahul Bin Subagio-Nov-2024.pdf" download class="btn-primary mb-10">
+              <iconify-icon icon="lucide:download"></iconify-icon>Download Resume
+            </a>
+          </div>
+        </div>
+        <!-- Tabs -->
+        <div class="mt-14 reveal">
+          <div class="mx-auto px-4 sm:px-8" style="max-width:680px">
+            <div class="flex gap-2 mb-6 flex-wrap justify-center">
+              <button class="tab-btn active" data-tab="experience">Experience</button>
+              <button class="tab-btn" data-tab="education">Education</button>
+              <button class="tab-btn" data-tab="awards">Awards</button>
+            </div>
+            <div id="tab-experience" class="tab-content active">
+              <div class="timeline-item">
+                <div class="timeline-dot" style="background:#10b981;box-shadow:0 0 0 3px rgba(16,185,129,0.2)"></div>
+                <p class="text-xs text-slate-500 mb-1" style="font-family:'JetBrains Mono',monospace">2024 – Present
+                </p>
+                <h4 class="text-white font-semibold text-sm">IoT Engineer</h4>
+                <p class="text-slate-400 text-xs">Freelance</p>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot" style="background:#f59e0b;box-shadow:0 0 0 3px rgba(245,158,11,0.2)"></div>
+                <p class="text-xs text-slate-500 mb-1" style="font-family:'JetBrains Mono',monospace">2025</p>
+                <h4 class="text-white font-semibold text-sm">Codero Education</h4>
+                <p class="text-slate-400 text-xs">Teacher Coding &amp; Robotic (Parttime)</p>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <p class="text-xs text-slate-500 mb-1" style="font-family:'JetBrains Mono',monospace">2021 – 2022</p>
+                <h4 class="text-white font-semibold text-sm">Robotics UPNYK (RUVY)</h4>
+                <p class="text-slate-400 text-xs">Wheel Division Head</p>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot" style="background:#06b6d4;box-shadow:0 0 0 3px rgba(6,182,212,0.2)"></div>
+                <p class="text-xs text-slate-500 mb-1" style="font-family:'JetBrains Mono',monospace">2019 – 2021</p>
+                <h4 class="text-white font-semibold text-sm">Information Technology Club (ITC UPNYK)</h4>
+                <p class="text-slate-400 text-xs">Vice Chairman</p>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot" style="background:#8b5cf6;box-shadow:0 0 0 3px rgba(139,92,246,0.2)"></div>
+                <p class="text-xs text-slate-500 mb-1" style="font-family:'JetBrains Mono',monospace">2020 – 2021</p>
+                <h4 class="text-white font-semibold text-sm">Robotics UPNYK (RUVY)</h4>
+                <p class="text-slate-400 text-xs">Member of Wheel Division</p>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot" style="background:#f59e0b;box-shadow:0 0 0 3px rgba(245,158,11,0.2)"></div>
+                <p class="text-xs text-slate-500 mb-1" style="font-family:'JetBrains Mono',monospace">2018 – 2019</p>
+                <h4 class="text-white font-semibold text-sm">Information Technology Club (ITC UPNYK)</h4>
+                <p class="text-slate-400 text-xs">Member of Web Development</p>
+              </div>
+              <div class="timeline-item" style="padding-bottom:0">
+                <div class="timeline-dot" style="background:#ef4444;box-shadow:0 0 0 3px rgba(239,68,68,0.2)"></div>
+                <p class="text-xs text-slate-500 mb-1" style="font-family:'JetBrains Mono',monospace">2018 – 2019</p>
+                <h4 class="text-white font-semibold text-sm">HIMATIF UPNYK</h4>
+                <p class="text-slate-400 text-xs">Member of Entrepreneurship</p>
+              </div>
+            </div>
+            <div id="tab-education" class="tab-content">
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <p class="text-xs text-slate-500 mb-1" style="font-family:'JetBrains Mono',monospace">2018 – 2025</p>
+                <h4 class="text-white font-semibold text-sm">UPN "Veteran" Yogyakarta</h4>
+                <p class="text-slate-400 text-xs">Bachelor of Informatics Engineering</p>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot" style="background:#06b6d4;box-shadow:0 0 0 3px rgba(6,182,212,0.2)"></div>
+                <p class="text-xs text-slate-500 mb-1" style="font-family:'JetBrains Mono',monospace">2015 – 2018</p>
+                <h4 class="text-white font-semibold text-sm">SMA Negeri 2 Sidrap</h4>
+                <p class="text-slate-400 text-xs">Science (IPA) Program</p>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot" style="background:#8b5cf6;box-shadow:0 0 0 3px rgba(139,92,246,0.2)"></div>
+                <p class="text-xs text-slate-500 mb-1" style="font-family:'JetBrains Mono',monospace">2013 – 2015</p>
+                <h4 class="text-white font-semibold text-sm">SMP Negeri 1 Watang Pulu</h4>
+                <p class="text-slate-400 text-xs">Junior High School</p>
+              </div>
+              <div class="timeline-item" style="padding-bottom:0">
+                <div class="timeline-dot" style="background:#f59e0b;box-shadow:0 0 0 3px rgba(245,158,11,0.2)"></div>
+                <p class="text-xs text-slate-500 mb-1" style="font-family:'JetBrains Mono',monospace">2006 – 2012</p>
+                <h4 class="text-white font-semibold text-sm">SK Ladang Sandak</h4>
+                <p class="text-slate-400 text-xs">Primary School</p>
+              </div>
+            </div>
+            <div id="tab-awards" class="tab-content">
+              <div class="timeline-item">
+                <div class="timeline-dot" style="background:#f59e0b;box-shadow:0 0 0 3px rgba(245,158,11,0.2)"></div>
+                <p class="text-xs text-slate-500 mb-1" style="font-family:'JetBrains Mono',monospace">Jul 2022</p>
+                <h4 class="text-white font-semibold text-sm">🥉 3rd Place – Micromouse Competition</h4>
+                <p class="text-slate-400 text-xs">PORSIMNAS UPN Veteran</p>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot" style="background:#cd7f32;box-shadow:0 0 0 3px rgba(205,127,50,0.2)"></div>
+                <p class="text-xs text-slate-500 mb-1" style="font-family:'JetBrains Mono',monospace">Nov 2021</p>
+                <h4 class="text-white font-semibold text-sm">🥉 Bronze Medal – International Science &amp; Invention
+                  Fair</h4>
+                <p class="text-slate-400 text-xs">ISIF 2021</p>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot" style="background:#f59e0b;box-shadow:0 0 0 3px rgba(245,158,11,0.2)"></div>
+                <p class="text-xs text-slate-500 mb-1" style="font-family:'JetBrains Mono',monospace">Sep 2019</p>
+                <h4 class="text-white font-semibold text-sm">🥉 3rd Place – Programming Competition</h4>
+                <p class="text-slate-400 text-xs">Issued by FKBMIK</p>
+              </div>
+              <div class="timeline-item" style="padding-bottom:0">
+                <div class="timeline-dot"></div>
+                <p class="text-xs text-slate-500 mb-1" style="font-family:'JetBrains Mono',monospace">Apr 2019</p>
+                <h4 class="text-white font-semibold text-sm">🏆 Competitive Programming Participant</h4>
+                <p class="text-slate-400 text-xs">FIND IT 2019</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="py-24 relative" style="background-color:#1a1a2e">
+      <div class="orb orb-cyan w-96 h-96 top-0 right-0 opacity-50"></div>
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+        <div class="text-center mb-16 reveal">
+          <div class="section-label justify-center">What I Do</div>
+          <h2 class="font-bold text-white text-3xl sm:text-4xl" style="font-family:'Space Grotesk',sans-serif">My
+            Services</h2>
+          <p class="text-slate-500 mt-3 max-w-lg mx-auto text-sm">Delivering end-to-end solutions from hardware to
+            cloud, and pixels to production.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="service-card reveal" style="transition-delay:0s">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5 border"
+              style="background:rgba(6,182,212,0.1);border-color:rgba(6,182,212,0.2)">
+              <iconify-icon icon="material-symbols:wifi" style="color:#06b6d4;font-size:1.5rem"></iconify-icon>
+            </div>
+            <h3 class="text-white font-bold text-lg mb-3" style="font-family:'Space Grotesk',sans-serif">IoT Development
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-4">Building smart connected devices from sensors to
+              cloud. Specializing in smart agriculture IoT solutions.</p>
+            <ul class="space-y-2 text-sm text-slate-400">
+              <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle"
+                  style="color:#06b6d4;font-size:1rem;flex-shrink:0"></iconify-icon>Microcontroller Programming
+                (Arduino, ESP, STM32, Raspberry Pi)</li>
+              <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle"
+                  style="color:#06b6d4;font-size:1rem;flex-shrink:0"></iconify-icon>Sensor Integration &amp; Calibration
+              </li>
+              <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle"
+                  style="color:#06b6d4;font-size:1rem;flex-shrink:0"></iconify-icon>IoT Cloud Integration (MQTT, HTTP)
+              </li>
+              <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle"
+                  style="color:#06b6d4;font-size:1rem;flex-shrink:0"></iconify-icon>Real-time Monitoring &amp; Control
+              </li>
+            </ul>
+          </div>
+          <div class="service-card reveal" style="transition-delay:0.1s">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5 border"
+              style="background:rgba(99,102,241,0.1);border-color:rgba(99,102,241,0.2)">
+              <iconify-icon icon="lucide:code-2" style="color:#6366f1;font-size:1.5rem"></iconify-icon>
+            </div>
+            <h3 class="text-white font-bold text-lg mb-3" style="font-family:'Space Grotesk',sans-serif">Fullstack Web
+              Dev</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-4">Crafting performant and beautiful web applications
+              from frontend UI to backend APIs and databases.</p>
+            <ul class="space-y-2 text-sm text-slate-400">
+              <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle"
+                  style="color:#6366f1;font-size:1rem;flex-shrink:0"></iconify-icon>Modern Frontend (React, Nextjs,Vite,
+                Tailwind)</li>
+              <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle"
+                  style="color:#6366f1;font-size:1rem;flex-shrink:0"></iconify-icon>Backend APIs (Node.js, PHP)
+              </li>
+              <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle"
+                  style="color:#6366f1;font-size:1rem;flex-shrink:0"></iconify-icon>Database Design (MySQL, PostgreSQL)
+              </li>
+              <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle"
+                  style="color:#6366f1;font-size:1rem;flex-shrink:0"></iconify-icon>Deployment &amp; Maintenance</li>
+            </ul>
+          </div>
+          <div class="service-card reveal" style="transition-delay:0.2s">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5 border"
+              style="background:rgba(139,92,246,0.1);border-color:rgba(139,92,246,0.2)">
+              <iconify-icon icon="lucide:pen-tool" style="color:#a78bfa;font-size:1.5rem"></iconify-icon>
+            </div>
+            <h3 class="text-white font-bold text-lg mb-3" style="font-family:'Space Grotesk',sans-serif">UI/UX &amp;
+              Design</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-4">Designing beautiful user interfaces and brand
+              identities that leave a lasting impression.</p>
+            <ul class="space-y-2 text-sm text-slate-400">
+              <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle"
+                  style="color:#a78bfa;font-size:1rem;flex-shrink:0"></iconify-icon>UI/UX Design (Figma, Adobe XD)</li>
+              <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle"
+                  style="color:#a78bfa;font-size:1rem;flex-shrink:0"></iconify-icon>Logo &amp; Brand Identity</li>
+              <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle"
+                  style="color:#a78bfa;font-size:1rem;flex-shrink:0"></iconify-icon>Social Media Graphics</li>
+              <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle"
+                  style="color:#a78bfa;font-size:1rem;flex-shrink:0"></iconify-icon>Illustration &amp; Vector Art</li>
+              <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle"
+                  style="color:#a78bfa;font-size:1rem;flex-shrink:0"></iconify-icon>3D Modeling</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="py-24 relative">
+      <div class="orb orb-purple w-80 h-80 bottom-0 left-0 opacity-50"></div>
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+        <div class="text-center mb-16 reveal">
+          <div class="section-label justify-center">Tech Stack</div>
+          <h2 class="font-bold text-white text-3xl sm:text-4xl" style="font-family:'Space Grotesk',sans-serif">My Skills
+          </h2>
+          <p class="text-slate-500 mt-3 max-w-lg mx-auto text-sm">Technologies I use to bring ideas to life.</p>
+        </div>
+        <div class="space-y-10">
+          <!-- Frontend -->
+          <div class="reveal">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-7 h-7 rounded-lg flex items-center justify-center border"
+                style="background:rgba(99,102,241,0.1);border-color:rgba(99,102,241,0.2)">
+                <iconify-icon icon="lucide:layout" style="color:#6366f1;font-size:0.85rem"></iconify-icon>
+              </div>
+              <h3 class="text-white font-semibold text-sm tracking-wide">Frontend &amp; Design</h3>
+              <div class="flex-1 h-px" style="background:rgba(99,102,241,0.1)"></div>
+            </div>
+            <div class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-3">
+              <a href="https://en.wikipedia.org/wiki/HTML5" target="_blank" class="skill-card"><img
+                  src="assets/skills/html.svg" alt="HTML5"><span>HTML5</span></a>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" class="skill-card"><img
+                  src="assets/skills/css.svg" alt="CSS3"><span>CSS3</span></a>
+              <a href="https://tailwindcss.com/" target="_blank" class="skill-card"><img
+                  src="assets/skills/tailwind.svg" alt="Tailwind"><span>Tailwind</span></a>
+              <a href="https://getbootstrap.com/" target="_blank" class="skill-card"><img
+                  src="assets/skills/bootstrap.svg" alt="Bootstrap"><span>Bootstrap</span></a>
+              <a href="https://react.dev/" target="_blank" class="skill-card"><img src="assets/skills/reactjs.svg"
+                  alt="React"><span>React</span></a>
+              <a href="https://nextjs.org/" target="_blank" class="skill-card"><img src="assets/skills/next-js.svg"
+                  alt="Nextjs"><span>Nextjs</span></a>
+              <a href="https://vite.dev/" target="_blank" class="skill-card"><img src="assets/skills/vitejs.svg"
+                  alt="Vite"><span>Vite</span></a>
+              <a href="https://www.figma.com/" target="_blank" class="skill-card"><img src="assets/skills/figma.svg"
+                  alt="Figma"><span>Figma</span></a>
+              <a href="https://en.wikipedia.org/wiki/Adobe_XD" target="_blank" class="skill-card"><img
+                  src="assets/skills/adobe-xd.svg" alt="Adobe XD"><span>Adobe XD</span></a>
+              <a href="https://www.coreldraw.com/en/" target="_blank" class="skill-card"><img
+                  src="assets/skills/coreldraw.svg" alt="CorelDRAW"><span>CorelDRAW</span></a>
+              <a href="https://www.autodesk.com/products/fusion-360/overview" target="_blank" class="skill-card"><img
+                  src="assets/skills/fusion.svg" alt="Fusion"><span>Fusion</span></a>
+            </div>
+          </div>
+          <!-- Backend -->
+          <div class="reveal">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-7 h-7 rounded-lg flex items-center justify-center border"
+                style="background:rgba(6,182,212,0.1);border-color:rgba(6,182,212,0.2)">
+                <iconify-icon icon="lucide:server" style="color:#06b6d4;font-size:0.85rem"></iconify-icon>
+              </div>
+              <h3 class="text-white font-semibold text-sm tracking-wide">Backend &amp; Database</h3>
+              <div class="flex-1 h-px" style="background:rgba(6,182,212,0.1)"></div>
+            </div>
+            <div class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-3">
+              <a href="https://www.javascript.com/" target="_blank" class="skill-card"><img
+                  src="assets/skills/javascript.svg" alt="JavaScript"><span>JavaScript</span></a>
+              <a href="https://www.php.net/" target="_blank" class="skill-card"><img src="assets/skills/php.svg"
+                  alt="PHP"><span>PHP</span></a>
+              <a href="https://laravel.com/" target="_blank" class="skill-card"><img src="assets/skills/laravel.svg"
+                  alt="Laravel"><span>Laravel</span></a>
+              <a href="https://www.codeigniter.com/" target="_blank" class="skill-card"><img
+                  src="assets/skills/codeigniter.svg" alt="CodeIgniter"><span>CodeIgniter</span></a>
+              <a href="https://nodejs.org/" target="_blank" class="skill-card"><img src="assets/skills/nodejs.svg"
+                  alt="Node.js"><span>Node.js</span></a>
+              <a href="https://firebase.google.com/" target="_blank" class="skill-card"><img
+                  src="assets/skills/firebase.svg" alt="Firebase"><span>Firebase</span></a>
+              <a href="https://supabase.com/" target="_blank" class="skill-card"><img
+                  src="assets/skills/supabase-icon.svg" alt="Supabase"><span>Supabase</span></a>
+              <a href="https://www.mysql.com/" target="_blank" class="skill-card"><img src="assets/skills/mysql.svg"
+                  alt="MySQL"><span>MySQL</span></a>
+              <a href="https://www.postgresql.org/" target="_blank" class="skill-card"><img
+                  src="assets/skills/postgresql.svg" alt="PostgreSQL"><span>PostgreSQL</span></a>
+              <a href="https://sqlite.org/" target="_blank" class="skill-card"><img src="assets/skills/sqlite.svg"
+                  alt="SQLite"><span>SQLite</span></a>
+            </div>
+          </div>
+          <!-- IoT -->
+          <div class="reveal">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-7 h-7 rounded-lg flex items-center justify-center border"
+                style="background:rgba(16,185,129,0.1);border-color:rgba(16,185,129,0.2)">
+                <iconify-icon icon="lucide:cpu" style="color:#10b981;font-size:0.85rem"></iconify-icon>
+              </div>
+              <h3 class="text-white font-semibold text-sm tracking-wide">IoT &amp; Embedded Systems</h3>
+              <div class="flex-1 h-px" style="background:rgba(16,185,129,0.1)"></div>
+            </div>
+            <div class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-3">
+              <a href="https://www.arduino.cc/" target="_blank" class="skill-card"><img src="assets/skills/arduino.svg"
+                  alt="Arduino"><span>Arduino</span></a>
+              <a href="https://id.wikipedia.org/wiki/C%2B%2B" target="_blank" class="skill-card"><img
+                  src="assets/skills/cpp.svg" alt="C++"><span>C/C++</span></a>
+              <a href="https://www.python.org/" target="_blank" class="skill-card"><img src="assets/skills/python.svg"
+                  alt="Python"><span>Python</span></a>
+              <a href="https://nodered.org/" target="_blank" class="skill-card"><img src="assets/skills/node-red.svg"
+                  alt="Node-RED"><span>Node-RED</span></a>
+              <a href="https://easyeda.com/" target="_blank" class="skill-card"><img src="assets/skills/easyeda.jpeg"
+                  alt="EasyEDA"><span>EasyEDA</span></a>
+              <a href="https://www.linux.org/" target="_blank" class="skill-card"><img src="assets/skills/linux.svg"
+                  alt="Linux"><span>Linux</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="py-24 relative" style="background-color:#1a1a2e">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-16 reveal">
+          <div class="section-label justify-center">Portfolio</div>
+          <h2 class="font-bold text-white text-3xl sm:text-4xl" style="font-family:'Space Grotesk',sans-serif">Featured
+            Projects</h2>
+          <p class="text-slate-500 mt-3 max-w-lg mx-auto text-sm">A highlight of my best work — IoT systems, web apps,
+            and hardware projects.</p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Highlight 1: IoT Hydroponic Melon Web -->
+          <div class="project-card reveal" style="transition-delay:0s" onclick="openProjectModal(4)">
+            <div class="relative overflow-hidden">
+              <img src="assets/portfolio/hidroponik-melon-web/landing-page.png" alt="Hydroponic Web"
+                class="project-img">
+              <div class="project-overlay"></div>
+              <div class="absolute top-3 left-3 flex gap-2">
+                <span class="project-badge badge-iot">IoT</span>
+                <span class="project-badge badge-web">Web</span>
+              </div>
+            </div>
+            <div class="p-5">
+              <h3 class="text-white font-bold text-base mb-2" style="font-family:'Space Grotesk',sans-serif">IoT
+                Hydroponic Melon Web</h3>
+              <p class="text-slate-400 text-xs leading-relaxed mb-4">Web dashboard for automated hydroponic nutrient
+                mixing system with real-time monitoring and inventory.</p>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span class="tag">Laravel</span><span class="tag">React</span><span class="tag">Arduino</span>
+              </div>
+              <button class="flex items-center gap-1 text-sm font-semibold hover:gap-3 transition-all"
+                style="color:#6366f1">
+                View Details <iconify-icon icon="lucide:arrow-right"></iconify-icon>
+              </button>
+            </div>
+          </div>
+          <!-- Highlight 2: IoT Hydroponic Hardware -->
+          <div class="project-card reveal" style="transition-delay:0.12s" onclick="openProjectModal(5)">
+            <div class="relative overflow-hidden">
+              <img src="assets/portfolio/hidroponik-melon/aktuator.png" alt="Hydroponic HW" class="project-img">
+              <div class="project-overlay"></div>
+              <div class="absolute top-3 left-3 flex gap-2">
+                <span class="project-badge badge-iot">IoT Hardware</span>
+              </div>
+            </div>
+            <div class="p-5">
+              <h3 class="text-white font-bold text-base mb-2" style="font-family:'Space Grotesk',sans-serif">IoT
+                Hydroponic System</h3>
+              <p class="text-slate-400 text-xs leading-relaxed mb-4">Hardware system for automatic nutrient mixing in
+                hydroponic melon cultivation using ESP32 &amp; sensors.</p>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span class="tag">ESP32</span><span class="tag">C++</span><span class="tag">MQTT</span>
+              </div>
+              <button class="flex items-center gap-1 text-sm font-semibold hover:gap-3 transition-all"
+                style="color:#6366f1">
+                View Details <iconify-icon icon="lucide:arrow-right"></iconify-icon>
+              </button>
+            </div>
+          </div>
+          <!-- Highlight 3: Dika Arenda -->
+          <div class="project-card reveal" style="transition-delay:0.24s" onclick="openProjectModal(3)">
+            <div class="relative overflow-hidden">
+              <img src="assets/portfolio/dika-arenda/home.png" alt="Dika Arenda" class="project-img">
+              <div class="project-overlay"></div>
+              <div class="absolute top-3 left-3 flex gap-2">
+                <span class="project-badge badge-web">Web App</span>
+              </div>
+            </div>
+            <div class="p-5">
+              <h3 class="text-white font-bold text-base mb-2" style="font-family:'Space Grotesk',sans-serif">Dika Arenda
+              </h3>
+              <p class="text-slate-400 text-xs leading-relaxed mb-4">Bookkeeping system for chicken slaughterhouse
+                business — journals, ledgers, and monthly reports.</p>
+              <div class="flex flex-wrap gap-1.5 mb-4">
+                <span class="tag">Laravel</span><span class="tag">MySQL</span><span class="tag">Tailwind</span>
+              </div>
+              <button class="flex items-center gap-1 text-sm font-semibold hover:gap-3 transition-all"
+                style="color:#6366f1">
+                View Details <iconify-icon icon="lucide:arrow-right"></iconify-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- View All CTA -->
+        <div class="text-center mt-12 reveal">
+          <p class="text-slate-500 text-sm mb-5">Showing 3 of 7 projects</p>
+          <a href="projects.html" class="btn-primary">
+            <iconify-icon icon="lucide:layout-grid"></iconify-icon>
+            View All Projects
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECT MODAL -->
+    <div id="project-modal" class="modal-overlay" onclick="closeProjectModal(event)">
+      <div class="modal-box" id="modal-box-content"></div>
+    </div>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-24 relative">
+      <div class="orb orb-purple w-96 h-96 top-0 right-0 opacity-30"></div>
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+        <div class="text-center mb-16 reveal">
+          <div class="section-label justify-center">Get In Touch</div>
+          <h2 class="font-bold text-white text-3xl sm:text-4xl" style="font-family:'Space Grotesk',sans-serif">Let's
+            Work Together</h2>
+          <p class="text-slate-500 mt-3 max-w-lg mx-auto text-sm">Have a project in mind? Let's discuss how we can bring
+            your idea to life.</p>
+        </div>
+        <div class="grid lg:grid-cols-2 gap-12">
+          <div class="reveal-left">
+            <div class="glass rounded-2xl p-6 sm:p-8">
+              <h3 class="text-white font-bold text-xl mb-6" style="font-family:'Space Grotesk',sans-serif">Send a
+                Message</h3>
+              <form action="https://formsubmit.co/rahulsubagio99@gmail.com" method="POST" class="space-y-5">
+                <div><label class="text-slate-400 text-xs font-medium mb-2 block">Your Name</label><input type="text"
+                    name="name" id="contact-name" placeholder="John Doe" class="form-input" required></div>
+                <div><label class="text-slate-400 text-xs font-medium mb-2 block">Email Address</label><input
+                    type="email" name="email" id="contact-email" placeholder="you@example.com" class="form-input"
+                    required></div>
+                <div><label class="text-slate-400 text-xs font-medium mb-2 block">Subject</label><input type="text"
+                    name="subject" id="contact-subject" placeholder="Project Collaboration" class="form-input"></div>
+                <div><label class="text-slate-400 text-xs font-medium mb-2 block">Message</label><textarea
+                    name="message" id="contact-message" rows="5" placeholder="Tell me about your project..."
+                    class="form-input" style="resize:none" required></textarea></div>
+                <button type="submit" class="btn-primary w-full justify-center"><iconify-icon
+                    icon="lucide:send"></iconify-icon>Send Message</button>
+              </form>
+            </div>
+          </div>
+          <div class="reveal-right flex flex-col justify-center">
+            <div class="mb-8">
+              <h3 class="text-white font-bold text-2xl sm:text-3xl leading-tight mb-4"
+                style="font-family:'Space Grotesk',sans-serif">
+                Got a project?<br><span class="gradient-text">Let's Talk.</span>
+              </h3>
+              <p class="text-slate-400 text-sm leading-relaxed">I'm always open to discussing new projects, creative
+                ideas, or opportunities to be part of amazing teams.</p>
+            </div>
+            <div class="space-y-4 mb-8">
+              <a href="https://www.google.com/maps/place/Sleman" target="_blank"
+                class="flex items-center gap-4 p-4 glass rounded-xl hover:border-indigo-500/30 transition-all group">
+                <div
+                  class="w-10 h-10 rounded-lg flex items-center justify-center border flex-shrink-0 group-hover:bg-indigo-500/20 transition-all"
+                  style="background:rgba(99,102,241,0.1);border-color:rgba(99,102,241,0.2)"><iconify-icon
+                    icon="lucide:map-pin" style="color:#6366f1;font-size:1.1rem"></iconify-icon></div>
+                <div>
+                  <p class="text-slate-500 text-xs mb-0.5">Location</p>
+                  <p class="text-white text-sm font-medium">Sleman, D.I. Yogyakarta, Indonesia</p>
+                </div>
+              </a>
+              <a href="mailto:rahulsubagio99@gmail.com" target="_blank"
+                class="flex items-center gap-4 p-4 glass rounded-xl hover:border-indigo-500/30 transition-all group">
+                <div
+                  class="w-10 h-10 rounded-lg flex items-center justify-center border flex-shrink-0 group-hover:bg-cyan-500/20 transition-all"
+                  style="background:rgba(6,182,212,0.1);border-color:rgba(6,182,212,0.2)"><iconify-icon
+                    icon="lucide:mail" style="color:#06b6d4;font-size:1.1rem"></iconify-icon></div>
+                <div>
+                  <p class="text-slate-500 text-xs mb-0.5">Email</p>
+                  <p class="text-white text-sm font-medium">rahulsubagio99@gmail.com</p>
+                </div>
+              </a>
+              <a href="https://bit.ly/rahulWA" target="_blank"
+                class="flex items-center gap-4 p-4 glass rounded-xl hover:border-indigo-500/30 transition-all group">
+                <div
+                  class="w-10 h-10 rounded-lg flex items-center justify-center border flex-shrink-0 group-hover:bg-emerald-500/20 transition-all"
+                  style="background:rgba(16,185,129,0.1);border-color:rgba(16,185,129,0.2)"><iconify-icon
+                    icon="akar-icons:whatsapp-fill" style="color:#10b981;font-size:1.1rem"></iconify-icon></div>
+                <div>
+                  <p class="text-slate-500 text-xs mb-0.5">WhatsApp</p>
+                  <p class="text-white text-sm font-medium">+62 822-9636-5028</p>
+                </div>
+              </a>
+            </div>
+            <div>
+              <p class="text-slate-500 text-xs mb-3">Find me on social media</p>
+              <div class="flex gap-3">
+                <a href="https://github.com/rahulsubagio" target="_blank" class="social-link"><iconify-icon
+                    icon="akar-icons:github-fill"></iconify-icon></a>
+                <a href="https://www.linkedin.com/in/rahulsubagio/" target="_blank" class="social-link"><iconify-icon
+                    icon="akar-icons:linkedin-fill"></iconify-icon></a>
+                <a href="https://www.instagram.com/rahulsubagio" target="_blank" class="social-link"><iconify-icon
+                    icon="akar-icons:instagram-fill"></iconify-icon></a>
+                <a href="https://www.youtube.com/@rahulsubagio" target="_blank" class="social-link"><iconify-icon
+                    icon="akar-icons:youtube-fill"></iconify-icon></a>
+                <a href="https://www.tiktok.com/@rahulsubagio" target="_blank" class="social-link"><iconify-icon
+                    icon="akar-icons:tiktok-fill"></iconify-icon></a>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- Contact Section End -->
   </main>
 
-  <!-- Footer Start -->
-  <footer class="py-10 lg:pb-10 lg:pt-28 bg-dark">
-    <div class="container">
-      <div class="section-page">
-        <div class="w-full px-4">
-          <a href="#home" id="logoRS">
-            <img src="assets/LOGO-RS-PRODUCTION-putih.png" alt="logo rs" class="mx-auto w-14 sm:w-16 md:w-20" data-sal="zoom-in" data-sal-duration="800">
-          </a>
-          <div class="mt-6 text-center" data-sal="slide-up" data-sal-duration="800">
-            <p class="text-xs font-medium tracking-wider text-light">Copyright ©️ 2022, <span class="font-normal text-secondary"> that's all folks.</span></p>
-            <p class="mt-1 text-xs tracking-wider">😎 by rahulsubagio.</p>
-          </div>
-          <div class="mt-10 mb-2 text-center text-light lg:text-lg drop-shadow-lg">
-            <!-- Github icon -->
-            <a href="https://github.com/rahulsubagio" target="_blank" class="icon-sosmed">
-              <iconify-icon icon="akar-icons:github-fill"></iconify-icon>
-            </a>
-            <!-- Linkedin icon -->
-            <a href="https://www.linkedin.com/in/rahulsubagio/" target="_blank" class="mx-5 icon-sosmed">
-              <iconify-icon icon="akar-icons:linkedin-fill"></iconify-icon>
-            </a>
-            <!-- Instagram icon -->
-            <a href="https://www.instagram.com/rahulsubagio" target="_blank" class="icon-sosmed">
-              <iconify-icon icon="akar-icons:instagram-fill"></iconify-icon>
-            </a>
-            <!-- Youtube icon -->
-            <a href="https://www.youtube.com/@rahulsubagio" target="_blank" class="mx-5 icon-sosmed">
-              <iconify-icon icon="akar-icons:youtube-fill"></iconify-icon></iconify-icon>
-            </a> 
-            <!-- Tiktok icon -->
-            <a href="https://www.tiktok.com/@rahulsubagio" target="_blank" class=" icon-sosmed">
-              <iconify-icon icon="akar-icons:tiktok-fill"></iconify-icon></iconify-icon></iconify-icon>
-            </a> 
-          </div>
+  <!-- FOOTER -->
+  <footer class="py-8 border-t" style="border-color:rgba(99,102,241,0.1)">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-2">
+          <img src="assets/logo-rs-kecil.png" alt="RS" class="w-6 h-6 object-contain">
+          <span class="font-bold text-white text-sm" style="font-family:'Space Grotesk',sans-serif">Rahul<span
+              style="color:#6366f1">.</span></span>
+        </div>
+        <p class="text-slate-600 text-xs text-center">
+          &copy; 2024 Rahul Subagio. Built with <span style="color:#6366f1">&#10084;</span> in Indonesia.
+        </p>
+        <div class="flex gap-3">
+          <a href="https://github.com/rahulsubagio" target="_blank"
+            class="text-slate-600 hover:text-indigo-500 transition-colors text-sm"><iconify-icon
+              icon="akar-icons:github-fill"></iconify-icon></a>
+          <a href="https://www.linkedin.com/in/rahulsubagio/" target="_blank"
+            class="text-slate-600 hover:text-indigo-500 transition-colors text-sm"><iconify-icon
+              icon="akar-icons:linkedin-fill"></iconify-icon></a>
+          <a href="https://www.instagram.com/rahulsubagio" target="_blank"
+            class="text-slate-600 hover:text-indigo-500 transition-colors text-sm"><iconify-icon
+              icon="akar-icons:instagram-fill"></iconify-icon></a>
         </div>
       </div>
     </div>
   </footer>
-  <!-- Footer End -->
 
-  <!-- iconify -->
-  <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
-  <!-- alphinejs -->
-  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.4.0/dist/alpine.min.js" defer></script>
-  <!-- Sal -->
-  <script src="https://cdn.jsdelivr.net/npm/sal.js/dist/sal.js"></script>
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        sal();
+    // Project data
+    const projects = [
+      { title: 'RAR Car Rental', type: 'Web Application', badges: ['Web App'], description: 'A comprehensive car rental management system featuring vehicle listing, booking management, tenant data input, and complete transaction tracking.', tags: ['PHP', 'MySQL', 'Bootstrap', 'JavaScript'], images: [{ src: 'assets/portfolio/RAR-Rental/Home.PNG', caption: 'Home Page' }, { src: 'assets/portfolio/RAR-Rental/Daftar-Kendaraan-page.png', caption: 'Vehicle List' }, { src: 'assets/portfolio/RAR-Rental/Input-penyewa-page.png', caption: 'Tenant Input' }, { src: 'assets/portfolio/RAR-Rental/transaksi-selesai.png', caption: 'Transaction Done' }] },
+      { title: '2D Shape Calculator', type: 'Web Application', badges: ['Web App'], description: 'Calculate area and perimeter of various two-dimensional shapes. Features calculation history, percentage comparison, and a clean responsive interface.', tags: ['PHP', 'CSS', 'MySQL', 'JavaScript'], images: [{ src: 'assets/portfolio/bangun-datar/home.png', caption: 'Home Page' }, { src: 'assets/portfolio/bangun-datar/triangle.png', caption: 'Triangle Input' }, { src: 'assets/portfolio/bangun-datar/hasil-hitung-persegi.png', caption: 'Calculation Result' }, { src: 'assets/portfolio/bangun-datar/persentase-perhitungan.png', caption: 'Percentage Calc' }, { src: 'assets/portfolio/bangun-datar/histori-perhitungan.png', caption: 'History' }] },
+      { title: 'Simple IoT Login System', type: 'IoT + Web', badges: ['IoT', 'Web'], description: 'Secure authentication system for IoT dashboards. Features user login, account registration, and a dashboard for real-time IoT device data visualization.', tags: ['PHP', 'Arduino', 'MySQL', 'Bootstrap'], images: [{ src: 'assets/portfolio/simple-login/home.png', caption: 'Home Page' }, { src: 'assets/portfolio/simple-login/login.png', caption: 'Login Page' }, { src: 'assets/portfolio/simple-login/create-account.png', caption: 'Register Page' }, { src: 'assets/portfolio/simple-login/dashboard.png', caption: 'Dashboard' }] },
+      { title: 'Dika Arenda', type: 'Web Application', badges: ['Web App'], description: 'Complete bookkeeping system for a chicken slaughterhouse business. Includes journal entries, ledgers, monthly recaps, and role-based access for cashier accounts.', tags: ['Laravel', 'MySQL', 'Tailwind CSS', 'Alpine.js'], images: [{ src: 'assets/portfolio/dika-arenda/home.png', caption: 'Home Page' }, { src: 'assets/portfolio/dika-arenda/login.png', caption: 'Login Page' }, { src: 'assets/portfolio/dika-arenda/jurnal-kasir.png', caption: 'Journal - Cashier' }, { src: 'assets/portfolio/dika-arenda/ledger-kasir.png', caption: 'Ledger - Cashier' }, { src: 'assets/portfolio/dika-arenda/rekapbulanan-kasir.png', caption: 'Monthly Recap' }] },
+      { title: 'IoT Hydroponic Melon Web', type: 'IoT + Web', badges: ['IoT', 'Web'], description: 'Full web dashboard for managing an automated hydroponic melon nutrient mixing IoT system. Features landing page, real-time monitoring, and inventory management.', tags: ['Laravel', 'React', 'Arduino', 'MySQL', 'MQTT'], images: [{ src: 'assets/portfolio/hidroponik-melon-web/landing-page.png', caption: 'Landing Page' }, { src: 'assets/portfolio/hidroponik-melon-web/login.png', caption: 'Login Page' }, { src: 'assets/portfolio/hidroponik-melon-web/dashboard.png', caption: 'Dashboard' }, { src: 'assets/portfolio/hidroponik-melon-web/inventory.png', caption: 'Inventory' }] },
+      { title: 'IoT Hydroponic Melon System', type: 'IoT Hardware', badges: ['IoT Hardware'], description: 'Physical IoT system for automatic mixing of hydroponic melon plant nutrients. Built with ESP32, various sensors, and actuators installed in a real greenhouse environment.', tags: ['ESP32', 'C++', 'Arduino', 'Sensors', 'Actuators'], images: [{ src: 'assets/portfolio/hidroponik-melon/aktuator.png', caption: 'Actuator Installation' }, { src: 'assets/portfolio/hidroponik-melon/rangkaian.png', caption: 'Circuit Board' }, { src: 'assets/portfolio/hidroponik-melon/gh-setup.png', caption: 'Greenhouse Setup' }, { src: 'assets/portfolio/hidroponik-melon/pohon-melon.png', caption: 'Melon Plants' }, { src: 'assets/portfolio/hidroponik-melon/buah-melon.png', caption: 'Harvest Result' }] },
+      { title: 'IoT Cooling & Irrigation System', type: 'IoT Hardware', badges: ['IoT Hardware'], description: 'Automated cooling and irrigation system with hydroponic water quality monitoring. Includes detailed device schematics and full system design documentation.', tags: ['Arduino', 'C++', 'Sensors', 'Actuators', 'IoT'], images: [{ src: 'assets/portfolio/sistem-pendingin-irigasi/iot.png', caption: 'System Design' }, { src: 'assets/portfolio/sistem-pendingin-irigasi/layout-pendingin.png', caption: 'Cooling Layout' }, { src: 'assets/portfolio/sistem-pendingin-irigasi/layout-irigasi.png', caption: 'Irrigation Layout' }, { src: 'assets/portfolio/sistem-pendingin-irigasi/skema-perangkat.png', caption: 'Device Schematic' }, { src: 'assets/portfolio/sistem-pendingin-irigasi/skema-detail-perangkat.png', caption: 'Detailed Schematic' }] },
+    ];
+
+    let currentCarouselIndex = 0, currentProjectIndex = 0;
+
+    function openProjectModal(index) {
+      currentProjectIndex = index;
+      currentCarouselIndex = 0;
+      const p = projects[index];
+      const badgeHtml = p.badges.map(b => {
+        const cls = b.toLowerCase().includes('iot') ? 'badge-iot' : 'badge-web';
+        return `<span class="project-badge ${cls}">${b}</span>`;
+      }).join('');
+      const imagesHtml = p.images.map(img =>
+        `<div class="carousel-slide"><img src="${img.src}" alt="${img.caption}" style="width:100%;height:320px;object-fit:cover"><p style="text-align:center;color:#94a3b8;font-size:0.75rem;margin-top:0.5rem">${img.caption}</p></div>`
+      ).join('');
+      const dotsHtml = p.images.map((_, i) =>
+        `<button class="carousel-dot ${i === 0 ? 'active' : ''}" onclick="goToSlide(${i})"></button>`
+      ).join('');
+      const tagsHtml = p.tags.map(t => `<span class="tag">${t}</span>`).join('');
+      document.getElementById('modal-box-content').innerHTML = `
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1.25rem">
+        <div><div style="display:flex;gap:0.5rem;margin-bottom:0.5rem">${badgeHtml}</div><h3 style="color:white;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.25rem">${p.title}</h3><p style="color:#64748b;font-size:0.75rem">${p.type}</p></div>
+        <button onclick="closeModal()" style="color:#64748b;cursor:pointer;background:none;border:none;margin-left:1rem;flex-shrink:0"><iconify-icon icon="lucide:x" style="font-size:1.25rem"></iconify-icon></button>
+      </div>
+      <div class="carousel-wrapper" style="margin-bottom:1rem">
+        <div class="carousel-track" id="modal-carousel-track">${imagesHtml}</div>
+        ${p.images.length > 1 ? `<button class="carousel-btn" style="left:0.75rem" onclick="prevSlide()"><iconify-icon icon="lucide:chevron-left" style="font-size:0.85rem"></iconify-icon></button><button class="carousel-btn" style="right:0.75rem" onclick="nextSlide()"><iconify-icon icon="lucide:chevron-right" style="font-size:0.85rem"></iconify-icon></button>` : ''}
+      </div>
+      ${p.images.length > 1 ? `<div class="carousel-dots" id="modal-dots">${dotsHtml}</div>` : ''}
+      <div style="margin-top:1.25rem"><p style="color:#94a3b8;font-size:0.875rem;line-height:1.6;margin-bottom:1rem">${p.description}</p><div style="display:flex;flex-wrap:wrap;gap:0.5rem">${tagsHtml}</div></div>
+    `;
+      document.getElementById('project-modal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      document.getElementById('project-modal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function closeProjectModal(e) { if (e.target === document.getElementById('project-modal')) closeModal(); }
+    function goToSlide(index) {
+      currentCarouselIndex = index;
+      const track = document.getElementById('modal-carousel-track');
+      if (track) { track.style.transform = `translateX(-${index * 100}%)`; document.querySelectorAll('#modal-dots .carousel-dot').forEach((d, i) => d.classList.toggle('active', i === index)); }
+    }
+    function nextSlide() { const p = projects[currentProjectIndex]; currentCarouselIndex = (currentCarouselIndex + 1) % p.images.length; goToSlide(currentCarouselIndex); }
+    function prevSlide() { const p = projects[currentProjectIndex]; currentCarouselIndex = (currentCarouselIndex - 1 + p.images.length) % p.images.length; goToSlide(currentCarouselIndex); }
+
+    // Typewriter
+    const roles = ['IoT Engineer', 'Fullstack Developer', 'Arduino Enthusiast', 'Web Developer'];
+    let roleIndex = 0, charIndex = 0, isDeleting = false;
+    function typeRole() {
+      const el = document.getElementById('typed-role');
+      if (!el) return;
+      const cur = roles[roleIndex];
+      if (isDeleting) el.textContent = cur.substring(0, charIndex--);
+      else el.textContent = cur.substring(0, ++charIndex);
+      if (!isDeleting && charIndex === cur.length) setTimeout(() => { isDeleting = true; }, 2000);
+      else if (isDeleting && charIndex === 0) { isDeleting = false; roleIndex = (roleIndex + 1) % roles.length; }
+      setTimeout(typeRole, isDeleting ? 60 : 100);
+    }
+    document.addEventListener('DOMContentLoaded', () => setTimeout(typeRole, 500));
+
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    hamburger.addEventListener('click', () => { hamburger.classList.toggle('active'); mobileMenu.classList.toggle('open'); });
+    document.querySelectorAll('.mobile-nav-link').forEach(l => l.addEventListener('click', () => { hamburger.classList.remove('active'); mobileMenu.classList.remove('open'); }));
+
+    // Scroll reveal
+    const observer = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => observer.observe(el));
+
+    // Back to top
+    window.addEventListener('scroll', () => { const btn = document.getElementById('back-to-top'); if (window.scrollY > 400) btn.classList.add('visible'); else btn.classList.remove('visible'); });
+
+    // Active nav
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    window.addEventListener('scroll', () => {
+      let cur = '';
+      sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) cur = s.getAttribute('id'); });
+      navLinks.forEach(l => {
+        const href = l.getAttribute('href');
+        // Match both "#projects" and "projects.html" style hrefs
+        const matches = href === '#' + cur || href === cur + '.html';
+        l.classList.toggle('active', matches);
+      });
     });
+
+    // Tabs
+    document.querySelectorAll('.tab-btn').forEach(btn => { btn.addEventListener('click', () => { const tab = btn.dataset.tab; document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active')); document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active')); btn.classList.add('active'); document.getElementById('tab-' + tab).classList.add('active'); }); });
+
+    // ESC
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
   </script>
-  <!-- GSAP -->
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
-  <script>
-    // use a script tag or an external JS file
-    document.addEventListener("DOMContentLoaded", (event) => {
-      gsap.registerPlugin(TextPlugin)
-      gsap.to('.rahul', {duration: 1, text: 'Rahul'})
-      gsap.to('.subagio', {duration: 1.5, delay: 1, text: 'Subagio.'})
-      gsap.from('.headline', {duration: 2, text: ''})
-    });
-  </script>
-  <script src="dist/js/script.js"></script>
 </body>
+
 </html>
